@@ -8,77 +8,32 @@
     "colore_nocciola": "#d4af37", 
     "colore_rosso": "#8b1818",
     "logo_url": "/logo.png",
-    "sfondo_hero": "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "sfondo_hero": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     "chi_siamo": "Il Milos è un rifugio per puristi. Portiamo in tavola solo carni selezionate da piccoli allevamenti, frollate con pazienza millimetrica nelle nostre celle, e formaggi a latte crudo introvabili. Qui si entra per peccare di gola."
+  },
+  "promo_banner": {
+    "attivo": true,
+    "testo": "🔥 Prenota ora per il weekend: in omaggio un calice di Barolo a persona."
   },
   "menu": [
     {
       "categoria": "I Preludi",
       "piatti": [
-        { 
-          "nome": "L'Estasi dei Formaggi", 
-          "descrizione": "Pecorino affinato in grotta, caciocavallo podolico e gorgonzola piccante. Serviti con marmellata di fichi neri e noci tostate.", 
-          "prezzo": "22€",
-          "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        { 
-          "nome": "Battuta al Tartufo Nero", 
-          "descrizione": "Tartare di fassona frollata, tagliata a coltello. Tuorlo d'uovo marinato, senape antica e generose scaglie di tartufo.", 
-          "prezzo": "26€",
-          "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
-      ]
-    },
-    {
-      "categoria": "Le Opere Prime",
-      "piatti": [
-        { 
-          "nome": "Pappardelle al Cinghiale", 
-          "descrizione": "Pasta fresca trafilata al bronzo, avvolta in un ragù di cinghiale selvatico sfumato al vino rosso e cacao amaro.", 
-          "prezzo": "24€",
-          "immagine": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        { 
-          "nome": "Risotto Zafferano e Midollo", 
-          "descrizione": "Riso Carnaroli riserva, pistilli di zafferano, midollo di bue scottato a cannello e una sottile foglia d'oro edibile.", 
-          "prezzo": "28€",
-          "immagine": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
+        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta, caciocavallo podolico e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+        { "nome": "Battuta al Tartufo Nero", "descrizione": "Tartare di fassona frollata, tagliata a coltello con scaglie di tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
       ]
     },
     {
       "categoria": "Il Fuoco",
       "piatti": [
-        { 
-          "nome": "Tomahawk Dry Aged", 
-          "descrizione": "La regina delle bistecche. Frollatura estrema di 60 giorni. Cotta su brace di quercia e servita sfrigolante sul suo osso.", 
-          "prezzo": "85€",
-          "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        { 
-          "nome": "Filetto Sotto Cenere", 
-          "descrizione": "Cuore di filetto sigillato a fiamma altissima. Una crosta croccante che nasconde un interno incredibilmente fondente.", 
-          "prezzo": "38€",
-          "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
-      ]
-    },
-    {
-      "categoria": "I Peccati",
-      "piatti": [
-        { 
-          "nome": "Sfera Oscura", 
-          "descrizione": "Guscio croccante di cioccolato 85% che si scioglie al tavolo rivelando un cuore caldo al peperoncino e lamponi neri.", 
-          "prezzo": "12€",
-          "immagine": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        { 
-          "nome": "Cheesecake di Bronte", 
-          "descrizione": "Base di biscotto salato, crema di ricotta di pecora e una colata pura e densa di pistacchio di Bronte DOP.", 
-          "prezzo": "10€",
-          "immagine": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        }
+        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema di 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima, incredibilmente fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
       ]
     }
+  ],
+  "faq": [
+    { "domanda": "Avete opzioni per celiaci o vegetariani?", "risposta": "Assolutamente sì. Nonostante la nostra specialità sia la carne, disponiamo di menù completi gluten-free e opzioni vegetariane ricercate." },
+    { "domanda": "È presente un parcheggio vicino al locale?", "risposta": "Sì, a soli 50 metri dal ristorante è disponibile un parcheggio custodito convenzionato per i nostri clienti." },
+    { "domanda": "Accettate animali di piccola taglia?", "risposta": "I vostri amici a quattro zampe sono i benvenuti, vi chiediamo solo di segnalarlo al momento della prenotazione per assegnarvi il tavolo più comodo." }
   ]
 }

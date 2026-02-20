@@ -2,126 +2,140 @@
 import '../styles/global.css';
 import siteData from '../data.json';
 
-const { ristorante, menu } = siteData;
+const { ristorante, promo_banner, menu, faq } = siteData;
 const numeroWhatsapp = ristorante.telefono.replace(/\s+/g, '');
-const messaggioPreimpostato = `Buonasera Milos. Desidero prenotare un tavolo a nome di...`;
+const messaggioPreimpostato = `Buonasera, desidero prenotare un tavolo a nome di...`;
 const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(messaggioPreimpostato)}`;
 ---
 
-<html lang="it" class="scroll-smooth bg-[#17110e]">
+<html lang="it" class="scroll-smooth bg-[#120d0b]">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{ristorante.nome} | Trattoria d'Eccellenza</title>
+    <title>{ristorante.nome} | Sito Ufficiale</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style define:vars={{ colorNocciola: ristorante.colore_nocciola, colorRosso: ristorante.colore_rosso }}>
-      body { 
-        font-family: 'Lato', sans-serif; 
-        background-color: #17110e; 
-        color: #f7f3eb; 
-        overflow-x: hidden; 
-      }
-      h1, h2, h3, h4, .font-trattoria { font-family: 'Playfair Display', serif; }
+      body { font-family: 'Lato', sans-serif; background-color: #120d0b; color: #f7f3eb; overflow-x: hidden; }
+      h1, h2, h3, h4, .font-elegante { font-family: 'Playfair Display', serif; }
       
-      .ingresso-di-botto {
-        animation: fadeIn 0.8s ease-out forwards;
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; transform: scale(0.98); }
-        to { opacity: 1; transform: scale(1); }
-      }
-
-      .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+      /* Animazioni fluide */
+      .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
       .reveal.active { opacity: 1; transform: translateY(0); }
+      
+      /* Sidebar Mobile Overlay */
+      #mobile-menu { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+      .menu-open { transform: translateX(0) !important; }
+
+      /* FAQ Accordion animazione */
+      details > summary { list-style: none; cursor: pointer; }
+      details > summary::-webkit-details-marker { display: none; }
+      details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+      @keyframes sweep { 0%    {opacity: 0; transform: translateY(-10px)} 100%  {opacity: 1; transform: translateY(0)} }
     </style>
   </head>
-  <body class="selection:bg-[var(--colorRosso)] selection:text-white flex flex-col min-h-screen">
+  <body class="selection:bg-[var(--colorNocciola)] selection:text-black">
 
-    <nav class="fixed top-0 left-0 w-full z-50 bg-[#17110e]/95 backdrop-blur-md border-b border-[#2d221c] shadow-xl">
+    {promo_banner.attivo && (
+      <div class="bg-[var(--colorRosso)] text-white text-xs md:text-sm font-bold text-center py-2 px-4 tracking-widest relative z-50">
+        {promo_banner.testo}
+      </div>
+    )}
+
+    <nav class="sticky top-0 w-full z-40 bg-[#120d0b]/90 backdrop-blur-lg border-b border-[#2d221c] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
       <div class="max-w-7xl mx-auto px-4 lg:px-8">
-        <div class="flex justify-between items-center h-20 md:h-24">
-          <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
-            <img src="/logo.png" alt="Logo Trattoria" class="h-12 w-12 md:h-14 md:w-14 object-contain" />
-            <span class="font-trattoria font-bold text-2xl md:text-3xl tracking-wider text-[var(--colorNocciola)]">{ristorante.nome}</span>
+        <div class="flex justify-between items-center h-20">
+          <div class="flex items-center gap-3 cursor-pointer z-50" onclick="window.scrollTo(0,0)">
+            <img src={ristorante.logo_url} alt="Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain drop-shadow-md" onerror="this.style.display='none'" />
+            <span class="font-elegante font-bold text-xl md:text-2xl tracking-wider text-[var(--colorNocciola)]">{ristorante.nome}</span>
           </div>
+          
+          <button id="menu-btn" class="md:hidden z-50 p-2 text-[var(--colorNocciola)] focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+
           <div class="hidden md:flex space-x-10 items-center">
-            <a href="#filosofia" class="text-[#d0c6b6] hover:text-[var(--colorNocciola)] transition-colors text-sm uppercase tracking-widest font-bold">La Filosofia</a>
-            <a href="#menu" class="text-[#d0c6b6] hover:text-[var(--colorNocciola)] transition-colors text-sm uppercase tracking-widest font-bold">Il Menù</a>
-            <a href={linkWhatsapp} target="_blank" class="bg-[var(--colorRosso)] text-white px-8 py-3 font-trattoria tracking-widest uppercase text-sm font-bold shadow-lg hover:bg-white hover:text-[var(--colorRosso)] transition-all duration-300">
-              Prenota il Tavolo
-            </a>
+            <a href="#filosofia" class="text-[#d0c6b6] hover:text-[var(--colorNocciola)] transition-colors text-sm uppercase tracking-widest">Chi Siamo</a>
+            <a href="#menu" class="text-[#d0c6b6] hover:text-[var(--colorNocciola)] transition-colors text-sm uppercase tracking-widest">Menù</a>
+            <a href="#faq" class="text-[#d0c6b6] hover:text-[var(--colorNocciola)] transition-colors text-sm uppercase tracking-widest">FAQ</a>
+            <a href={linkWhatsapp} target="_blank" class="bg-[var(--colorNocciola)] text-black px-6 py-2 font-elegante tracking-widest uppercase text-sm font-bold shadow-lg hover:bg-white transition-all duration-300">Prenota</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <header class="relative h-screen w-full flex items-center justify-center text-center ingresso-di-botto">
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-[#17110e] border-l border-[#2d221c] shadow-2xl z-40 transform translate-x-full pt-28 px-6 flex flex-col gap-8">
+      <a href="#filosofia" class="mobile-link text-xl font-elegante text-white uppercase tracking-widest border-b border-[#2d221c] pb-2">Chi Siamo</a>
+      <a href="#menu" class="mobile-link text-xl font-elegante text-white uppercase tracking-widest border-b border-[#2d221c] pb-2">Il Menù</a>
+      <a href="#faq" class="mobile-link text-xl font-elegante text-white uppercase tracking-widest border-b border-[#2d221c] pb-2">FAQ</a>
+      <a href={linkWhatsapp} target="_blank" class="mobile-link bg-[var(--colorRosso)] text-white text-center py-3 font-bold uppercase tracking-widest mt-4">Prenota Ora</a>
+    </div>
+    <div id="overlay" class="fixed inset-0 bg-black/70 z-30 hidden backdrop-blur-sm transition-opacity"></div>
+
+    <a href={linkWhatsapp} target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:scale-110 transition-transform flex items-center justify-center animate-bounce">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 21.031c-1.636 0-3.238-.429-4.639-1.242l-5.18 1.358 1.388-5.051a9.96 9.96 0 0 1-1.36-5.068C2.24 5.498 6.626 1.11 12.031 1.11c5.404 0 9.79 4.388 9.79 9.792 0 5.404-4.386 9.792-9.79 9.792zm-5.011-3.645c1.474.873 3.193 1.336 4.98 1.336 4.717 0 8.549-3.832 8.549-8.549 0-4.718-3.832-8.55-8.549-8.55-4.717 0-8.549 3.832-8.549 8.55 0 1.63.435 3.208 1.258 4.62l-.935 3.403 3.479-.925c.001-.001.002-.001.003-.001z"/></svg>
+    </a>
+
+    <header class="relative min-h-[90vh] flex items-center justify-center text-center">
       <div class="absolute inset-0 z-0">
-        <img src={ristorante.sfondo_hero} alt="Sfondo Trattoria" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#17110e]/75"></div> 
-        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#17110e] to-transparent"></div> 
+        <img src={ristorante.sfondo_hero} alt="Sfondo" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#120d0b]/80 via-[#120d0b]/60 to-[#120d0b]"></div> 
       </div>
-      
-      <div class="relative z-10 flex flex-col items-center mt-16 px-4">
-        <img src="/logo.png" alt="Logo Trattoria" class="h-28 w-28 md:h-40 md:w-40 mb-6 object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]" />
-        
-        <h1 class="text-6xl md:text-[7rem] font-bold text-white mb-6 tracking-wide font-trattoria drop-shadow-2xl leading-none">
+      <div class="relative z-10 px-4 w-full flex flex-col items-center animate-[fadeIn_1s_ease-out_forwards]">
+        <h1 class="text-5xl sm:text-6xl md:text-[6rem] font-bold text-white mb-6 tracking-wide font-elegante drop-shadow-2xl px-2 leading-tight">
           {ristorante.nome}
         </h1>
-        <div class="flex items-center gap-4 mb-8">
-          <div class="h-px w-12 bg-[var(--colorNocciola)]"></div>
-          <span class="text-[var(--colorNocciola)] text-xl font-trattoria italic">Trattoria d'Eccellenza</span>
-          <div class="h-px w-12 bg-[var(--colorNocciola)]"></div>
+        <div class="flex items-center justify-center gap-4 mb-8">
+          <div class="h-px w-8 md:w-16 bg-[var(--colorNocciola)]"></div>
+          <span class="text-[var(--colorNocciola)] text-sm md:text-xl font-elegante italic uppercase tracking-widest">Eccellenza Assoluta</span>
+          <div class="h-px w-8 md:w-16 bg-[var(--colorNocciola)]"></div>
         </div>
-        <p class="text-lg md:text-xl text-[#e8dfd1] font-light tracking-widest uppercase max-w-2xl leading-relaxed drop-shadow-md">
+        <p class="text-sm sm:text-base md:text-lg text-[#d0c6b6] font-light tracking-[0.2em] uppercase max-w-2xl leading-relaxed mb-10">
           {ristorante.slogan}
         </p>
+        <a href="#menu" class="border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-3 uppercase tracking-widest text-sm hover:bg-[var(--colorNocciola)] hover:text-black transition-colors">
+          Scopri l'Esperienza
+        </a>
       </div>
     </header>
 
-    <section id="filosofia" class="py-24 px-4 max-w-4xl mx-auto text-center scroll-mt-20 reveal z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-wide font-trattoria">L'Arte della Carne</h2>
-      <div class="w-16 h-1 bg-[var(--colorRosso)] mx-auto mb-10"></div>
-      <p class="text-xl text-[#d0c6b6] font-light leading-relaxed italic font-trattoria">
+    <section id="filosofia" class="py-20 md:py-32 px-4 max-w-4xl mx-auto text-center scroll-mt-20 reveal z-10">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 tracking-wide font-elegante">L'Arte e la Passione</h2>
+      <div class="w-12 md:w-16 h-1 bg-[var(--colorNocciola)] mx-auto mb-10"></div>
+      <p class="text-lg md:text-2xl text-[#d0c6b6] font-light leading-relaxed italic font-elegante px-4 border-l-2 border-[var(--colorRosso)] md:border-none">
         "{ristorante.chi_siamo}"
       </p>
     </section>
 
-    <main id="menu" class="py-20 scroll-mt-20 relative bg-[#1c1511] border-y border-[#2d221c]">
+    <main id="menu" class="py-16 md:py-24 scroll-mt-20 relative bg-[#17110e]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div class="space-y-32">
+        <div class="space-y-24 md:space-y-32">
           {menu.map((sezione) => (
             <div class="reveal">
-              <div class="flex items-center justify-center mb-16 gap-6">
-                <div class="h-px bg-[#4a392f] w-full max-w-[120px]"></div>
-                <h3 class="text-3xl md:text-4xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-trattoria text-center">
+              <div class="flex items-center justify-center mb-10 md:mb-16 gap-4 md:gap-8">
+                <div class="h-px bg-[#362922] w-full max-w-[50px] md:max-w-[150px]"></div>
+                <h3 class="text-2xl md:text-4xl font-bold text-[var(--colorNocciola)] tracking-[0.2em] uppercase font-elegante text-center">
                   {sezione.categoria}
                 </h3>
-                <div class="h-px bg-[#4a392f] w-full max-w-[120px]"></div>
+                <div class="h-px bg-[#362922] w-full max-w-[50px] md:max-w-[150px]"></div>
               </div>
 
-              <div class="space-y-16">
+              <div class="space-y-10 md:space-y-16">
                 {sezione.piatti.map((piatto, index) => (
-                  <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-stretch gap-0 bg-[#241c17] rounded-sm overflow-hidden border border-[#362922] hover:border-[var(--colorNocciola)] transition-colors shadow-2xl reveal`}>
-                    
-                    <div class="w-full lg:w-1/2 h-[350px] md:h-[400px] overflow-hidden relative border-b lg:border-b-0 lg:border-r border-[#362922]">
-                      <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                  <div class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} bg-[#1a1410] rounded-lg overflow-hidden border border-[#2d221c] shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:border-[var(--colorNocciola)]/50 transition-all duration-500 reveal`}>
+                    <div class="w-full lg:w-1/2 h-[250px] sm:h-[350px] overflow-hidden relative">
+                      <div class="absolute inset-0 bg-[#120d0b]/20 hover:bg-transparent transition-colors z-10"></div>
+                      <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s] ease-out" />
                     </div>
-
-                    <div class="w-full lg:w-1/2 flex flex-col justify-center p-8 lg:p-14">
-                      <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-6 gap-2 border-b border-[#362922] pb-6">
-                        <h4 class="text-2xl md:text-3xl font-bold text-white font-trattoria tracking-wide">
-                          {piatto.nome}
-                        </h4>
-                        <span class="text-3xl font-bold text-[var(--colorRosso)] font-trattoria mt-2 lg:mt-0">{piatto.prezzo}</span>
+                    <div class="w-full lg:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                      <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2 border-b border-[#2d221c] pb-4">
+                        <h4 class="text-xl md:text-3xl font-bold text-white font-elegante tracking-wide">{piatto.nome}</h4>
+                        <span class="text-2xl font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
                       </div>
-                      <p class="text-[#d0c6b6] text-lg leading-relaxed font-light">{piatto.descrizione}</p>
+                      <p class="text-[#968a7c] text-sm md:text-base leading-loose font-light">{piatto.descrizione}</p>
                     </div>
-
                   </div>
                 ))}
               </div>
@@ -131,50 +145,64 @@ const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
       </div>
     </main>
 
-    <footer id="contatti" class="bg-[#120d0b] pt-24 pb-12 mt-auto">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="faq" class="py-20 md:py-32 bg-[#120d0b] px-4 scroll-mt-20 reveal">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-4 text-white font-elegante">Domande Frequenti</h2>
+        <p class="text-center text-[var(--colorNocciola)] text-sm tracking-widest uppercase mb-12">Tutto ciò che devi sapere</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 border-b border-[#2d221c] pb-16">
+        <div class="space-y-4">
+          {faq.map((item) => (
+            <details class="bg-[#17110e] border border-[#2d221c] rounded-md overflow-hidden group">
+              <summary class="font-bold text-white p-6 md:p-8 flex justify-between items-center text-sm md:text-base tracking-wide uppercase focus:outline-none">
+                {item.domanda}
+                <span class="text-[var(--colorNocciola)] text-2xl group-open:rotate-45 transition-transform duration-300">+</span>
+              </summary>
+              <div class="p-6 md:p-8 pt-0 text-[#968a7c] text-sm md:text-base font-light leading-relaxed border-t border-[#2d221c] mt-2">
+                {item.risposta}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <footer id="contatti" class="bg-[#0a0705] pt-16 md:pt-24 pb-12 border-t border-[var(--colorNocciola)]/20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-16 border-b border-[#2d221c] pb-16">
           
-          <div class="text-center md:text-left flex flex-col items-center md:items-start">
-            <img src="/logo.png" alt="Logo" class="h-16 w-16 mb-6 opacity-80" />
-            <h3 class="text-3xl font-bold mb-4 text-[var(--colorNocciola)] tracking-widest uppercase font-trattoria">{ristorante.nome}</h3>
-            <p class="text-[#968a7c] text-sm leading-relaxed font-light">
-              La vera essenza della trattoria siciliana, dove il fuoco incontra la passione.
-            </p>
+          <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <h3 class="text-3xl font-bold mb-4 text-[var(--colorNocciola)] tracking-widest uppercase font-elegante">{ristorante.nome}</h3>
+            <p class="text-[#968a7c] text-sm leading-relaxed font-light">{ristorante.slogan}</p>
           </div>
 
           <div class="text-center">
-            <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6 font-trattoria">Dove e Quando</h4>
-            <div class="text-[#d0c6b6] text-sm font-light space-y-4 mb-8">
+            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 font-elegante border-b border-[#2d221c] pb-2 inline-block">I Riferimenti</h4>
+            <div class="text-[#d0c6b6] text-sm font-light space-y-2">
               <p>{ristorante.indirizzo}</p>
               <p>{ristorante.telefono}</p>
-            </div>
-            <div class="inline-block border border-[#2d221c] px-6 py-3 bg-[#17110e]">
-              <p class="text-[var(--colorNocciola)] font-bold text-lg font-trattoria">Aperti Tutti i Giorni</p>
-              <p class="text-[#968a7c] text-sm">Dalle 19:30 alle 01:00</p>
+              <p class="text-[var(--colorNocciola)] font-bold mt-4">{ristorante.orari}</p>
             </div>
           </div>
 
-          <div class="text-center md:text-right flex flex-col justify-center items-center md:items-end">
-            <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6 font-trattoria">Prenota il tuo posto</h4>
-            <p class="text-[#968a7c] text-sm font-light mb-6">Assicurati un tavolo inviandoci un messaggio su WhatsApp. Risposta immediata.</p>
-            <a href={linkWhatsapp} target="_blank" class="bg-[var(--colorRosso)] text-white px-8 py-4 font-bold tracking-widest uppercase text-sm hover:bg-[var(--colorNocciola)] hover:text-[#120d0b] transition-colors duration-300 w-full md:w-auto text-center shadow-lg">
-              Prenota Ora
+          <div class="flex flex-col items-center md:items-end text-center md:text-right">
+            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 font-elegante border-b border-[#2d221c] pb-2 inline-block">Riservazioni</h4>
+            <p class="text-[#968a7c] text-sm font-light mb-6">Assistenza immediata tramite il nostro canale WhatsApp dedicato.</p>
+            <a href={linkWhatsapp} target="_blank" class="bg-[var(--colorNocciola)] text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors duration-300 w-full md:w-auto">
+              Prenota Tavolo
             </a>
           </div>
 
         </div>
-
-        <div class="flex flex-col md:flex-row justify-between items-center text-xs text-[#6e6357] font-light uppercase tracking-widest gap-4">
-          <p>© 2026 {ristorante.nome}. P.IVA 01234567891.</p>
-          <p>Realizzato con eccellenza da <span class="text-[var(--colorNocciola)]">La Tua Agenzia</span></p>
+        <div class="text-center text-[10px] md:text-xs text-[#6e6357] font-light uppercase tracking-widest">
+          <p>© 2026 {ristorante.nome}. P.IVA 01234567891. Architettura Web by [Tua Agenzia]</p>
         </div>
       </div>
     </footer>
 
-    <script>
+  <script>
+      // @ts-nocheck
       document.addEventListener("DOMContentLoaded", function() {
+        // 1. Animazioni allo scorrimento (Scroll Reveal)
         const reveals = document.querySelectorAll(".reveal");
         const revealOnScroll = new IntersectionObserver(function(entries) {
           entries.forEach(entry => {
@@ -183,8 +211,34 @@ const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
             }
           });
         }, { threshold: 0.1 });
-
         reveals.forEach(reveal => revealOnScroll.observe(reveal));
+
+        // 2. Logica Menu Mobile (Sidebar)
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+          // I punti interrogativi evitano qualsiasi errore "null"
+          mobileMenu?.classList.toggle('menu-open');
+          overlay?.classList.toggle('hidden');
+          
+          // Anima l'icona hamburger
+          if(mobileMenu?.classList.contains('menu-open')) {
+            if(menuBtn) menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+          } else {
+            if(menuBtn) menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+          }
+        }
+
+        menuBtn?.addEventListener('click', toggleMenu);
+        overlay?.addEventListener('click', toggleMenu);
+        
+        // Chiudi il menù se clicchi su un link
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', toggleMenu);
+        });
       });
     </script>
 
