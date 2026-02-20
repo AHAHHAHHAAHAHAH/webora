@@ -4,9 +4,7 @@
     "moduli": {
       "promo_banner": true,
       "video_hero": true,
-      "recensioni_funnel": true,
-      "faq": true,
-      "newsletter": false
+      "faq": true
     }
   },
   "ristorante": {
@@ -23,9 +21,7 @@
     "colore_nocciola": "#d4af37", 
     "colore_rosso": "#8b1818",
     "logo_url": "/logo.png",
-    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "video_hero_url": "/video-brace.mp4",
-    "chi_siamo": "Il Milos è un tempio per i puristi del sapore. Selezioniamo carni da allevamenti etici, le frolliamo con pazienza millimetrica e le domiamo col fuoco della quercia."
+    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
   },
   "sfondi_sezioni": {
     "filosofia": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
@@ -36,33 +32,27 @@
   },
   "mappa": {
     "link_google": "https://maps.google.com/?q=Via+dei+Macellai+12+Catania",
-    "indicazioni": "Ci troviamo nel cuore storico della città. Disponibile servizio di Car Valet o parcheggio convenzionato a 50 metri."
+    "indicazioni": "Servizio di Car Valet o parcheggio convenzionato a 50 metri."
   },
-  "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio.",
+  "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk. Prenota ora.",
   "menu": [
     {
       "categoria": "I Preludi",
       "piatti": [
-        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        { "nome": "Estasi dei Formaggi", "descrizione": "Pecorino affinato e gorgonzola.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
       "categoria": "Il Fuoco",
       "piatti": [
-        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema 60 giorni.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura 60 giorni.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Filetto Cenere", "descrizione": "Cuore di filetto a fiamma.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     }
   ],
-  "recensioni_complete": [
-    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica.", "risposta_titolare": "Grazie Alessandro!" },
-    { "id": 2, "nome": "Giulia M.", "stelle": 4, "data": "1 settimana fa", "testo": "Ottima carne, conto un po' alto.", "risposta_titolare": "" }
-  ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci o intolleranti?", "risposta": "Sì, disponiamo di un menù dedicato gluten-free. Lavoriamo con attenzione per evitare contaminazioni incrociate." },
-    { "domanda": "Accettate cani di piccola o grande taglia?", "risposta": "I vostri amici a quattro zampe sono i benvenuti! Vi preghiamo solo di segnalarlo al momento della prenotazione per assegnarvi il tavolo più comodo." },
-    { "domanda": "È richiesto un dress code particolare?", "risposta": "Richiediamo un abbigliamento smart casual. L'eleganza è gradita, ma la comodità dei nostri ospiti viene prima di tutto." },
-    { "domanda": "Posso portare una bottiglia di vino da casa?", "risposta": "Accettiamo il servizio di 'Diritto di Tappo' con un supplemento di 15€ a bottiglia servita." }
+    { "domanda": "Avete opzioni per celiaci?", "risposta": "Sì, menù gluten-free disponibile." },
+    { "domanda": "Cani ammessi?", "risposta": "Sì, segnalarlo alla prenotazione." }
   ]
 }

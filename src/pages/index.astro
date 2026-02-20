@@ -1,7 +1,7 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { ristorante, menu, mappa, sfondi_sezioni } = siteData;
+const { ristorante, menu, mappa, sfondi_sezioni } = siteData as any;
 const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetrina)).filter(Boolean);
 ---
 

@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # Il tuo branch di Github
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "impostazioni"
+    label: "Dati Sito e Menù"
+    files:
+      - label: "Database Principale"
+        name: "data"
+        file: "src/data.json"
+        fields:
+          - {label: "Nome Ristorante", name: "ristorante.nome", widget: "string"}
+          - {label: "Indirizzo", name: "ristorante.indirizzo", widget: "string"}
+          - {label: "Slogan", name: "ristorante.slogan", widget: "string"}
+          # Qui il cliente vedrà un pannello pulito dove cambiare i testi, e si salveranno da soli nel JSON!
