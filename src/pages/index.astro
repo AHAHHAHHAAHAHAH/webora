@@ -1,7 +1,10 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { ristorante, menu } = siteData;
+const { ristorante, menu, mappa } = siteData;
+
+// Filtra automaticamente 1 solo piatto in vetrina per ogni categoria
+const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetrina)).filter(Boolean);
 ---
 
 <LayoutMaster>
@@ -30,54 +33,51 @@ const { ristorante, menu } = siteData;
     </p>
   </section>
 
-  <main class="py-20 relative bg-[#0e0a08] border-y border-white/5">
+  <section class="py-24 relative bg-[#0e0a08] border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center">
-      <h2 class="text-5xl font-bold text-white tracking-widest uppercase font-elegante mb-16 reveal">I Piatti Firma</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
-        {menu[0].piatti.filter(p => p.in_vetrina).map((piatto) => (
-          <div class="group bg-[#15100d] rounded-sm overflow-hidden border border-white/5 shadow-2xl relative text-left reveal">
-            <div class="h-[300px] overflow-hidden relative">
-              <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out" />
+      <h2 class="text-5xl font-bold text-white tracking-widest uppercase font-elegante mb-4 reveal">I Piatti Firma</h2>
+      <p class="text-[var(--colorNocciola)] tracking-[0.2em] text-sm uppercase mb-16 reveal">Un assaggio della nostra eccellenza</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {piattiFirma.map((piatto: any) => (
+          <div class="group bg-[#15100d] rounded-sm overflow-hidden border border-white/5 shadow-2xl relative text-left reveal hover:border-[var(--colorNocciola)]/50 transition-colors">
+            <div class="h-[250px] overflow-hidden relative border-b border-white/5">
+              <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+              <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" />
             </div>
-            <div class="p-8">
-              <div class="flex justify-between items-start mb-4 gap-4 border-b border-white/10 pb-4">
-                <h4 class="text-2xl font-bold text-white font-elegante tracking-wide uppercase">{piatto.nome}</h4>
-                <span class="text-2xl font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="text-lg font-bold text-white font-elegante tracking-wide uppercase truncate">{piatto.nome}</h4>
+                <span class="text-lg font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
               </div>
-              <p class="text-gray-400 text-sm leading-relaxed font-light">{piatto.descrizione}</p>
+              <p class="text-gray-400 text-sm leading-relaxed font-light line-clamp-2">{piatto.descrizione}</p>
             </div>
           </div>
         ))}
       </div>
-      <a href="/menu" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-3 uppercase tracking-widest text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-colors reveal">Esplora tutto il Menù</a>
+      
+      <a href="/menu" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-10 py-4 uppercase tracking-widest text-sm hover:bg-[var(--colorNocciola)] hover:text-black transition-all duration-300 reveal shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+        Esplora l'Intero Menù
+      </a>
     </div>
-  </main>
+  </section>
 
-  <section id="dove-siamo" class="relative py-32 border-t border-white/5 bg-black overflow-hidden reveal">
+  <section id="dove-siamo" class="relative py-32 bg-black overflow-hidden reveal">
     <div class="absolute inset-0 z-0">
-      <img src={siteData.mappa.sfondo_dark} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" />
+      <img src={mappa.sfondo_dark} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" />
       <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
     </div>
-
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16">
-      
       <div class="w-full lg:w-1/2 bg-[#120d0b]/90 backdrop-blur-xl border border-white/10 p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.8)] rounded-sm">
         <h2 class="text-4xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-elegante mb-6">Le Tue Coordinate</h2>
         <div class="w-16 h-px bg-[var(--colorRosso)] mb-8"></div>
-        
-        <p class="text-white text-lg font-light leading-relaxed mb-4">
-          {siteData.ristorante.indirizzo}
-        </p>
-        <p class="text-gray-400 text-sm font-light italic leading-loose mb-10">
-          {siteData.mappa.indicazioni}
-        </p>
-
-        <a href={siteData.mappa.link_google} target="_blank" class="group flex items-center justify-center gap-4 w-full bg-white text-black py-5 uppercase font-bold tracking-widest text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+        <p class="text-white text-lg font-light leading-relaxed mb-4">{ristorante.indirizzo}</p>
+        <p class="text-gray-400 text-sm font-light italic leading-loose mb-10">{mappa.indicazioni}</p>
+        <a href={mappa.link_google} target="_blank" class="group flex items-center justify-center gap-4 w-full bg-white text-black py-5 uppercase font-bold tracking-widest text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
           <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           Apri in Google Maps
         </a>
       </div>
-
       <div class="hidden lg:flex w-1/2 justify-center items-center">
         <div class="relative flex items-center justify-center">
           <div class="absolute w-40 h-40 bg-[var(--colorNocciola)]/20 rounded-full animate-ping"></div>
@@ -85,7 +85,7 @@ const { ristorante, menu } = siteData;
           <div class="relative z-10 w-8 h-8 bg-[var(--colorNocciola)] rounded-full border-4 border-black shadow-[0_0_30px_rgba(212,175,55,1)]"></div>
         </div>
       </div>
-
     </div>
   </section>
+
 </LayoutMaster>

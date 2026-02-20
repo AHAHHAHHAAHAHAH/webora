@@ -27,46 +27,47 @@
     "link_google": "https://maps.google.com/?q=Via+dei+Macellai+12+Catania",
     "indicazioni": "Ci troviamo nel cuore storico della città. Disponibile servizio di Car Valet o parcheggio convenzionato a 50 metri."
   },
+  "sfondo_menu": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio.",
   "menu": [
     {
-      "categoria": "I Preludi (Antipasti)",
+      "categoria": "I Preludi",
       "piatti": [
         { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Midollo Arrostito", "descrizione": "Midollo di bue cotto a legna, crostini di pane nero.", "prezzo": "18€", "immagine": "", "in_vetrina": false },
-        { "nome": "Carpaccio di Cervo", "descrizione": "Cervo marinato ai frutti rossi e ginepro.", "prezzo": "24€", "immagine": "", "in_vetrina": false }
+        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
+        { "nome": "Midollo Arrostito", "descrizione": "Midollo di bue cotto a legna, crostini di pane nero.", "prezzo": "18€", "immagine": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
+        { "nome": "Carpaccio di Cervo", "descrizione": "Cervo marinato ai frutti rossi e ginepro.", "prezzo": "24€", "immagine": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
-      "categoria": "Le Opere Prime (Primi)",
+      "categoria": "Le Opere Prime",
       "piatti": [
         { "nome": "Pappardelle al Cinghiale", "descrizione": "Pasta fresca trafilata al bronzo, ragù di cinghiale sfumato al Barolo.", "prezzo": "24€", "immagine": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Risotto Zafferano e Midollo", "descrizione": "Riso Carnaroli riserva, zafferano puro, midollo scottato a cannello.", "prezzo": "28€", "immagine": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Tortelli di Coda", "descrizione": "Ripieni di coda alla vaccinara, sugo d'arrosto e pecorino.", "prezzo": "22€", "immagine": "", "in_vetrina": false }
+        { "nome": "Risotto Zafferano e Midollo", "descrizione": "Riso Carnaroli riserva, zafferano puro, midollo scottato a cannello.", "prezzo": "28€", "immagine": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
+        { "nome": "Tortelli di Coda", "descrizione": "Ripieni di coda alla vaccinara, sugo d'arrosto e pecorino.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
-      "categoria": "Il Fuoco (Secondi)",
+      "categoria": "Il Fuoco",
       "piatti": [
         { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima. Crosta fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Picanha Wagyu A5", "descrizione": "Taglio picanha di Wagyu giapponese, servito al sangue.", "prezzo": "95€", "immagine": "", "in_vetrina": false },
-        { "nome": "Costata di Rubia Gallega", "descrizione": "Carne spagnola dal grasso dorato e sapore intenso.", "prezzo": "75€", "immagine": "", "in_vetrina": false }
+        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima. Crosta fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
+        { "nome": "Picanha Wagyu A5", "descrizione": "Taglio picanha di Wagyu giapponese, servito al sangue.", "prezzo": "95€", "immagine": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
+        { "nome": "Costata di Rubia Gallega", "descrizione": "Carne spagnola dal grasso dorato e sapore intenso.", "prezzo": "75€", "immagine": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
-      "categoria": "I Doni (Contorni)",
+      "categoria": "I Doni",
       "piatti": [
-        { "nome": "Patate Cenere", "descrizione": "Patate cotte sotto la cenere, burro affumicato e sale Maldon.", "prezzo": "8€", "immagine": "", "in_vetrina": false },
-        { "nome": "Cime di Rapa Ripassate", "descrizione": "Aglio, olio, peperoncino dell'Etna.", "prezzo": "7€", "immagine": "", "in_vetrina": false }
+        { "nome": "Patate Cenere", "descrizione": "Patate cotte sotto la cenere, burro affumicato e sale Maldon.", "prezzo": "8€", "immagine": "https://images.unsplash.com/photo-1518977622052-97fa67cb34fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Cime di Rapa", "descrizione": "Aglio, olio, peperoncino dell'Etna.", "prezzo": "7€", "immagine": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
-      "categoria": "I Peccati (Dessert)",
+      "categoria": "I Peccati",
       "piatti": [
         { "nome": "Sfera Oscura", "descrizione": "Cioccolato 85% fuso al tavolo, cuore caldo ai lamponi neri.", "prezzo": "12€", "immagine": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Cheesecake di Bronte", "descrizione": "Base salata, ricotta di pecora, colata di pistacchio puro DOP.", "prezzo": "10€", "immagine": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true }
+        { "nome": "Cheesecake di Bronte", "descrizione": "Base salata, ricotta di pecora, colata di pistacchio puro DOP.", "prezzo": "10€", "immagine": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     }
   ],

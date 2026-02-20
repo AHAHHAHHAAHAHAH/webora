@@ -1,75 +1,65 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { menu } = siteData;
+const { menu, sfondo_menu } = siteData;
 ---
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 bg-gradient-to-b from-[#120d0b] to-[#0a0705]">
-    <h1 class="text-5xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase reveal">
-      Il Rituale
-    </h1>
-    <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8 reveal"></div>
-    <p class="text-gray-400 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed reveal px-4">
-      Esplora le nostre tentazioni. Dalle frollature estreme ai peccati di gola finali.
-    </p>
+  <header class="relative pt-48 pb-32 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-black">
+      <img src={sfondo_menu} alt="Sfondo Trattoria" class="w-full h-full object-cover opacity-30 blur-[1px]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/60 to-transparent"></div>
+    </div>
+    
+    <div class="relative z-10 px-4 reveal">
+      <h1 class="text-5xl md:text-7xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase drop-shadow-2xl">
+        Il Rituale
+      </h1>
+      <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8 shadow-[0_0_10px_rgba(139,24,24,0.8)]"></div>
+      <p class="text-gray-300 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed drop-shadow-md">
+        Esplora le nostre tentazioni. Dalle frollature estreme ai peccati di gola finali.
+      </p>
+    </div>
   </header>
 
   <main class="py-24 relative bg-[#0a0705]">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
+    <div class="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
       
       <div class="space-y-32">
-        {menu.map((sezione, catIndex) => {
-          const piattiVetrina = sezione.piatti.filter((p: any) => p.in_vetrina);
-          const piattiLista = sezione.piatti.filter((p: any) => !p.in_vetrina);
-
-          return (
-            <div class="reveal">
-              <div class="flex items-center justify-center mb-16 gap-6">
-                <div class="h-px bg-white/10 w-full max-w-[100px] md:max-w-[200px]"></div>
-                <h3 class="text-3xl md:text-4xl font-bold text-white tracking-[0.2em] uppercase font-elegante text-center">
-                  {sezione.categoria}
-                </h3>
-                <div class="h-px bg-white/10 w-full max-w-[100px] md:max-w-[200px]"></div>
-              </div>
-
-              {piattiVetrina.length > 0 && (
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
-                  {piattiVetrina.map((piatto: any) => (
-                    <div class="group bg-[#15100d] rounded-sm overflow-hidden border border-white/5 hover:border-[var(--colorNocciola)]/30 transition-all duration-500 shadow-2xl relative">
-                      <div class="h-[300px] md:h-[400px] overflow-hidden relative">
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-                        <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s] ease-out" />
-                      </div>
-                      <div class="p-8">
-                        <div class="flex justify-between items-start mb-4 gap-4 border-b border-white/10 pb-4">
-                          <h4 class="text-2xl font-bold text-white font-elegante tracking-wide uppercase">{piatto.nome}</h4>
-                          <span class="text-2xl font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
-                        </div>
-                        <p class="text-gray-400 text-sm leading-relaxed font-light">{piatto.descrizione}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {piattiLista.length > 0 && (
-                <div class="w-full max-w-4xl mx-auto bg-[#15100d] border border-white/5 p-8 rounded-sm space-y-6 shadow-xl">
-                  {piattiLista.map((piatto: any) => (
-                    <div class="flex flex-col sm:flex-row justify-between sm:items-end border-b border-white/5 pb-4 group">
-                      <div class="w-full sm:w-3/4">
-                        <h5 class="text-lg font-bold text-white font-elegante tracking-wide uppercase group-hover:text-[var(--colorNocciola)] transition-colors">{piatto.nome}</h5>
-                        <p class="text-gray-500 text-xs mt-1 font-light leading-relaxed">{piatto.descrizione}</p>
-                      </div>
-                      <div class="text-[var(--colorRosso)] font-bold font-elegante text-xl mt-2 sm:mt-0">{piatto.prezzo}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
+        {menu.map((sezione: any) => (
+          <div class="reveal">
+            <div class="flex items-center justify-center mb-16 gap-6">
+              <div class="h-px bg-white/10 w-full max-w-[80px] md:max-w-[150px]"></div>
+              <h3 class="text-3xl md:text-4xl font-bold text-white tracking-[0.2em] uppercase font-elegante text-center">
+                {sezione.categoria}
+              </h3>
+              <div class="h-px bg-white/10 w-full max-w-[80px] md:max-w-[150px]"></div>
             </div>
-          );
-        })}
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {sezione.piatti.map((piatto: any) => (
+                <div class="flex flex-col sm:flex-row bg-[#15100d] border border-white/5 rounded-sm overflow-hidden group hover:border-[var(--colorNocciola)]/30 transition-all duration-500 shadow-xl">
+                  
+                  <div class="w-full sm:w-2/5 h-[220px] sm:h-auto relative overflow-hidden border-b sm:border-b-0 sm:border-r border-white/5">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+                    <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" />
+                  </div>
+                  
+                  <div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center bg-[#15100d]">
+                    <div class="flex justify-between items-start mb-3 border-b border-white/5 pb-3 gap-2">
+                      <h4 class="text-lg md:text-xl font-bold text-white font-elegante tracking-wide uppercase">{piatto.nome}</h4>
+                      <span class="text-xl font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed font-light">{piatto.descrizione}</p>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+        ))}
       </div>
 
     </div>
