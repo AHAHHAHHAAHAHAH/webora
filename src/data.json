@@ -4,24 +4,38 @@
     "moduli": {
       "promo_banner": true,
       "video_hero": true,
-      "faq": true
+      "faq": true,
+      "newsletter": true
     }
   },
   "ristorante": {
-    "nome": "Milos",
-    "slogan": "L'esaltazione della carne. Frollature estreme e lussuria culinaria.",
-    "telefono": "+39 333 123 4567",
-    "indirizzo": "Via dei Macellai 12, Catania (CT)",
+    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     "orari_completi": [
-      { "giorno": "Lunedì", "ore": "Chiuso" },
-      { "giorno": "Martedì - Giovedì", "ore": "19:30 - 23:30" },
-      { "giorno": "Venerdì - Sabato", "ore": "19:30 - 01:00" },
-      { "giorno": "Domenica", "ore": "12:30 - 15:00 / 19:30 - 23:00" }
+      {
+        "giorno": "Lunedì",
+        "ore": "Chiuso"
+      },
+      {
+        "giorno": "Martedì - Giovedì",
+        "ore": "19:30 - 23:30"
+      },
+      {
+        "giorno": "Venerdì - Sabato",
+        "ore": "19:30 - 01:00"
+      },
+      {
+        "giorno": "Domenica",
+        "ore": "12:30 - 15:00 / 19:30 - 23:00"
+      }
     ],
-    "colore_nocciola": "#d4af37", 
+    "indirizzo": "Via dei Macellai 12, Catania (CT)",
+    "chi_siamo": "siamo noi",
+    "telefono": "+39 333 123 4567",
     "colore_rosso": "#8b1818",
+    "colore_nocciola": "#d4af37",
+    "nome": "Milos",
     "logo_url": "/logo.png",
-    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+    "slogan": "L'esaltazione della carne. Frollature estreme e lussuria culinaria."
   },
   "sfondi_sezioni": {
     "filosofia": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
@@ -39,20 +53,50 @@
     {
       "categoria": "I Preludi",
       "piatti": [
-        { "nome": "Estasi dei Formaggi", "descrizione": "Pecorino affinato e gorgonzola.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        {
+          "nome": "Estasi dei Formaggi",
+          "descrizione": "Pecorino affinato e gorgonzola.",
+          "prezzo": "2",
+          "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          "in_vetrina": true
+        },
+        {
+          "nome": "Battuta al Tartufo",
+          "descrizione": "Tartare di fassona e tartufo.",
+          "prezzo": "26€",
+          "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          "in_vetrina": false
+        }
       ]
     },
     {
       "categoria": "Il Fuoco",
       "piatti": [
-        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura 60 giorni.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Filetto Cenere", "descrizione": "Cuore di filetto a fiamma.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        {
+          "nome": "Tomahawk Dry Aged",
+          "descrizione": "Frollatura 60 giorni.",
+          "prezzo": "85€",
+          "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          "in_vetrina": true
+        },
+        {
+          "nome": "Filetto Cenere",
+          "descrizione": "Cuore di filetto a fiamma.",
+          "prezzo": "38€",
+          "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          "in_vetrina": false
+        }
       ]
     }
   ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci?", "risposta": "Sì, menù gluten-free disponibile." },
-    { "domanda": "Cani ammessi?", "risposta": "Sì, segnalarlo alla prenotazione." }
+    {
+      "domanda": "Avete opzioni per celiaci?",
+      "risposta": "Sì, menù gluten-free disponibile."
+    },
+    {
+      "domanda": "Cani ammessi?",
+      "risposta": "Sì, segnalarlo alla prenotazione."
+    }
   ]
 }
