@@ -1,39 +1,69 @@
 {
+  "configurazione": {
+    "nome_agenzia": "La Tua Agenzia Web",
+    "moduli": {
+      "promo_banner": true,
+      "video_hero": true,
+      "menu_avanzato": true,
+      "carta_vini": true,
+      "recensioni_funnel": true,
+      "lavora_con_noi": true,
+      "faq": true,
+      "newsletter": true
+    }
+  },
   "ristorante": {
     "nome": "Milos",
-    "slogan": "L'esaltazione della carne. Frollature estreme e formaggi di grotta.",
+    "slogan": "L'esaltazione della carne. Frollature estreme e lussuria culinaria.",
     "telefono": "+39 333 123 4567",
     "indirizzo": "Via dei Macellai 12, Catania (CT)",
     "orari": "Tutti i giorni: 19:30 - 01:00",
     "colore_nocciola": "#d4af37", 
     "colore_rosso": "#8b1818",
     "logo_url": "/logo.png",
-    "sfondo_hero": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "chi_siamo": "Il Milos è un rifugio per puristi. Portiamo in tavola solo carni selezionate da piccoli allevamenti, frollate con pazienza millimetrica nelle nostre celle, e formaggi a latte crudo introvabili. Qui si entra per peccare di gola."
+    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "video_hero_url": "/video-brace.mp4",
+    "chi_siamo": "Il Milos è un tempio per i puristi del sapore. Selezioniamo carni da allevamenti etici, le frolliamo con pazienza millimetrica e le domiamo col fuoco della quercia. Entra, e dimentica il mondo fuori."
   },
-  "promo_banner": {
-    "attivo": true,
-    "testo": "🔥 Prenota ora per il weekend: in omaggio un calice di Barolo a persona."
-  },
+  "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio. Prenota ora.",
   "menu": [
     {
-      "categoria": "I Preludi",
+      "categoria": "I Preludi (Antipasti)",
       "piatti": [
-        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta, caciocavallo podolico e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-        { "nome": "Battuta al Tartufo Nero", "descrizione": "Tartare di fassona frollata, tagliata a coltello con scaglie di tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": ["Lattosio"] },
+        { "nome": "Battuta al Tartufo Nero", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] },
+        { "nome": "Midollo Arrostito", "descrizione": "Midollo di bue cotto a legna, crostini di pane nero.", "prezzo": "18€", "immagine": "", "in_vetrina": false, "allergeni": ["Glutine"] },
+        { "nome": "Carpaccio di Cervo", "descrizione": "Cervo marinato ai frutti rossi e ginepro.", "prezzo": "24€", "immagine": "", "in_vetrina": false, "allergeni": [] }
       ]
     },
     {
-      "categoria": "Il Fuoco",
+      "categoria": "Il Fuoco (Secondi)",
       "piatti": [
-        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema di 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
-        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima, incredibilmente fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] },
+        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] },
+        { "nome": "Picanha Wagyu", "descrizione": "Taglio picanha di Wagyu grado A5, servito al sangue.", "prezzo": "95€", "immagine": "", "in_vetrina": false, "allergeni": [] },
+        { "nome": "Costata di Rubia Gallega", "descrizione": "Carne spagnola dal grasso giallo e sapore intenso.", "prezzo": "75€", "immagine": "", "in_vetrina": false, "allergeni": [] }
       ]
     }
   ],
+  "carta_vini": [
+    { "categoria": "I Grandi Rossi", "vini": [
+      { "nome": "Barolo Riserva Monfortino", "cantina": "Giacomo Conterno", "anno": "2015", "prezzo": "1.200€" },
+      { "nome": "Amarone della Valpolicella", "cantina": "Dal Forno Romano", "anno": "2013", "prezzo": "450€" }
+    ]},
+    { "categoria": "Le Bollicine", "vini": [
+      { "nome": "Giulio Ferrari Riserva", "cantina": "Cantine Ferrari", "anno": "2010", "prezzo": "180€" },
+      { "nome": "Franciacorta Annamaria Clementi", "cantina": "Ca' del Bosco", "anno": "2014", "prezzo": "160€" }
+    ]}
+  ],
+  "recensioni": [
+    { "nome": "Alessandro P.", "testo": "L'atmosfera è ipnotica. La carne è illegale.", "stelle": 5 },
+    { "nome": "Federica M.", "testo": "Un tempio per i carnivori. Locale avvolgente.", "stelle": 5 },
+    { "nome": "Marco R.", "testo": "Il Tomahawk vale ogni singolo centesimo.", "stelle": 5 },
+    { "nome": "Giulia T.", "testo": "Carta dei vini spaventosa, servizio perfetto.", "stelle": 5 }
+  ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci o vegetariani?", "risposta": "Assolutamente sì. Nonostante la nostra specialità sia la carne, disponiamo di menù completi gluten-free e opzioni vegetariane ricercate." },
-    { "domanda": "È presente un parcheggio vicino al locale?", "risposta": "Sì, a soli 50 metri dal ristorante è disponibile un parcheggio custodito convenzionato per i nostri clienti." },
-    { "domanda": "Accettate animali di piccola taglia?", "risposta": "I vostri amici a quattro zampe sono i benvenuti, vi chiediamo solo di segnalarlo al momento della prenotazione per assegnarvi il tavolo più comodo." }
+    { "domanda": "Avete opzioni per celiaci?", "risposta": "Assolutamente sì. Disponiamo di menù gluten-free e lavoriamo in ambienti separati." },
+    { "domanda": "È presente un parcheggio?", "risposta": "Sì, a soli 50 metri c'è un parcheggio custodito convenzionato." }
   ]
 }
