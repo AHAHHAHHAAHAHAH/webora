@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+import siteData from '../data.json';
+
+const { configurazione, ristorante, promo_banner, faq } = siteData;
+const moduli = configurazione.moduli;
+const numeroWhatsapp = ristorante.telefono.replace(/\s+/g, '');
+const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent("Buonasera, desidero prenotare un tavolo...")}`;
+---
+
+<html lang="it" class="scroll-smooth bg-[#0a0705]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{ristorante.nome} | L'Eccellenza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style define:vars={{ colorNocciola: ristorante.colore_nocciola, colorRosso: ristorante.colore_rosso }} is:global>
+      body { font-family: 'Lato', sans-serif; background-color: #0a0705; color: #f7f3eb; overflow-x: hidden; }
+      h1, h2, h3, h4, .font-elegante { font-family: 'Playfair Display', serif; }
+      .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
+      .reveal.active { opacity: 1; transform: translateY(0); }
+      #mobile-menu { transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+      .menu-open { transform: translateX(0) !important; }
+    </style>
+  </head>
+  <body class="selection:bg-[var(--colorNocciola)] selection:text-black antialiased relative">
+
+    <div id="overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-md transition-opacity"></div>
+
+    {moduli.promo_banner && (
+      <div class="bg-[var(--colorRosso)] text-white text-xs md:text-sm font-bold text-center py-2 px-4 tracking-[0.2em] uppercase relative z-50">
+        {promo_banner}
+      </div>
+    )}
+
+    <nav class="sticky top-0 w-full z-40 bg-[#0a0705]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div class="flex justify-between items-center h-20 md:h-24">
+          <a href="/" class="flex items-center gap-4 cursor-pointer z-50">
+            <img src={ristorante.logo_url} alt="Logo" class="h-10 w-10 md:h-14 md:w-14 object-contain" onerror="this.style.display='none'" />
+            <span class="font-elegante font-bold text-2xl md:text-3xl tracking-widest text-[var(--colorNocciola)] uppercase">{ristorante.nome}</span>
+          </a>
+          
+          <button id="menu-btn" class="md:hidden z-50 p-2 text-[var(--colorNocciola)] focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+
+          <div class="hidden md:flex space-x-10 items-center">
+            <a href="/" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Home</a>
+            <a href="/#filosofia" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Filosofia</a>
+            <a href="/lavora-con-noi" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Lavora con Noi</a>
+            <a href={linkWhatsapp} target="_blank" class="border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-3 font-elegante tracking-[0.2em] uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-all">Riserva</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 w-72 h-full bg-[#120d0b] border-l border-white/5 shadow-2xl z-50 transform translate-x-full pt-32 px-8 flex flex-col gap-8">
+      <a href="/" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">Home</a>
+      <a href="/#filosofia" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">La Filosofia</a>
+      <a href="/lavora-con-noi" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">Lavora con Noi</a>
+      <a href={linkWhatsapp} target="_blank" class="mobile-link bg-[var(--colorRosso)] text-white text-center py-4 font-bold uppercase tracking-widest mt-8 shadow-xl">Prenota Ora</a>
+    </div>
+
+    <a href={linkWhatsapp} target="_blank" class="md:hidden fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:scale-110 transition-transform flex items-center justify-center border border-[#120d0b]">
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 21.031c-1.636 0-3.238-.429-4.639-1.242l-5.18 1.358 1.388-5.051a9.96 9.96 0 0 1-1.36-5.068C2.24 5.498 6.626 1.11 12.031 1.11c5.404 0 9.79 4.388 9.79 9.792 0 5.404-4.386 9.792-9.79 9.792zm-5.011-3.645c1.474.873 3.193 1.336 4.98 1.336 4.717 0 8.549-3.832 8.549-8.549 0-4.718-3.832-8.55-8.549-8.55-4.717 0-8.549 3.832-8.549 8.55 0 1.63.435 3.208 1.258 4.62l-.935 3.403 3.479-.925c.001-.001.002-.001.003-.001z"/></svg>
+    </a>
+
+    <slot />
+
+    <footer class="bg-black pt-24 pb-12 border-t border-[var(--colorRosso)]/30 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left mb-16">
+          <div class="flex flex-col items-center md:items-start">
+            <h3 class="text-3xl font-bold mb-4 text-[var(--colorNocciola)] tracking-widest uppercase font-elegante">{ristorante.nome}</h3>
+            <div class="text-gray-400 text-sm font-light space-y-2">
+              <p>{ristorante.indirizzo}</p>
+              <p>{ristorante.telefono}</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 border-b border-[var(--colorNocciola)]/50 pb-2">Orari d'Apertura</h4>
+            <p class="text-gray-400 text-sm font-light">{ristorante.orari}</p>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-light uppercase tracking-widest gap-4">
+          <p>© 2026 {ristorante.nome}. P.IVA 01234567891.</p>
+          <p>Powered by <span class="text-white font-bold">{configurazione.nome_agenzia}</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // @ts-nocheck
+      document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        const revealOnScroll = new IntersectionObserver((entries) => {
+          entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); });
+        }, { threshold: 0.1 });
+        reveals.forEach(r => revealOnScroll.observe(r));
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+          mobileMenu?.classList.toggle('menu-open');
+          overlay?.classList.toggle('hidden');
+        }
+        menuBtn?.addEventListener('click', toggleMenu);
+        overlay?.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+      });
+    </script>
+  </body>
+</html>
