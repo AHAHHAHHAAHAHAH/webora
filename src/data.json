@@ -30,22 +30,50 @@
   "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio.",
   "menu": [
     {
-      "categoria": "I Preludi",
+      "categoria": "I Preludi (Antipasti)",
       "piatti": [
         { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true }
+        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Midollo Arrostito", "descrizione": "Midollo di bue cotto a legna, crostini di pane nero.", "prezzo": "18€", "immagine": "", "in_vetrina": false },
+        { "nome": "Carpaccio di Cervo", "descrizione": "Cervo marinato ai frutti rossi e ginepro.", "prezzo": "24€", "immagine": "", "in_vetrina": false }
+      ]
+    },
+    {
+      "categoria": "Le Opere Prime (Primi)",
+      "piatti": [
+        { "nome": "Pappardelle al Cinghiale", "descrizione": "Pasta fresca trafilata al bronzo, ragù di cinghiale sfumato al Barolo.", "prezzo": "24€", "immagine": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Risotto Zafferano e Midollo", "descrizione": "Riso Carnaroli riserva, zafferano puro, midollo scottato a cannello.", "prezzo": "28€", "immagine": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Tortelli di Coda", "descrizione": "Ripieni di coda alla vaccinara, sugo d'arrosto e pecorino.", "prezzo": "22€", "immagine": "", "in_vetrina": false }
+      ]
+    },
+    {
+      "categoria": "Il Fuoco (Secondi)",
+      "piatti": [
+        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima. Crosta fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Picanha Wagyu A5", "descrizione": "Taglio picanha di Wagyu giapponese, servito al sangue.", "prezzo": "95€", "immagine": "", "in_vetrina": false },
+        { "nome": "Costata di Rubia Gallega", "descrizione": "Carne spagnola dal grasso dorato e sapore intenso.", "prezzo": "75€", "immagine": "", "in_vetrina": false }
+      ]
+    },
+    {
+      "categoria": "I Doni (Contorni)",
+      "piatti": [
+        { "nome": "Patate Cenere", "descrizione": "Patate cotte sotto la cenere, burro affumicato e sale Maldon.", "prezzo": "8€", "immagine": "", "in_vetrina": false },
+        { "nome": "Cime di Rapa Ripassate", "descrizione": "Aglio, olio, peperoncino dell'Etna.", "prezzo": "7€", "immagine": "", "in_vetrina": false }
+      ]
+    },
+    {
+      "categoria": "I Peccati (Dessert)",
+      "piatti": [
+        { "nome": "Sfera Oscura", "descrizione": "Cioccolato 85% fuso al tavolo, cuore caldo ai lamponi neri.", "prezzo": "12€", "immagine": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Cheesecake di Bronte", "descrizione": "Base salata, ricotta di pecora, colata di pistacchio puro DOP.", "prezzo": "10€", "immagine": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true }
       ]
     }
   ],
   "recensioni_complete": [
-    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica. La carne è letteralmente illegale, una frollatura mai sentita prima in città. Servizio impeccabile e cantina vini da capogiro.", "risposta_titolare": "Grazie Alessandro! La ricerca dell'eccellenza è il nostro unico credo. Ti aspettiamo per farti provare la nuova selezione di Wagyu." },
-    { "id": 2, "nome": "Federica M.", "stelle": 5, "data": "1 settimana fa", "testo": "Un tempio per i carnivori. Locale avvolgente ed elegante. Il Tomahawk vale ogni singolo centesimo speso.", "risposta_titolare": "" },
-    { "id": 3, "nome": "Marco R.", "stelle": 4, "data": "3 settimane fa", "testo": "Tutto eccellente, carne divina e dolci sorprendenti. Unica pecca: abbiamo aspettato 15 minuti oltre l'orario di prenotazione per farci accomodare.", "risposta_titolare": "Marco, ti chiediamo scusa per l'attesa. Il sabato sera cerchiamo di non mettere fretta a chi sta finendo il dessert, ma stiamo migliorando la gestione dei turni. A presto!" },
-    { "id": 4, "nome": "Giulia T.", "stelle": 5, "data": "1 mese fa", "testo": "Carta dei vini spaventosa, mi hanno saputo consigliare un Barolo perfetto per la mia tagliata. Prezzi altini ma proporzionati alla qualità estrema.", "risposta_titolare": "" },
-    { "id": 5, "nome": "Lorenzo S.", "stelle": 2, "data": "2 mesi fa", "testo": "Location bellissima ma non ho apprezzato la cottura del filetto. Lo avevo chiesto ben cotto ed è arrivato rosato all'interno.", "risposta_titolare": "Caro Lorenzo, ci spiace non aver soddisfatto la tua richiesta. Tuttavia, come specificato sul menù, ci rifiutiamo di stracuocere tagli di carne frollati 60 giorni per non distruggerne le proprietà organolettiche. Speriamo tu possa comprendere la nostra filosofia." },
-    { "id": 6, "nome": "Elena B.", "stelle": 5, "data": "3 mesi fa", "testo": "Esperienza mistica. Il carrello dei formaggi a fine pasto è un colpo al cuore.", "risposta_titolare": "" }
+    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica.", "risposta_titolare": "" }
   ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci?", "risposta": "Assolutamente sì. Disponiamo di menù gluten-free." }
+    { "domanda": "Avete opzioni per celiaci?", "risposta": "Sì." }
   ]
 }
