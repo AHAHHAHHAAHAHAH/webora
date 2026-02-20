@@ -1,44 +1,59 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
+import siteData from '../data.json';
+const { sfondi_sezioni } = siteData;
 ---
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 bg-gradient-to-b from-[#120d0b] to-[#0a0705]">
-    <h1 class="text-5xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase reveal">
-      Unisciti alla Brigata
-    </h1>
-    <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8 reveal"></div>
-    <p class="text-gray-400 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed reveal">
-      Cerchiamo talento, fiamme e dedizione. La sala e la cucina sono il nostro palcoscenico.
-    </p>
+  <header class="relative pt-48 pb-32 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-black">
+      <img src={sfondi_sezioni.lavora_con_noi} alt="Sfondo Recruiting" class="w-full h-full object-cover opacity-20 blur-[1px]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/60 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 px-4 reveal">
+      <h1 class="text-5xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase drop-shadow-xl">
+        Unisciti alla Brigata
+      </h1>
+      <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8"></div>
+      <p class="text-gray-300 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed">
+        Cerchiamo talento, fiamme e dedizione. La sala e la cucina sono il nostro palcoscenico.
+      </p>
+    </div>
   </header>
 
-  <section class="py-24 bg-[#0a0705] reveal">
-    <div class="max-w-3xl mx-auto px-4">
-      <form class="bg-[#120d0b] p-8 md:p-12 border border-white/5 shadow-2xl rounded-sm flex flex-col gap-8">
+  <section class="py-24 bg-[#0a0705] relative z-10">
+    <div class="max-w-3xl mx-auto px-4 reveal">
+      
+      <form action="https://formsubmit.co/tuaemail@gmail.com" method="POST" enctype="multipart/form-data" class="bg-[#120d0b] p-8 md:p-12 border border-white/5 shadow-2xl rounded-sm flex flex-col gap-8">
+        
+        <input type="hidden" name="_subject" value="Nuova Candidatura dal Sito Web!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        
         <h3 class="text-2xl text-white font-elegante tracking-wider uppercase border-b border-white/10 pb-4">Invia la tua Candidatura</h3>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" placeholder="Nome e Cognome *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
-          <input type="email" placeholder="Email *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
+          <input type="text" name="Nome" placeholder="Nome e Cognome *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
+          <input type="email" name="Email" placeholder="Email *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
         </div>
         
-        <select class="bg-[#0a0705] border border-white/10 text-gray-400 p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors cursor-pointer">
+        <select name="Posizione" required class="bg-[#0a0705] border border-white/10 text-gray-400 p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors cursor-pointer">
           <option value="" disabled selected>Posizione d'interesse *</option>
-          <option value="cucina">Chef de Partie / Aiuto Cuoco</option>
-          <option value="sala">Maitre / Chef de Rang</option>
-          <option value="sommelier">Sommelier</option>
+          <option value="Chef de Partie">Chef de Partie / Aiuto Cuoco</option>
+          <option value="Maitre / Sala">Maitre / Chef de Rang</option>
+          <option value="Sommelier">Sommelier</option>
         </select>
         
-        <textarea placeholder="Parlaci di te (Esperienze, visione, perché noi) *" required rows="4" class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors resize-none"></textarea>
+        <textarea name="Lettera_Presentazione" placeholder="Parlaci di te (Esperienze, visione, perché noi) *" required rows="4" class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors resize-none"></textarea>
 
         <div class="border border-white/10 border-dashed p-8 text-center bg-[#0a0705]">
           <label class="text-gray-400 text-xs tracking-widest uppercase block mb-4">Allega Curriculum Vitae (PDF)</label>
-          <input type="file" accept=".pdf" class="text-white text-xs w-full max-w-xs mx-auto block" />
+          <input type="file" name="CV_Allegato" accept=".pdf" class="text-white text-xs w-full max-w-xs mx-auto block" />
         </div>
         
-        <button type="button" class="bg-[var(--colorNocciola)] text-black px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors mt-4">Sottoponi Profilo</button>
+        <button type="submit" class="bg-[var(--colorNocciola)] text-black px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors mt-4">Sottoponi Profilo</button>
       </form>
     </div>
   </section>

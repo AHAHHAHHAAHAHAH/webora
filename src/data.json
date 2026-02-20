@@ -6,7 +6,7 @@
       "video_hero": true,
       "recensioni_funnel": true,
       "faq": true,
-      "newsletter": true
+      "newsletter": false
     }
   },
   "ristorante": {
@@ -14,7 +14,12 @@
     "slogan": "L'esaltazione della carne. Frollature estreme e lussuria culinaria.",
     "telefono": "+39 333 123 4567",
     "indirizzo": "Via dei Macellai 12, Catania (CT)",
-    "orari": "Tutti i giorni: 19:30 - 01:00",
+    "orari_completi": [
+      { "giorno": "Lunedì", "ore": "Chiuso" },
+      { "giorno": "Martedì - Giovedì", "ore": "19:30 - 23:30" },
+      { "giorno": "Venerdì - Sabato", "ore": "19:30 - 01:00" },
+      { "giorno": "Domenica", "ore": "12:30 - 15:00 / 19:30 - 23:00" }
+    ],
     "colore_nocciola": "#d4af37", 
     "colore_rosso": "#8b1818",
     "logo_url": "/logo.png",
@@ -22,59 +27,42 @@
     "video_hero_url": "/video-brace.mp4",
     "chi_siamo": "Il Milos è un tempio per i puristi del sapore. Selezioniamo carni da allevamenti etici, le frolliamo con pazienza millimetrica e le domiamo col fuoco della quercia."
   },
+  "sfondi_sezioni": {
+    "filosofia": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "vetrina_piatti": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "mappa": "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "recensioni": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "lavora_con_noi": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+  },
   "mappa": {
-    "sfondo_dark": "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     "link_google": "https://maps.google.com/?q=Via+dei+Macellai+12+Catania",
     "indicazioni": "Ci troviamo nel cuore storico della città. Disponibile servizio di Car Valet o parcheggio convenzionato a 50 metri."
   },
-  "sfondo_menu": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
   "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio.",
   "menu": [
     {
       "categoria": "I Preludi",
       "piatti": [
         { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
-        { "nome": "Midollo Arrostito", "descrizione": "Midollo di bue cotto a legna, crostini di pane nero.", "prezzo": "18€", "immagine": "https://images.unsplash.com/photo-1603048297172-c92544798d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
-        { "nome": "Carpaccio di Cervo", "descrizione": "Cervo marinato ai frutti rossi e ginepro.", "prezzo": "24€", "immagine": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
-      ]
-    },
-    {
-      "categoria": "Le Opere Prime",
-      "piatti": [
-        { "nome": "Pappardelle al Cinghiale", "descrizione": "Pasta fresca trafilata al bronzo, ragù di cinghiale sfumato al Barolo.", "prezzo": "24€", "immagine": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Risotto Zafferano e Midollo", "descrizione": "Riso Carnaroli riserva, zafferano puro, midollo scottato a cannello.", "prezzo": "28€", "immagine": "https://images.unsplash.com/photo-1633964913295-ceb43826e7c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
-        { "nome": "Tortelli di Coda", "descrizione": "Ripieni di coda alla vaccinara, sugo d'arrosto e pecorino.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona e tartufo nero.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     },
     {
       "categoria": "Il Fuoco",
       "piatti": [
-        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema 60 giorni. Cotta su brace di quercia.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma altissima. Crosta fondente.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
-        { "nome": "Picanha Wagyu A5", "descrizione": "Taglio picanha di Wagyu giapponese, servito al sangue.", "prezzo": "95€", "immagine": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false },
-        { "nome": "Costata di Rubia Gallega", "descrizione": "Carne spagnola dal grasso dorato e sapore intenso.", "prezzo": "75€", "immagine": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
-      ]
-    },
-    {
-      "categoria": "I Doni",
-      "piatti": [
-        { "nome": "Patate Cenere", "descrizione": "Patate cotte sotto la cenere, burro affumicato e sale Maldon.", "prezzo": "8€", "immagine": "https://images.unsplash.com/photo-1518977622052-97fa67cb34fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Cime di Rapa", "descrizione": "Aglio, olio, peperoncino dell'Etna.", "prezzo": "7€", "immagine": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
-      ]
-    },
-    {
-      "categoria": "I Peccati",
-      "piatti": [
-        { "nome": "Sfera Oscura", "descrizione": "Cioccolato 85% fuso al tavolo, cuore caldo ai lamponi neri.", "prezzo": "12€", "immagine": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
-        { "nome": "Cheesecake di Bronte", "descrizione": "Base salata, ricotta di pecora, colata di pistacchio puro DOP.", "prezzo": "10€", "immagine": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
+        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura estrema 60 giorni.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": false }
       ]
     }
   ],
   "recensioni_complete": [
-    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica.", "risposta_titolare": "" }
+    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica.", "risposta_titolare": "Grazie Alessandro!" },
+    { "id": 2, "nome": "Giulia M.", "stelle": 4, "data": "1 settimana fa", "testo": "Ottima carne, conto un po' alto.", "risposta_titolare": "" }
   ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci?", "risposta": "Sì." }
+    { "domanda": "Avete opzioni per celiaci o intolleranti?", "risposta": "Sì, disponiamo di un menù dedicato gluten-free. Lavoriamo con attenzione per evitare contaminazioni incrociate." },
+    { "domanda": "Accettate cani di piccola o grande taglia?", "risposta": "I vostri amici a quattro zampe sono i benvenuti! Vi preghiamo solo di segnalarlo al momento della prenotazione per assegnarvi il tavolo più comodo." },
+    { "domanda": "È richiesto un dress code particolare?", "risposta": "Richiediamo un abbigliamento smart casual. L'eleganza è gradita, ma la comodità dei nostri ospiti viene prima di tutto." },
+    { "domanda": "Posso portare una bottiglia di vino da casa?", "risposta": "Accettiamo il servizio di 'Diritto di Tappo' con un supplemento di 15€ a bottiglia servita." }
   ]
 }

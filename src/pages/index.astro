@@ -1,9 +1,7 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { ristorante, menu, mappa } = siteData;
-
-// Filtra automaticamente 1 solo piatto in vetrina per ogni categoria
+const { ristorante, menu, mappa, sfondi_sezioni } = siteData;
 const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetrina)).filter(Boolean);
 ---
 
@@ -25,15 +23,26 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
     </div>
   </header>
 
-  <section id="filosofia" class="py-24 md:py-32 px-4 max-w-5xl mx-auto text-center scroll-mt-20 reveal">
-    <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-widest font-elegante uppercase">La Genesi</h2>
-    <div class="w-16 h-1 bg-[var(--colorRosso)] mx-auto mb-10 shadow-[0_0_10px_rgba(139,24,24,0.8)]"></div>
-    <p class="text-lg md:text-2xl text-gray-400 font-light leading-relaxed font-elegante italic">
-      "{ristorante.chi_siamo}"
-    </p>
+  <section id="filosofia" class="relative py-32 px-4 text-center scroll-mt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src={sfondi_sezioni.filosofia} alt="Background Filosofia" class="w-full h-full object-cover opacity-10" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0705] via-transparent to-[#0e0a08]"></div>
+    </div>
+    <div class="relative z-10 max-w-5xl mx-auto reveal">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-widest font-elegante uppercase">La Genesi</h2>
+      <div class="w-16 h-1 bg-[var(--colorRosso)] mx-auto mb-10 shadow-[0_0_10px_rgba(139,24,24,0.8)]"></div>
+      <p class="text-lg md:text-2xl text-gray-400 font-light leading-relaxed font-elegante italic">
+        "{ristorante.chi_siamo}"
+      </p>
+    </div>
   </section>
 
-  <section class="py-24 relative bg-[#0e0a08] border-y border-white/5">
+  <section class="py-32 relative border-y border-white/5 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src={sfondi_sezioni.vetrina_piatti} alt="Background Vetrina" class="w-full h-full object-cover opacity-[0.05]" />
+      <div class="absolute inset-0 bg-[#0e0a08]/90"></div>
+    </div>
+    
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center">
       <h2 class="text-5xl font-bold text-white tracking-widest uppercase font-elegante mb-4 reveal">I Piatti Firma</h2>
       <p class="text-[var(--colorNocciola)] tracking-[0.2em] text-sm uppercase mb-16 reveal">Un assaggio della nostra eccellenza</p>
@@ -46,7 +55,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
               <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" />
             </div>
             <div class="p-6">
-              <div class="flex justify-between items-start mb-2">
+              <div class="flex justify-between items-start mb-2 gap-2">
                 <h4 class="text-lg font-bold text-white font-elegante tracking-wide uppercase truncate">{piatto.nome}</h4>
                 <span class="text-lg font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
               </div>
@@ -64,7 +73,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
 
   <section id="dove-siamo" class="relative py-32 bg-black overflow-hidden reveal">
     <div class="absolute inset-0 z-0">
-      <img src={mappa.sfondo_dark} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" />
+      <img src={sfondi_sezioni.mappa} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" />
       <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
     </div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16">
