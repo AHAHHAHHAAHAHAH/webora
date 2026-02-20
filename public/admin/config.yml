@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: AHAHHAHHAAHAHAH/webora # DA CAMBIARE QUANDO LO METTI SU GITHUB
+  repo: AHAHHAHHAAHAHAH/webora
   branch: main
+  base_url: https://webora-01a.pages.dev
+  auth_endpoint: /auth
 
 media_folder: "public/img"
 public_folder: "/img"
