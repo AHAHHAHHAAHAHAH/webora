@@ -13,80 +13,145 @@ const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{ristorante.nome} | L'Eccellenza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style define:vars={{ colorNocciola: ristorante.colore_nocciola, colorRosso: ristorante.colore_rosso }} is:global>
       body { font-family: 'Lato', sans-serif; background-color: #0a0705; color: #f7f3eb; overflow-x: hidden; }
       h1, h2, h3, h4, .font-elegante { font-family: 'Playfair Display', serif; }
+      
+      /* Animazioni Globali */
       .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.25, 1, 0.5, 1); }
       .reveal.active { opacity: 1; transform: translateY(0); }
+      
+      /* Offcanvas Menu Mobile */
       #mobile-menu { transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
       .menu-open { transform: translateX(0) !important; }
+
+      /* Animazione FAQ nel Footer */
+      details > summary { list-style: none; cursor: pointer; }
+      details > summary::-webkit-details-marker { display: none; }
+      details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+      @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
     </style>
   </head>
-  <body class="selection:bg-[var(--colorNocciola)] selection:text-black antialiased relative">
+  <body class="selection:bg-[var(--colorNocciola)] selection:text-black antialiased relative flex flex-col min-h-screen">
 
     <div id="overlay" class="fixed inset-0 bg-black/80 z-40 hidden backdrop-blur-md transition-opacity"></div>
 
     {moduli.promo_banner && (
-      <div class="bg-[var(--colorRosso)] text-white text-xs md:text-sm font-bold text-center py-2 px-4 tracking-[0.2em] uppercase relative z-50">
+      <div class="bg-[var(--colorRosso)] text-white text-[10px] md:text-xs font-bold text-center py-2 px-4 tracking-[0.2em] uppercase relative z-50 shadow-md">
         {promo_banner}
       </div>
     )}
 
-    <nav class="sticky top-0 w-full z-40 bg-[#0a0705]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+    <nav class="sticky top-0 w-full z-40 bg-[#0a0705]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 lg:px-8">
         <div class="flex justify-between items-center h-20 md:h-24">
-          <a href="/" class="flex items-center gap-4 cursor-pointer z-50">
+          
+          <a href="/" class="flex items-center gap-4 cursor-pointer z-50 hover:opacity-80 transition-opacity">
             <img src={ristorante.logo_url} alt="Logo" class="h-10 w-10 md:h-14 md:w-14 object-contain" onerror="this.style.display='none'" />
-            <span class="font-elegante font-bold text-2xl md:text-3xl tracking-widest text-[var(--colorNocciola)] uppercase">{ristorante.nome}</span>
+            <span class="font-elegante font-bold text-xl md:text-3xl tracking-widest text-[var(--colorNocciola)] uppercase">{ristorante.nome}</span>
           </a>
           
-          <button id="menu-btn" class="md:hidden z-50 p-2 text-[var(--colorNocciola)] focus:outline-none">
+          <button id="menu-btn" class="md:hidden z-50 p-2 text-[var(--colorNocciola)] focus:outline-none hover:scale-110 transition-transform">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
 
-          <div class="hidden md:flex space-x-10 items-center">
-            <a href="/" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Home</a>
-            <a href="/#filosofia" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Filosofia</a>
-            <a href="/lavora-con-noi" class="text-gray-300 hover:text-[var(--colorNocciola)] transition-colors text-xs uppercase tracking-[0.2em]">Lavora con Noi</a>
-            <a href={linkWhatsapp} target="_blank" class="border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-3 font-elegante tracking-[0.2em] uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-all">Riserva</a>
+          <div class="hidden md:flex space-x-8 items-center">
+            <a href="/" class="text-gray-300 hover:text-white transition-colors text-xs uppercase tracking-[0.2em]">Home</a>
+            <a href="/dicono-di-noi" class="text-gray-300 hover:text-white transition-colors text-xs uppercase tracking-[0.2em]">Recensioni</a>
+            <a href="/lavora-con-noi" class="text-gray-300 hover:text-white transition-colors text-xs uppercase tracking-[0.2em]">Lavora con Noi</a>
+            <a href={linkWhatsapp} target="_blank" class="border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-6 py-3 font-elegante tracking-[0.2em] uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-all duration-500 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+              Riserva Tavolo
+            </a>
           </div>
         </div>
       </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed top-0 right-0 w-72 h-full bg-[#120d0b] border-l border-white/5 shadow-2xl z-50 transform translate-x-full pt-32 px-8 flex flex-col gap-8">
-      <a href="/" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">Home</a>
-      <a href="/#filosofia" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">La Filosofia</a>
-      <a href="/lavora-con-noi" class="mobile-link text-2xl font-elegante text-white uppercase tracking-widest border-b border-white/10 pb-4">Lavora con Noi</a>
-      <a href={linkWhatsapp} target="_blank" class="mobile-link bg-[var(--colorRosso)] text-white text-center py-4 font-bold uppercase tracking-widest mt-8 shadow-xl">Prenota Ora</a>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-72 h-full bg-[#120d0b] border-l border-white/5 shadow-2xl z-50 transform translate-x-full pt-32 px-8 flex flex-col gap-8 overflow-y-auto">
+      <a href="/" class="mobile-link text-2xl font-elegante text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/10 pb-4 transition-colors">Home</a>
+      <a href="/dicono-di-noi" class="mobile-link text-2xl font-elegante text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/10 pb-4 transition-colors">Dicono di Noi</a>
+      <a href="/lavora-con-noi" class="mobile-link text-2xl font-elegante text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/10 pb-4 transition-colors">Lavora con Noi</a>
+      <a href={linkWhatsapp} target="_blank" class="mobile-link bg-[var(--colorRosso)] text-white text-center py-4 font-bold uppercase tracking-widest mt-8 shadow-xl hover:bg-white hover:text-[var(--colorRosso)] transition-colors">Prenota Ora</a>
     </div>
 
     <a href={linkWhatsapp} target="_blank" class="md:hidden fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:scale-110 transition-transform flex items-center justify-center border border-[#120d0b]">
       <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 21.031c-1.636 0-3.238-.429-4.639-1.242l-5.18 1.358 1.388-5.051a9.96 9.96 0 0 1-1.36-5.068C2.24 5.498 6.626 1.11 12.031 1.11c5.404 0 9.79 4.388 9.79 9.792 0 5.404-4.386 9.792-9.79 9.792zm-5.011-3.645c1.474.873 3.193 1.336 4.98 1.336 4.717 0 8.549-3.832 8.549-8.549 0-4.718-3.832-8.55-8.549-8.55-4.717 0-8.549 3.832-8.549 8.55 0 1.63.435 3.208 1.258 4.62l-.935 3.403 3.479-.925c.001-.001.002-.001.003-.001z"/></svg>
     </a>
 
-    <slot />
-
-    <footer class="bg-black pt-24 pb-12 border-t border-[var(--colorRosso)]/30 relative overflow-hidden">
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <footer class="bg-[#050302] pt-24 pb-12 border-t border-[var(--colorRosso)]/30 relative overflow-hidden mt-auto">
+      <div class="absolute -bottom-40 -right-40 text-[var(--colorNocciola)] opacity-[0.03] text-[20rem] font-elegante pointer-events-none">M</div>
+      
       <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left mb-16">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24 border-b border-white/5 pb-20">
+          
+          {moduli.faq && (
+            <div class="reveal">
+              <h4 class="text-white font-bold tracking-widest uppercase text-lg font-elegante mb-8">Domande Frequenti</h4>
+              <div class="space-y-4">
+                {faq.map((item) => (
+                  <details class="group border-b border-white/10 pb-4">
+                    <summary class="text-gray-400 hover:text-white transition-colors text-sm font-bold tracking-wider cursor-pointer list-none flex justify-between uppercase focus:outline-none">
+                      {item.domanda}
+                      <span class="text-[var(--colorNocciola)] group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p class="text-gray-500 text-xs leading-relaxed mt-4 font-light pr-8">{item.risposta}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {moduli.newsletter && (
+            <div class="bg-[#0a0705] border border-white/5 p-8 md:p-10 flex flex-col justify-center text-center shadow-2xl reveal">
+              <h4 class="text-[var(--colorNocciola)] font-bold tracking-widest uppercase text-xl font-elegante mb-4">Vip Club</h4>
+              <p class="text-gray-400 text-xs font-light mb-8 leading-relaxed">Lascia la tua email per accedere a serate esclusive e ricevere un calice di benvenuto alla tua prima prenotazione.</p>
+              <form class="flex flex-col sm:flex-row gap-2">
+                <input type="email" required placeholder="Il tuo indirizzo email" class="w-full bg-black border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none text-center sm:text-left transition-colors" />
+                <button type="submit" class="bg-[var(--colorNocciola)] text-black px-8 py-4 uppercase tracking-widest text-xs font-bold hover:bg-white transition-colors flex-shrink-0">Iscriviti</button>
+              </form>
+            </div>
+          )}
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left mb-16 reveal">
           <div class="flex flex-col items-center md:items-start">
-            <h3 class="text-3xl font-bold mb-4 text-[var(--colorNocciola)] tracking-widest uppercase font-elegante">{ristorante.nome}</h3>
-            <div class="text-gray-400 text-sm font-light space-y-2">
+            <h3 class="text-3xl font-bold mb-6 text-[var(--colorNocciola)] tracking-widest uppercase font-elegante">{ristorante.nome}</h3>
+            <div class="text-gray-400 text-sm font-light space-y-3">
               <p>{ristorante.indirizzo}</p>
               <p>{ristorante.telefono}</p>
+              <p>info@milos.it</p>
             </div>
           </div>
+          
           <div class="flex flex-col items-center md:items-start">
-            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 border-b border-[var(--colorNocciola)]/50 pb-2">Orari d'Apertura</h4>
+            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 border-b border-white/20 pb-2">Orari d'Apertura</h4>
             <p class="text-gray-400 text-sm font-light">{ristorante.orari}</p>
           </div>
+          
+          <div class="flex flex-col items-center md:items-end md:text-right">
+            <h4 class="text-white font-bold tracking-widest uppercase text-xs mb-6 border-b border-white/20 pb-2">Location</h4>
+            <a href="https://maps.google.com" target="_blank" class="text-gray-400 hover:text-[var(--colorNocciola)] text-sm font-light flex items-center gap-2 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              Apri in Google Maps
+            </a>
+          </div>
         </div>
-        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-light uppercase tracking-widest gap-4">
+
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 font-light uppercase tracking-widest gap-4">
           <p>© 2026 {ristorante.nome}. P.IVA 01234567891.</p>
-          <p>Powered by <span class="text-white font-bold">{configurazione.nome_agenzia}</span></p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+          </div>
+          <p>Architettura Web by <span class="text-white font-bold">{configurazione.nome_agenzia}</span></p>
         </div>
       </div>
     </footer>
@@ -94,12 +159,17 @@ const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
     <script>
       // @ts-nocheck
       document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. Motore Animazioni allo scorrimento
         const reveals = document.querySelectorAll(".reveal");
         const revealOnScroll = new IntersectionObserver((entries) => {
-          entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("active"); });
-        }, { threshold: 0.1 });
+          entries.forEach(entry => { 
+            if (entry.isIntersecting) entry.target.classList.add("active"); 
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
         reveals.forEach(r => revealOnScroll.observe(r));
 
+        // 2. Motore Menu Laterale Telefono
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const overlay = document.getElementById('overlay');
@@ -108,7 +178,14 @@ const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
         function toggleMenu() {
           mobileMenu?.classList.toggle('menu-open');
           overlay?.classList.toggle('hidden');
+          
+          if(mobileMenu?.classList.contains('menu-open')) {
+            if(menuBtn) menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>';
+          } else {
+            if(menuBtn) menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+          }
         }
+        
         menuBtn?.addEventListener('click', toggleMenu);
         overlay?.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));

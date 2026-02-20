@@ -20,31 +20,32 @@
     "logo_url": "/logo.png",
     "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     "video_hero_url": "/video-brace.mp4",
-    "chi_siamo": "Il Milos è un tempio per i puristi del sapore. Selezioniamo carni da allevamenti etici, le frolliamo con pazienza millimetrica e le domiamo col fuoco della quercia. Entra, e dimentica il mondo fuori."
+    "chi_siamo": "Il Milos è un tempio per i puristi del sapore. Selezioniamo carni da allevamenti etici, le frolliamo con pazienza millimetrica e le domiamo col fuoco della quercia."
+  },
+  "mappa": {
+    "sfondo_dark": "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    "link_google": "https://maps.google.com/?q=Via+dei+Macellai+12+Catania",
+    "indicazioni": "Ci troviamo nel cuore storico della città. Disponibile servizio di Car Valet o parcheggio convenzionato a 50 metri."
   },
   "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk con calice di Barolo in omaggio.",
   "menu": [
     {
       "categoria": "I Preludi",
       "piatti": [
-        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": ["Lattosio"] },
-        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] }
-      ]
-    },
-    {
-      "categoria": "Il Fuoco",
-      "piatti": [
-        { "nome": "Tomahawk Dry Aged", "descrizione": "Frollatura 60 giorni. Cotta su brace.", "prezzo": "85€", "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] },
-        { "nome": "Filetto Sotto Cenere", "descrizione": "Cuore di filetto sigillato a fiamma.", "prezzo": "38€", "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true, "allergeni": [] }
+        { "nome": "L'Estasi dei Formaggi", "descrizione": "Pecorino affinato in grotta e gorgonzola piccante.", "prezzo": "22€", "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true },
+        { "nome": "Battuta al Tartufo", "descrizione": "Tartare di fassona, tuorlo marinato e tartufo.", "prezzo": "26€", "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "in_vetrina": true }
       ]
     }
   ],
-  "recensioni": [
-    { "nome": "Alessandro P.", "testo": "L'atmosfera è ipnotica. La carne è illegale.", "stelle": 5 },
-    { "nome": "Marco R.", "testo": "Il Tomahawk vale ogni singolo centesimo.", "stelle": 5 }
+  "recensioni_complete": [
+    { "id": 1, "nome": "Alessandro P.", "stelle": 5, "data": "2 giorni fa", "testo": "L'atmosfera è ipnotica. La carne è letteralmente illegale, una frollatura mai sentita prima in città. Servizio impeccabile e cantina vini da capogiro.", "risposta_titolare": "Grazie Alessandro! La ricerca dell'eccellenza è il nostro unico credo. Ti aspettiamo per farti provare la nuova selezione di Wagyu." },
+    { "id": 2, "nome": "Federica M.", "stelle": 5, "data": "1 settimana fa", "testo": "Un tempio per i carnivori. Locale avvolgente ed elegante. Il Tomahawk vale ogni singolo centesimo speso.", "risposta_titolare": "" },
+    { "id": 3, "nome": "Marco R.", "stelle": 4, "data": "3 settimane fa", "testo": "Tutto eccellente, carne divina e dolci sorprendenti. Unica pecca: abbiamo aspettato 15 minuti oltre l'orario di prenotazione per farci accomodare.", "risposta_titolare": "Marco, ti chiediamo scusa per l'attesa. Il sabato sera cerchiamo di non mettere fretta a chi sta finendo il dessert, ma stiamo migliorando la gestione dei turni. A presto!" },
+    { "id": 4, "nome": "Giulia T.", "stelle": 5, "data": "1 mese fa", "testo": "Carta dei vini spaventosa, mi hanno saputo consigliare un Barolo perfetto per la mia tagliata. Prezzi altini ma proporzionati alla qualità estrema.", "risposta_titolare": "" },
+    { "id": 5, "nome": "Lorenzo S.", "stelle": 2, "data": "2 mesi fa", "testo": "Location bellissima ma non ho apprezzato la cottura del filetto. Lo avevo chiesto ben cotto ed è arrivato rosato all'interno.", "risposta_titolare": "Caro Lorenzo, ci spiace non aver soddisfatto la tua richiesta. Tuttavia, come specificato sul menù, ci rifiutiamo di stracuocere tagli di carne frollati 60 giorni per non distruggerne le proprietà organolettiche. Speriamo tu possa comprendere la nostra filosofia." },
+    { "id": 6, "nome": "Elena B.", "stelle": 5, "data": "3 mesi fa", "testo": "Esperienza mistica. Il carrello dei formaggi a fine pasto è un colpo al cuore.", "risposta_titolare": "" }
   ],
   "faq": [
-    { "domanda": "Avete opzioni per celiaci?", "risposta": "Assolutamente sì. Disponiamo di menù gluten-free." },
-    { "domanda": "È presente un parcheggio?", "risposta": "Sì, a soli 50 metri c'è un parcheggio custodito convenzionato." }
+    { "domanda": "Avete opzioni per celiaci?", "risposta": "Assolutamente sì. Disponiamo di menù gluten-free." }
   ]
 }
