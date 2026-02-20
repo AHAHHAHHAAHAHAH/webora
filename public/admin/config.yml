@@ -1,19 +1,85 @@
 backend:
-  name: git-gateway
-  branch: main # Il tuo branch di Github
+  name: github
+  repo: AHAHHAHHAAHAHAH/webora # DA CAMBIARE QUANDO LO METTI SU GITHUB
+  branch: main
 
 media_folder: "public/img"
 public_folder: "/img"
 
 collections:
-  - name: "impostazioni"
-    label: "Dati Sito e Menù"
+  - name: "database"
+    label: "Gestione Dati Sito"
     files:
-      - label: "Database Principale"
+      - label: "Modifica JSON Principale"
         name: "data"
         file: "src/data.json"
         fields:
-          - {label: "Nome Ristorante", name: "ristorante.nome", widget: "string"}
-          - {label: "Indirizzo", name: "ristorante.indirizzo", widget: "string"}
-          - {label: "Slogan", name: "ristorante.slogan", widget: "string"}
-          # Qui il cliente vedrà un pannello pulito dove cambiare i testi, e si salveranno da soli nel JSON!
+          - label: "Configurazione"
+            name: "configurazione"
+            widget: "object"
+            fields:
+              - {label: "Nome Agenzia", name: "nome_agenzia", widget: "string"}
+              - label: "Moduli Attivi"
+                name: "moduli"
+                widget: "object"
+                fields:
+                  - {label: "Promo Banner", name: "promo_banner", widget: "boolean"}
+                  - {label: "Video Hero", name: "video_hero", widget: "boolean"}
+                  - {label: "FAQ", name: "faq", widget: "boolean"}
+                  - {label: "Newsletter", name: "newsletter", widget: "boolean"}
+          - label: "Ristorante Info"
+            name: "ristorante"
+            widget: "object"
+            fields:
+              - {label: "Nome", name: "nome", widget: "string"}
+              - {label: "Slogan", name: "slogan", widget: "string"}
+              - {label: "Telefono", name: "telefono", widget: "string"}
+              - {label: "Indirizzo", name: "indirizzo", widget: "string"}
+              - label: "Orari Completi"
+                name: "orari_completi"
+                widget: "list"
+                fields:
+                  - {label: "Giorno", name: "giorno", widget: "string"}
+                  - {label: "Ore", name: "ore", widget: "string"}
+              - {label: "Colore Nocciola", name: "colore_nocciola", widget: "color"}
+              - {label: "Colore Rosso", name: "colore_rosso", widget: "color"}
+              - {label: "Logo URL", name: "logo_url", widget: "string"}
+              - {label: "Sfondo Hero Fallback", name: "sfondo_hero_fallback", widget: "string"}
+              - {label: "Video Hero URL", name: "video_hero_url", widget: "string", required: false}
+              - {label: "Chi Siamo", name: "chi_siamo", widget: "text"}
+          - label: "Sfondi Sezioni"
+            name: "sfondi_sezioni"
+            widget: "object"
+            fields:
+              - {label: "Filosofia", name: "filosofia", widget: "string"}
+              - {label: "Vetrina Piatti", name: "vetrina_piatti", widget: "string"}
+              - {label: "Mappa", name: "mappa", widget: "string"}
+              - {label: "Recensioni", name: "recensioni", widget: "string"}
+              - {label: "Lavora con Noi", name: "lavora_con_noi", widget: "string"}
+          - label: "Mappa Google"
+            name: "mappa"
+            widget: "object"
+            fields:
+              - {label: "Link Google Maps", name: "link_google", widget: "string"}
+              - {label: "Indicazioni Mappa", name: "indicazioni", widget: "text"}
+          - {label: "Testo Promo Banner", name: "promo_banner", widget: "string"}
+          - label: "Gestione Menù"
+            name: "menu"
+            widget: "list"
+            fields:
+              - {label: "Nome Categoria", name: "categoria", widget: "string"}
+              - label: "Piatti in questa categoria"
+                name: "piatti"
+                widget: "list"
+                fields:
+                  - {label: "Nome Piatto", name: "nome", widget: "string"}
+                  - {label: "Descrizione", name: "descrizione", widget: "text"}
+                  - {label: "Prezzo", name: "prezzo", widget: "string"}
+                  - {label: "URL Immagine", name: "immagine", widget: "string", required: false}
+                  - {label: "Mostra in Vetrina sulla Home?", name: "in_vetrina", widget: "boolean"}
+          - label: "Domande Frequenti (FAQ)"
+            name: "faq"
+            widget: "list"
+            fields:
+              - {label: "Domanda", name: "domanda", widget: "string"}
+              - {label: "Risposta", name: "risposta", widget: "text"}
