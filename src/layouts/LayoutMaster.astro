@@ -2,17 +2,50 @@
 import '../styles/global.css';
 import siteData from '../data.json';
 
-const { configurazione, ristorante, promo_banner, faq } = siteData;
+const { configurazione, ristorante, promo_banner, faq } = siteData as any;
 const moduli = configurazione.moduli;
 const numeroWhatsapp = ristorante.telefono.replace(/\s+/g, '');
 const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent("Buonasera, desidero prenotare un tavolo...")}`;
+
+// --- NUOVO MOTORE SEO DINAMICO ---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+// Se non specifichiamo un titolo in una pagina, usa questi di default letti dal JSON!
+const { 
+  title = `${ristorante.nome} | L'Eccellenza Culinaria`, 
+  description = ristorante.slogan, 
+  image = ristorante.sfondo_hero_fallback 
+} = Astro.props;
 ---
 
 <html lang="it" class="scroll-smooth bg-[#0a0705]">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{ristorante.nome} | L'Eccellenza</title>
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={configurazione.nome_agenzia} />
+    <meta name="robots" content="index, follow" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:site_name" content={ristorante.nome} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style define:vars={{ colorNocciola: ristorante.colore_nocciola, colorRosso: ristorante.colore_rosso }} is:global>
