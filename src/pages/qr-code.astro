@@ -2,20 +2,19 @@
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 
 // Quando trasformeremo tutto in JSON, questo dominio lo prenderemo dal data.json
-// Per ora mettiamo il tuo link provvisorio per farlo funzionare subito.
 const dominioSito = "https://webora-01a.pages.dev";
 ---
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 bg-black">
+  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 bg-black hide-on-print">
     <div class="relative z-10 px-4 reveal">
       <h1 class="text-4xl md:text-5xl font-bold text-[var(--colorNocciola)] mb-4 tracking-widest font-elegante uppercase">
         Centro Stampa QR Code
       </h1>
       <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
       <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
-        Strumento riservato alla gestione del locale. Salva o stampa i codici QR per le tue operazioni di marketing e per il servizio ai tavoli.
+        Strumento riservato alla gestione. Scegli quale QR Code stampare. Il sistema ottimizzerà la grafica per risparmiare inchiostro.
       </p>
     </div>
   </header>
@@ -23,42 +22,44 @@ const dominioSito = "https://webora-01a.pages.dev";
   <section class="py-16 bg-[#0a0705] min-h-screen">
     <div class="max-w-5xl mx-auto px-4 lg:px-8">
 
-      <div class="text-center mb-12 reveal">
-        <button onclick="window.print()" class="inline-block bg-[var(--colorNocciola)] text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-lg cursor-pointer">
-          Stampa questa pagina
-        </button>
-      </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
         
-        <div class="bg-[#120d0b] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorNocciola)] to-transparent opacity-50"></div>
+        <div id="stampa-vetrina" class="bg-[#120d0b] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
+          <div class="sfumatura-decorativa absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorNocciola)] to-transparent opacity-50"></div>
           
-          <h2 class="text-2xl font-bold text-white tracking-widest uppercase font-elegante mb-2">QR Code Generale</h2>
-          <p class="text-gray-400 text-xs tracking-widest uppercase mb-8">Uso: Vetrina, Biglietti da Visita, Social</p>
+          <h2 class="text-2xl font-bold text-white tracking-widest uppercase font-elegante mb-2 print-text-black">QR Code Generale</h2>
+          <p class="text-gray-400 text-xs tracking-widest uppercase mb-8 print-text-black">Uso: Vetrina, Biglietti da Visita, Social</p>
           
           <div class="bg-white p-4 rounded-sm shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-6">
-            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${dominioSito}/`} alt="QR Code Vetrina" class="w-48 h-48" />
+            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${dominioSito}/`} alt="QR Code Vetrina" class="w-48 h-48 md:w-64 md:h-64" />
           </div>
 
-          <p class="text-gray-500 text-xs font-light leading-relaxed">
-            Questo codice porta alla <strong class="text-white">Home Page</strong>. Serve per presentare il locale, far vedere l'eleganza degli ambienti e smistare i clienti verso le prenotazioni o le recensioni.
+          <p class="text-gray-500 text-xs font-light leading-relaxed mb-8 print-text-black">
+            Questo codice porta alla <strong class="text-white print-text-black">Home Page</strong>. Serve per presentare il locale, far vedere l'eleganza degli ambienti e smistare i clienti verso le prenotazioni o le recensioni.
           </p>
+
+          <button onclick="stampaIsolata('stampa-vetrina')" class="mt-auto hide-on-print bg-white text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-colors shadow-lg">
+            Stampa QR Vetrina
+          </button>
         </div>
 
-        <div class="bg-[#120d0b] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorRosso)] to-transparent opacity-50"></div>
+        <div id="stampa-tavolo" class="bg-[#120d0b] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
+          <div class="sfumatura-decorativa absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorRosso)] to-transparent opacity-50"></div>
           
-          <h2 class="text-2xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-elegante mb-2">QR Code Tavolo</h2>
-          <p class="text-[var(--colorNocciola)] text-xs tracking-widest uppercase mb-8">Uso: Segnaposto sui Tavoli fisici</p>
+          <h2 class="text-2xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-elegante mb-2 print-text-black">QR Code Tavolo</h2>
+          <p class="text-[var(--colorNocciola)] text-xs tracking-widest uppercase mb-8 print-text-black">Uso: Segnaposto sui Tavoli fisici</p>
           
-          <div class="bg-white p-4 rounded-sm shadow-[0_0_30px_rgba(212,175,55,0.2)] mb-6 border-2 border-[var(--colorNocciola)]">
-            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${dominioSito}/menu`} alt="QR Code Tavolo" class="w-48 h-48" />
+          <div class="bg-white p-4 rounded-sm shadow-[0_0_30px_rgba(212,175,55,0.2)] mb-6 border-2 border-[var(--colorNocciola)] print-border-black">
+            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${dominioSito}/menu`} alt="QR Code Tavolo" class="w-48 h-48 md:w-64 md:h-64" />
           </div>
 
-          <p class="text-gray-500 text-xs font-light leading-relaxed">
-            Questo codice porta al <strong class="text-white">Menù Veloce</strong>. Salta la presentazione e permette al cliente seduto di consultare immediatamente i piatti, ordinare o accedere al pagamento.
+          <p class="text-gray-500 text-xs font-light leading-relaxed mb-8 print-text-black">
+            Questo codice porta al <strong class="text-white print-text-black">Menù Veloce</strong>. Salta la presentazione e permette al cliente seduto di consultare immediatamente i piatti, ordinare o accedere al pagamento.
           </p>
+
+          <button onclick="stampaIsolata('stampa-tavolo')" class="mt-auto hide-on-print bg-[var(--colorNocciola)] text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-lg">
+            Stampa QR Tavolo
+          </button>
         </div>
 
       </div>
@@ -68,12 +69,59 @@ const dominioSito = "https://webora-01a.pages.dev";
 
 </LayoutMaster>
 
-<style>
+<script is:inline>
+  function stampaIsolata(idElemento) {
+    const elemento = document.getElementById(idElemento);
+    // Aggiunge la classe magica che isola l'elemento
+    elemento.classList.add('stampa-attiva');
+    
+    // Apre la finestra di stampa del browser (mette in pausa il sito)
+    window.print();
+    
+    // Appena chiudi la finestra di stampa, toglie la classe e il sito torna normale
+    elemento.classList.remove('stampa-attiva');
+  }
+</script>
+
+<style is:global>
   @media print {
-    body { background-color: white !important; color: black !important; }
-    nav, footer, button { display: none !important; }
-    .bg-\[\#120d0b\], .bg-\[\#0a0705\], .bg-black { background-color: white !important; border: 1px solid #ccc !important; }
-    .text-white, .text-gray-300, .text-gray-400, .text-gray-500 { color: black !important; }
-    .shadow-2xl { box-shadow: none !important; }
+    /* Nasconde tutto il sito di default */
+    body * {
+      visibility: hidden;
+    }
+    
+    /* Mostra SOLO l'elemento con la classe .stampa-attiva e i suoi figli */
+    .stampa-attiva, .stampa-attiva * {
+      visibility: visible;
+    }
+    
+    /* Riposiziona il blocco perfettamente al centro del foglio A4 bianco */
+    .stampa-attiva {
+      position: absolute !important;
+      left: 50% !important;
+      top: 0 !important;
+      transform: translateX(-50%) !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      background: white !important; /* Sfondo bianco per non sprecare inchiostro nero */
+      color: black !important;
+      box-shadow: none !important;
+      border: none !important;
+      padding: 40px !important;
+    }
+
+    /* Forza i testi a diventare neri per la stampa */
+    .stampa-attiva .print-text-black {
+      color: black !important;
+    }
+
+    .stampa-attiva .print-border-black {
+      border-color: black !important;
+    }
+
+    /* Nasconde i bottoni e i gradienti decorativi sul foglio stampato */
+    .hide-on-print, .stampa-attiva .hide-on-print, .stampa-attiva .sfumatura-decorativa {
+      display: none !important;
+    }
   }
 </style>
