@@ -1,7 +1,7 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const sfondo = siteData.sfondi_sezioni.recensioni;
+const sfondo = "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000";
 ---
 
 <LayoutMaster>
@@ -17,26 +17,19 @@ const sfondo = siteData.sfondi_sezioni.recensioni;
       </h1>
       <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
       <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
-        Lasciati ispirare dalle nostre creazioni.
+        Scegli le tue specialità. Quando sei pronto, usa il tasto in basso per ordinare e pagare dal tavolo.
       </p>
     </div>
   </header>
 
-  <section class="py-16 bg-[#0a0705] min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 lg:px-8">
+  <section class="py-16 bg-[#0a0705] min-h-screen relative">
+    <div class="max-w-4xl mx-auto px-4 lg:px-8 pb-32">
 
-      <div class="flex overflow-x-auto pb-4 mb-12 hide-scrollbar gap-4 snap-x reveal">
-        <a href="#colazione" class="snap-start shrink-0 border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-[var(--colorNocciola)] hover:text-black transition-colors rounded-full">Colazione</a>
-        <a href="#tavola-calda" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Tavola Calda</a>
-        <a href="#pasticceria" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Pasticceria</a>
-        <a href="#drink" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Drink & Vini</a>
-      </div>
-
-      <div id="colazione" class="mb-16 reveal scroll-mt-24">
+      <div class="mb-16 reveal">
         <h2 class="text-2xl text-[var(--colorNocciola)] font-elegante uppercase tracking-widest border-b border-white/10 pb-4 mb-8">Colazione & Caffetteria</h2>
         
         <div class="flex flex-col gap-6">
-          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+          <div class="flex justify-between items-center border-b border-white/5 pb-4">
             <div class="pr-4">
               <h3 class="text-white font-bold tracking-wider uppercase text-sm">Espresso 100% Arabica</h3>
               <p class="text-gray-500 text-xs mt-1 font-light">Miscela selezionata, tostatura artigianale.</p>
@@ -44,65 +37,32 @@ const sfondo = siteData.sfondi_sezioni.recensioni;
             <span class="text-[var(--colorNocciola)] font-bold">€ 1.50</span>
           </div>
 
-          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+          <div class="flex justify-between items-center border-b border-white/5 pb-4">
             <div class="pr-4">
               <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cornetto Farcito</h3>
               <p class="text-gray-500 text-xs mt-1 font-light">Crema, cioccolato, pistacchio o marmellata.</p>
             </div>
             <span class="text-[var(--colorNocciola)] font-bold">€ 2.00</span>
           </div>
-          
-          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
-            <div class="pr-4">
-              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Granita Siciliana & Brioche</h3>
-              <p class="text-gray-500 text-xs mt-1 font-light">Mandorla, limone, pistacchio, cioccolato. Con brioche col tuppo.</p>
-            </div>
-            <span class="text-[var(--colorNocciola)] font-bold">€ 4.50</span>
-          </div>
         </div>
-      </div>
-
-      <div id="tavola-calda" class="mb-16 reveal scroll-mt-24">
-        <h2 class="text-2xl text-[var(--colorNocciola)] font-elegante uppercase tracking-widest border-b border-white/10 pb-4 mb-8">Tavola Calda</h2>
-        
-        <div class="flex flex-col gap-6">
-          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
-            <div class="pr-4">
-              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Arancino al Ragù</h3>
-              <p class="text-gray-500 text-xs mt-1 font-light">Riso carnaroli, ragù di scottona, piselli, caciocavallo.</p>
-            </div>
-            <span class="text-[var(--colorNocciola)] font-bold">€ 3.00</span>
-          </div>
-
-          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
-            <div class="pr-4">
-              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cartocciata Catanese</h3>
-              <p class="text-gray-500 text-xs mt-1 font-light">Prosciutto cotto, mozzarella, pomodoro, olive.</p>
-            </div>
-            <span class="text-[var(--colorNocciola)] font-bold">€ 2.50</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-12 text-center reveal">
-        <p class="text-gray-400 text-xs tracking-widest uppercase mb-4">Vuoi vedere le foto delle nostre specialità?</p>
-        <a href="/menu-fotografico" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-          Sfoglia il Menù Fotografico
-        </a>
       </div>
 
     </div>
   </section>
 
-</LayoutMaster>
+  <div class="fixed bottom-0 left-0 w-full bg-[#120d0b] border-t border-[var(--colorNocciola)] z-50 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] p-4">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <div class="text-center md:text-left">
+        <p class="text-white text-sm font-bold tracking-widest uppercase">Hai Scelto?</p>
+        <p class="text-gray-400 text-xs">Paga comodamente dal tuo smartphone.</p>
+      </div>
 
-<style>
-  /* Nasconde la scrollbar brutta dai bottoncini in alto su mobile */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
+      <a href="https://INSERISCI_IL_LINK_DEL_SOFTWARE_QUI.com" target="_blank" class="w-full md:w-auto text-center inline-block bg-[var(--colorNocciola)] text-black px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-lg animate-pulse">
+        Ordina e Paga Ora
+      </a>
+      
+    </div>
+  </div>
+
+</LayoutMaster>

@@ -1,8 +1,7 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-// Usiamo lo sfondo recensioni come sicurezza per non avere errori
-const sfondo = siteData.sfondi_sezioni.recensioni; 
+const sfondo = siteData.sfondi_sezioni?.recensioni || "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000"; 
 ---
 
 <LayoutMaster>
@@ -51,11 +50,11 @@ const sfondo = siteData.sfondi_sezioni.recensioni;
           </p>
           
           <div class="flex flex-col gap-4 mt-auto w-full sm:w-auto">
-            <a href="#ordina" class="inline-block bg-white text-black px-10 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)] w-full">
+            <a href="https://wa.me/390000000000?text=Salve,%20vorrei%20effettuare%20un%20ordine%20per%20asporto/domicilio." target="_blank" class="inline-block bg-white text-black px-10 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)] w-full">
               Ordina Direttamente
             </a>
             
-            <a href="#glovo" class="inline-block border border-white/20 text-white px-10 py-4 font-bold tracking-widest uppercase text-xs hover:border-white transition-all duration-300 w-full">
+            <a href="https://glovoapp.com/it/it/catania/" target="_blank" class="inline-block border border-white/20 text-white px-10 py-4 font-bold tracking-widest uppercase text-xs hover:border-white transition-all duration-300 w-full">
               Trovaci su Glovo
             </a>
           </div>
