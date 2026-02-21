@@ -8,52 +8,39 @@ const { sfondi_sezioni } = siteData;
   
   <header class="relative pt-48 pb-32 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-      <img src={sfondi_sezioni.lavora_con_noi} alt="Sfondo Recruiting" class="w-full h-full object-cover opacity-20 blur-[1px]" />
+      <img src={sfondi_sezioni.recensioni} alt="Sfondo" class="w-full h-full object-cover opacity-20 blur-[1px]" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/60 to-transparent"></div>
     </div>
-
     <div class="relative z-10 px-4 reveal">
       <h1 class="text-5xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase drop-shadow-xl">
-        Unisciti alla Brigata
+        La Voce dei Clienti
       </h1>
       <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8"></div>
       <p class="text-gray-300 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed">
-        Cerchiamo talento, fiamme e dedizione. La sala e la cucina sono il nostro palcoscenico.
+        Non chiediamo di crederci sulla parola. Leggi le esperienze in tempo reale direttamente da Google.
       </p>
     </div>
   </header>
 
-  <section class="py-24 bg-[#0a0705] relative z-10">
-    <div class="max-w-3xl mx-auto px-4 reveal">
+  <section class="py-24 bg-[#0a0705]">
+    <div class="max-w-6xl mx-auto px-4 lg:px-8">
       
-<form action="https://formsubmit.co/flexedit56@gmail.com" method="POST" enctype="multipart/form-data" class="bg-[#120d0b] p-8 md:p-12 border border-white/5 shadow-2xl rounded-sm flex flex-col gap-8">        
-        <input type="hidden" name="_subject" value="Nuova Candidatura dal Sito Web!">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        
-        <h3 class="text-2xl text-white font-elegante tracking-wider uppercase border-b border-white/10 pb-4">Invia la tua Candidatura</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input type="text" name="Nome" placeholder="Nome e Cognome *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
-          <input type="email" name="Email" placeholder="Email *" required class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors" />
-        </div>
-        
-        <select name="Posizione" required class="bg-[#0a0705] border border-white/10 text-gray-400 p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors cursor-pointer">
-          <option value="" disabled selected>Posizione d'interesse *</option>
-          <option value="Chef de Partie">Chef de Partie / Aiuto Cuoco</option>
-          <option value="Maitre / Sala">Maitre / Chef de Rang</option>
-          <option value="Sommelier">Sommelier</option>
-        </select>
-        
-        <textarea name="Lettera_Presentazione" placeholder="Parlaci di te (Esperienze, visione, perché noi) *" required rows="4" class="bg-[#0a0705] border border-white/10 text-white p-4 text-sm focus:border-[var(--colorNocciola)] outline-none transition-colors resize-none"></textarea>
+      <div class="reveal w-full min-h-[300px]">
+        <script defer async src='https://cdn.trustindex.io/loader.js?156f87b65a4a4023be061b5bf13'></script>
+      </div>
 
-        <div class="border border-white/10 border-dashed p-8 text-center bg-[#0a0705]">
-          <label class="text-gray-400 text-xs tracking-widest uppercase block mb-4">Allega Curriculum Vitae (PDF)</label>
-          <input type="file" name="CV_Allegato" accept=".pdf" class="text-white text-xs w-full max-w-xs mx-auto block" />
-        </div>
+      <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 reveal">
         
-        <button type="submit" class="bg-[var(--colorNocciola)] text-black px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors mt-4">Sottoponi Profilo</button>
-      </form>
+        <a href="https://www.google.com/maps/place/?q=place_id:ChIJaaqymLf8ExMRg0ozHPhZGKY" target="_blank" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-10 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)] w-full sm:w-auto text-center">
+          Leggi Tutte le Recensioni
+        </a>
+
+        <a href="https://search.google.com/local/writereview?placeid=ChIJaaqymLf8ExMRg0ozHPhZGKY" target="_blank" class="inline-block bg-white text-black px-10 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-colors shadow-[0_10px_30px_rgba(255,255,255,0.1)] w-full sm:w-auto text-center">
+          Lascia la tua Recensione
+        </a>
+
+      </div>
+
     </div>
   </section>
 
