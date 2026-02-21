@@ -9,7 +9,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
   
   <header class="relative min-h-[95vh] flex items-center justify-center text-center overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-      <img src={ristorante.sfondo_hero_fallback} alt="Sfondo" class="w-full h-full object-cover opacity-60" style="animation: panImage 20s linear infinite alternate; transform: scale(1.1);" />
+      <img src={ristorante.sfondo_hero_fallback} alt="Sfondo" class="w-full h-full object-cover opacity-60" style="animation: panImage 20s linear infinite alternate; transform: scale(1.1);" fetchpriority="high" decoding="sync" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div> 
     </div>
     <div class="relative z-10 px-4 w-full flex flex-col items-center animate-[fadeIn_1.5s_ease-out_forwards]">
@@ -25,7 +25,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
 
   <section id="filosofia" class="relative py-32 px-4 text-center scroll-mt-20 overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.filosofia} alt="Background Filosofia" class="w-full h-full object-cover opacity-10" />
+      <img src={sfondi_sezioni.filosofia} alt="Background Filosofia" class="w-full h-full object-cover opacity-10" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-[#0a0705] via-transparent to-[#0e0a08]"></div>
     </div>
     <div class="relative z-10 max-w-5xl mx-auto reveal">
@@ -39,7 +39,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
 
   <section class="py-32 relative border-y border-white/5 overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.vetrina_piatti} alt="Background Vetrina" class="w-full h-full object-cover opacity-[0.05]" />
+      <img src={sfondi_sezioni.vetrina_piatti} alt="Background Vetrina" class="w-full h-full object-cover opacity-[0.05]" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-[#0e0a08]/90"></div>
     </div>
     
@@ -52,7 +52,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
           <div class="group bg-[#15100d] rounded-sm overflow-hidden border border-white/5 shadow-2xl relative text-left reveal hover:border-[var(--colorNocciola)]/50 transition-colors">
             <div class="h-[250px] overflow-hidden relative border-b border-white/5">
               <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-              <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" />
+              <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" decoding="async" />
             </div>
             <div class="p-6">
               <div class="flex justify-between items-start mb-2 gap-2">
@@ -73,7 +73,7 @@ const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetr
 
   <section id="dove-siamo" class="relative py-32 bg-black overflow-hidden reveal">
     <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.mappa} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" />
+      <img src={sfondi_sezioni.mappa} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
     </div>
     <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16">
