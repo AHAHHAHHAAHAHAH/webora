@@ -1,80 +1,108 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { menu, sfondi_sezioni } = siteData as any;
+const sfondo = siteData.sfondi_sezioni.recensioni;
 ---
 
 <LayoutMaster>
   
-  <header class="relative pt-48 pb-32 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
+  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-      <img 
-        src={sfondi_sezioni.vetrina_piatti} 
-        alt="Sfondo Trattoria" 
-        class="w-full h-full object-cover opacity-20 blur-[1px]" 
-        fetchpriority="high" 
-        decoding="sync" 
-      />
+      <img src={sfondo} alt="Sfondo Menu" class="w-full h-full object-cover opacity-20 blur-[1px]" />
       <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/60 to-transparent"></div>
     </div>
-    
     <div class="relative z-10 px-4 reveal">
-      <h1 class="text-5xl md:text-7xl font-bold text-[var(--colorNocciola)] mb-6 tracking-widest font-elegante uppercase drop-shadow-2xl">
-        Il Rituale
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-4 tracking-widest font-elegante uppercase drop-shadow-xl">
+        Il Menù
       </h1>
-      <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8 shadow-[0_0_10px_rgba(139,24,24,0.8)]"></div>
-      <p class="text-gray-300 text-sm md:text-base font-light tracking-widest uppercase max-w-2xl leading-relaxed drop-shadow-md">
-        Esplora le nostre tentazioni. Dalle frollature estreme ai peccati di gola finali.
+      <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
+      <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
+        Lasciati ispirare dalle nostre creazioni.
       </p>
     </div>
   </header>
 
-  <main class="py-24 relative bg-[#0a0705]">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 relative z-10">
-      
-      <div class="space-y-32">
-        {menu.map((sezione: any) => (
-          <div class="reveal">
-            <div class="flex items-center justify-center mb-16 gap-6">
-              <div class="h-px bg-white/10 w-full max-w-[80px] md:max-w-[150px]"></div>
-              <h3 class="text-3xl md:text-4xl font-bold text-white tracking-[0.2em] uppercase font-elegante text-center">
-                {sezione.categoria}
-              </h3>
-              <div class="h-px bg-white/10 w-full max-w-[80px] md:max-w-[150px]"></div>
+  <section class="py-16 bg-[#0a0705] min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 lg:px-8">
+
+      <div class="flex overflow-x-auto pb-4 mb-12 hide-scrollbar gap-4 snap-x reveal">
+        <a href="#colazione" class="snap-start shrink-0 border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-6 py-2 text-xs font-bold uppercase tracking-widest hover:bg-[var(--colorNocciola)] hover:text-black transition-colors rounded-full">Colazione</a>
+        <a href="#tavola-calda" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Tavola Calda</a>
+        <a href="#pasticceria" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Pasticceria</a>
+        <a href="#drink" class="snap-start shrink-0 border border-white/20 text-white px-6 py-2 text-xs font-bold uppercase tracking-widest hover:border-white transition-colors rounded-full">Drink & Vini</a>
+      </div>
+
+      <div id="colazione" class="mb-16 reveal scroll-mt-24">
+        <h2 class="text-2xl text-[var(--colorNocciola)] font-elegante uppercase tracking-widest border-b border-white/10 pb-4 mb-8">Colazione & Caffetteria</h2>
+        
+        <div class="flex flex-col gap-6">
+          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+            <div class="pr-4">
+              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Espresso 100% Arabica</h3>
+              <p class="text-gray-500 text-xs mt-1 font-light">Miscela selezionata, tostatura artigianale.</p>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {sezione.piatti.map((piatto: any) => (
-                <div class="flex flex-col sm:flex-row bg-[#15100d] border border-white/5 rounded-sm overflow-hidden group hover:border-[var(--colorNocciola)]/30 transition-all duration-500 shadow-xl">
-                  
-                  <div class="w-full sm:w-2/5 h-[220px] sm:h-auto relative overflow-hidden border-b sm:border-b-0 sm:border-r border-white/5">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-                    <img 
-                      src={piatto.immagine} 
-                      alt={piatto.nome} 
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
-                      loading="lazy" 
-                      decoding="async" 
-                    />
-                  </div>
-                  
-                  <div class="w-full sm:w-3/5 p-6 md:p-8 flex flex-col justify-center bg-[#15100d]">
-                    <div class="flex justify-between items-start mb-3 border-b border-white/5 pb-3 gap-2">
-                      <h4 class="text-lg md:text-xl font-bold text-white font-elegante tracking-wide uppercase">{piatto.nome}</h4>
-                      <span class="text-xl font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed font-light">{piatto.descrizione}</p>
-                  </div>
-
-                </div>
-              ))}
-            </div>
-
+            <span class="text-[var(--colorNocciola)] font-bold">€ 1.50</span>
           </div>
-        ))}
+
+          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+            <div class="pr-4">
+              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cornetto Farcito</h3>
+              <p class="text-gray-500 text-xs mt-1 font-light">Crema, cioccolato, pistacchio o marmellata.</p>
+            </div>
+            <span class="text-[var(--colorNocciola)] font-bold">€ 2.00</span>
+          </div>
+          
+          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+            <div class="pr-4">
+              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Granita Siciliana & Brioche</h3>
+              <p class="text-gray-500 text-xs mt-1 font-light">Mandorla, limone, pistacchio, cioccolato. Con brioche col tuppo.</p>
+            </div>
+            <span class="text-[var(--colorNocciola)] font-bold">€ 4.50</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="tavola-calda" class="mb-16 reveal scroll-mt-24">
+        <h2 class="text-2xl text-[var(--colorNocciola)] font-elegante uppercase tracking-widest border-b border-white/10 pb-4 mb-8">Tavola Calda</h2>
+        
+        <div class="flex flex-col gap-6">
+          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+            <div class="pr-4">
+              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Arancino al Ragù</h3>
+              <p class="text-gray-500 text-xs mt-1 font-light">Riso carnaroli, ragù di scottona, piselli, caciocavallo.</p>
+            </div>
+            <span class="text-[var(--colorNocciola)] font-bold">€ 3.00</span>
+          </div>
+
+          <div class="flex justify-between items-baseline border-b border-white/5 pb-4">
+            <div class="pr-4">
+              <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cartocciata Catanese</h3>
+              <p class="text-gray-500 text-xs mt-1 font-light">Prosciutto cotto, mozzarella, pomodoro, olive.</p>
+            </div>
+            <span class="text-[var(--colorNocciola)] font-bold">€ 2.50</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center reveal">
+        <p class="text-gray-400 text-xs tracking-widest uppercase mb-4">Preferisci il menù classico?</p>
+        <a href="/menu.pdf" target="_blank" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-8 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-colors">
+          Scarica il Menu in PDF
+        </a>
       </div>
 
     </div>
-  </main>
+  </section>
 
 </LayoutMaster>
+
+<style>
+  /* Nasconde la scrollbar brutta dai bottoncini in alto su mobile */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
