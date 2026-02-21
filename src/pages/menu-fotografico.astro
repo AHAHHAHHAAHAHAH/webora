@@ -1,0 +1,130 @@
+---
+import LayoutMaster from '../layouts/LayoutMaster.astro';
+import siteData from '../data.json';
+const sfondo =  siteData.sfondi_sezioni.recensioni;
+---
+
+<LayoutMaster>
+  
+  <header class="relative pt-48 pb-32 flex flex-col items-center justify-center text-center border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-black">
+      <img src={sfondo} alt="Sfondo Menu Fotografico" class="w-full h-full object-cover opacity-20 blur-[1px]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/60 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-4 reveal">
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--colorNocciola)] mb-4 tracking-widest font-elegante uppercase drop-shadow-xl">
+        L'Esperienza Visiva
+      </h1>
+      <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
+      <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
+        I nostri capolavori, prima per gli occhi e poi per il palato.
+      </p>
+    </div>
+  </header>
+
+  <section class="py-20 bg-[#0a0705] min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+
+      <div class="mb-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl text-white font-elegante uppercase tracking-widest mb-4">Colazione & Caffetteria</h2>
+          <div class="w-12 h-px bg-[var(--colorNocciola)] mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="bg-[#120d0b] border border-white/5 rounded-sm overflow-hidden group shadow-2xl">
+            <div class="h-64 overflow-hidden relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+              <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Espresso" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-white font-bold tracking-wider uppercase text-sm">Espresso 100% Arabica</h3>
+                <span class="text-[var(--colorNocciola)] font-bold">€ 1.50</span>
+              </div>
+              <p class="text-gray-500 text-xs font-light leading-relaxed">Miscela selezionata, tostatura artigianale. L'aroma intenso per iniziare la giornata.</p>
+            </div>
+          </div>
+
+          <div class="bg-[#120d0b] border border-white/5 rounded-sm overflow-hidden group shadow-2xl">
+            <div class="h-64 overflow-hidden relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800&auto=format&fit=crop" alt="Cornetto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cornetto Farcito</h3>
+                <span class="text-[var(--colorNocciola)] font-bold">€ 2.00</span>
+              </div>
+              <p class="text-gray-500 text-xs font-light leading-relaxed">Sfornato caldo ogni mattina. Disponibile con crema, cioccolato, pistacchio o marmellata.</p>
+            </div>
+          </div>
+
+          <div class="bg-[#120d0b] border border-white/5 rounded-sm overflow-hidden group shadow-2xl">
+            <div class="h-64 overflow-hidden relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+              <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?q=80&w=800&auto=format&fit=crop" alt="Granita e Brioche" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-white font-bold tracking-wider uppercase text-sm">Granita & Brioche</h3>
+                <span class="text-[var(--colorNocciola)] font-bold">€ 4.50</span>
+              </div>
+              <p class="text-gray-500 text-xs font-light leading-relaxed">La vera tradizione siciliana. Mandorla, limone, pistacchio o cioccolato, accompagnata da brioche col tuppo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl text-white font-elegante uppercase tracking-widest mb-4">Tavola Calda</h2>
+          <div class="w-12 h-px bg-[var(--colorNocciola)] mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <div class="bg-[#120d0b] border border-white/5 rounded-sm overflow-hidden group shadow-2xl">
+            <div class="h-72 overflow-hidden relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+              <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800&auto=format&fit=crop" alt="Arancino" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-white font-bold tracking-wider uppercase text-sm">Arancino al Ragù</h3>
+                <span class="text-[var(--colorNocciola)] font-bold">€ 3.00</span>
+              </div>
+              <p class="text-gray-500 text-xs font-light leading-relaxed">Il Re dello street food. Riso carnaroli, cuore di ragù di scottona, piselli e caciocavallo filante.</p>
+            </div>
+          </div>
+
+          <div class="bg-[#120d0b] border border-white/5 rounded-sm overflow-hidden group shadow-2xl">
+            <div class="h-72 overflow-hidden relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+              <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=800&auto=format&fit=crop" alt="Cartocciata" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-white font-bold tracking-wider uppercase text-sm">Cartocciata Catanese</h3>
+                <span class="text-[var(--colorNocciola)] font-bold">€ 2.50</span>
+              </div>
+              <p class="text-gray-500 text-xs font-light leading-relaxed">Morbido impasto da rosticceria farcito con prosciutto cotto, mozzarella fior di latte, salsa di pomodoro e olive.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-20 text-center reveal border-t border-white/5 pt-12">
+        <p class="text-gray-400 text-xs tracking-widest uppercase mb-4">Pronto per ordinare?</p>
+        <a href="/menu" class="inline-block bg-white text-black px-10 py-4 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_10px_30px_rgba(255,255,255,0.1)]">
+          Torna al Menù Rapido
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</LayoutMaster>
