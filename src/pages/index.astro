@@ -1,98 +1,82 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const { ristorante, menu, mappa, sfondi_sezioni } = siteData as any;
-const piattiFirma = menu.map((cat: any) => cat.piatti.find((p: any) => p.in_vetrina)).filter(Boolean);
+const heroBg = siteData.sfondi_sezioni.recensioni; 
 ---
 
 <LayoutMaster>
   
-  <header class="relative min-h-[95vh] flex items-center justify-center text-center overflow-hidden">
+  <section class="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-      <img src={ristorante.sfondo_hero_fallback} alt="Sfondo" class="w-full h-full object-cover opacity-60" style="animation: panImage 20s linear infinite alternate; transform: scale(1.1);" fetchpriority="high" decoding="sync" />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div> 
-    </div>
-    <div class="relative z-10 px-4 w-full flex flex-col items-center animate-[fadeIn_1.5s_ease-out_forwards]">
-      <img src={ristorante.logo_url} alt="Logo" class="h-24 w-24 md:h-36 md:w-36 mb-8 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]" onerror="this.style.display='none'" />
-      <h1 class="text-6xl sm:text-7xl md:text-[8rem] font-bold text-white mb-6 tracking-wider font-elegante drop-shadow-2xl leading-none uppercase">
-        {ristorante.nome}
-      </h1>
-      <p class="text-xs md:text-sm text-gray-300 font-light tracking-[0.3em] uppercase max-w-2xl leading-loose drop-shadow-md">
-        {ristorante.slogan}
-      </p>
-    </div>
-  </header>
-
-  <section id="filosofia" class="relative py-32 px-4 text-center scroll-mt-20 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.filosofia} alt="Background Filosofia" class="w-full h-full object-cover opacity-10" loading="lazy" decoding="async" />
-      <div class="absolute inset-0 bg-gradient-to-b from-[#0a0705] via-transparent to-[#0e0a08]"></div>
-    </div>
-    <div class="relative z-10 max-w-5xl mx-auto reveal">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-widest font-elegante uppercase">La Genesi</h2>
-      <div class="w-16 h-1 bg-[var(--colorRosso)] mx-auto mb-10 shadow-[0_0_10px_rgba(139,24,24,0.8)]"></div>
-      <p class="text-lg md:text-2xl text-gray-400 font-light leading-relaxed font-elegante italic">
-        "{ristorante.chi_siamo}"
-      </p>
-    </div>
-  </section>
-
-  <section class="py-32 relative border-y border-white/5 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.vetrina_piatti} alt="Background Vetrina" class="w-full h-full object-cover opacity-[0.05]" loading="lazy" decoding="async" />
-      <div class="absolute inset-0 bg-[#0e0a08]/90"></div>
+      <img src={heroBg} alt="Interno Caffè Europa" class="w-full h-full object-cover opacity-30 scale-105 origin-center animate-[pulse_10s_ease-in-out_infinite]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0705]/40 to-[#0a0705]"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 text-center">
-      <h2 class="text-5xl font-bold text-white tracking-widest uppercase font-elegante mb-4 reveal">I Piatti Firma</h2>
-      <p class="text-[var(--colorNocciola)] tracking-[0.2em] text-sm uppercase mb-16 reveal">Un assaggio della nostra eccellenza</p>
+    <div class="relative z-10 px-4 flex flex-col items-center mt-20">
+      <p class="text-[var(--colorNocciola)] tracking-[0.4em] uppercase text-xs md:text-sm mb-4 font-bold drop-shadow-lg">Dal 1960</p>
+      <h1 class="text-6xl md:text-8xl md:text-[100px] font-bold text-white mb-6 tracking-widest font-elegante uppercase drop-shadow-2xl">
+        Caffè Europa
+      </h1>
+      <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8"></div>
+      <p class="text-gray-300 text-sm md:text-lg font-light tracking-widest uppercase max-w-2xl leading-relaxed mb-12 drop-shadow-md">
+        Il Salotto di Catania. L'arte della pasticceria, la cultura del caffè e l'eccellenza della tavola calda.
+      </p>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {piattiFirma.map((piatto: any) => (
-          <div class="group bg-[#15100d] rounded-sm overflow-hidden border border-white/5 shadow-2xl relative text-left reveal hover:border-[var(--colorNocciola)]/50 transition-colors">
-            <div class="h-[250px] overflow-hidden relative border-b border-white/5">
-              <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-              <img src={piatto.immagine} alt={piatto.nome} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" decoding="async" />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-2 gap-2">
-                <h4 class="text-lg font-bold text-white font-elegante tracking-wide uppercase truncate">{piatto.nome}</h4>
-                <span class="text-lg font-bold text-[var(--colorRosso)] font-elegante">{piatto.prezzo}</span>
-              </div>
-              <p class="text-gray-400 text-sm leading-relaxed font-light line-clamp-2">{piatto.descrizione}</p>
-            </div>
-          </div>
-        ))}
+      <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+        <a href="/riserva" class="inline-block bg-[var(--colorNocciola)] text-black px-12 py-5 font-bold tracking-widest uppercase text-xs hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
+          Prenota un Tavolo
+        </a>
+        <a href="/menu-fotografico" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-12 py-5 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-all duration-300 backdrop-blur-sm bg-black/20">
+          Sfoglia il Menù
+        </a>
       </div>
-      
-      <a href="/menu" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-10 py-4 uppercase tracking-widest text-sm hover:bg-[var(--colorNocciola)] hover:text-black transition-all duration-300 reveal shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-        Esplora l'Intero Menù
-      </a>
     </div>
   </section>
 
-  <section id="dove-siamo" class="relative py-32 bg-black overflow-hidden reveal">
-    <div class="absolute inset-0 z-0">
-      <img src={sfondi_sezioni.mappa} alt="Mappa Ristorante" class="w-full h-full object-cover opacity-30 grayscale blur-[2px]" loading="lazy" decoding="async" />
-      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-16">
-      <div class="w-full lg:w-1/2 bg-[#120d0b]/90 backdrop-blur-xl border border-white/10 p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.8)] rounded-sm">
-        <h2 class="text-4xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-elegante mb-6">Le Tue Coordinate</h2>
-        <div class="w-16 h-px bg-[var(--colorRosso)] mb-8"></div>
-        <p class="text-white text-lg font-light leading-relaxed mb-4">{ristorante.indirizzo}</p>
-        <p class="text-gray-400 text-sm font-light italic leading-loose mb-10">{mappa.indicazioni}</p>
-        <a href={mappa.link_google} target="_blank" class="group flex items-center justify-center gap-4 w-full bg-white text-black py-5 uppercase font-bold tracking-widest text-xs hover:bg-[var(--colorNocciola)] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-          <svg class="w-6 h-6 transform group-hover:-translate-y-1 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Apri in Google Maps
-        </a>
+  <section class="bg-[var(--colorNocciola)] py-5 text-center">
+    <a href="/menu" class="text-black font-bold uppercase tracking-widest text-[10px] md:text-xs hover:text-white transition-colors flex items-center justify-center gap-3">
+      <span>Sei seduto al tavolo? Clicca qui per il Menu Rapido e Ordina</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+  </section>
+
+  <section class="py-24 bg-[#0a0705]">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-3xl text-white font-elegante uppercase tracking-widest mb-4">L'Esperienza</h2>
+        <div class="w-12 h-px bg-[var(--colorNocciola)] mx-auto"></div>
       </div>
-      <div class="hidden lg:flex w-1/2 justify-center items-center">
-        <div class="relative flex items-center justify-center">
-          <div class="absolute w-40 h-40 bg-[var(--colorNocciola)]/20 rounded-full animate-ping"></div>
-          <div class="absolute w-24 h-24 bg-[var(--colorNocciola)]/40 rounded-full animate-pulse"></div>
-          <div class="relative z-10 w-8 h-8 bg-[var(--colorNocciola)] rounded-full border-4 border-black shadow-[0_0_30px_rgba(212,175,55,1)]"></div>
-        </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+        
+        <a href="/menu-fotografico" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Caffè e Pasticceria" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
+            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Le Creazioni</h3>
+            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Esplora i Piatti</p>
+          </div>
+        </a>
+        
+        <a href="/riserva" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Ristorante" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
+            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Riserva & Delivery</h3>
+            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Prenota Subito</p>
+          </div>
+        </a>
+        
+        <a href="/dicono-di-noi" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop" alt="Recensioni Clienti" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
+            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Dicono di Noi</h3>
+            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Leggi le Opinioni</p>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
