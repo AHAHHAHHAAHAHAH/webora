@@ -6,41 +6,41 @@ const { prenotazioni } = siteData;
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-24 flex flex-col items-center justify-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5">
+  <header class="relative pt-32 pb-16 flex flex-col items-center justify-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5">
     <div class="relative z-10 px-6 reveal max-w-3xl">
-      <h1 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] mb-6 font-serif-luxury">
+      <h1 class="text-3xl md:text-5xl font-bold text-[var(--text-main)] mb-4 font-serif-luxury">
         {prenotazioni.titolo_pagina}
       </h1>
-      <p class="text-[var(--text-muted)] text-base md:text-lg font-light leading-relaxed">
+      <p class="text-[var(--text-muted)] text-sm md:text-base font-light leading-relaxed">
         {prenotazioni.sottotitolo_pagina}
       </p>
     </div>
   </header>
 
-  <section class="py-20 bg-[var(--bg)] min-h-screen">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 reveal">
+  <section class="py-16 bg-[var(--bg)] min-h-screen">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 reveal">
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <div class="bg-[var(--card)] p-10 flex flex-col items-center text-center rounded-3xl shadow-lg border border-[var(--text-main)]/5 relative overflow-hidden">
-          <div class="w-16 h-16 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        <div class="bg-[var(--card)] p-8 flex flex-col items-center text-center rounded-3xl shadow-lg border border-[var(--text-main)]/5 relative overflow-hidden">
+          <div class="w-14 h-14 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
           </div>
-          <h2 class="text-2xl font-bold text-[var(--text-main)] font-serif-luxury mb-4">{prenotazioni.blocco_1_sede.titolo}</h2>
-          <p class="text-[var(--text-muted)] font-light leading-relaxed mb-8">{prenotazioni.blocco_1_sede.descrizione}</p>
+          <h2 class="text-xl font-bold text-[var(--text-main)] font-serif-luxury mb-3">{prenotazioni.blocco_1_sede.titolo}</h2>
+          <p class="text-[var(--text-muted)] text-sm font-light leading-relaxed mb-6">{prenotazioni.blocco_1_sede.descrizione}</p>
           <a href={prenotazioni.blocco_1_sede.link_azione} target="_blank" class="mt-auto btn-primary w-full">
             {prenotazioni.blocco_1_sede.testo_bottone}
           </a>
         </div>
 
-        <div class="bg-[var(--card)] p-10 flex flex-col items-center text-center rounded-3xl shadow-lg border border-[var(--text-main)]/5 relative overflow-hidden">
-          <div class="w-16 h-16 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+        <div class="bg-[var(--card)] p-8 flex flex-col items-center text-center rounded-3xl shadow-lg border border-[var(--text-main)]/5 relative overflow-hidden">
+          <div class="w-14 h-14 bg-[var(--primary)]/10 rounded-full flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
           </div>
-          <h2 class="text-2xl font-bold text-[var(--text-main)] font-serif-luxury mb-4">{prenotazioni.blocco_2_domicilio.titolo}</h2>
-          <p class="text-[var(--text-muted)] font-light leading-relaxed mb-8">{prenotazioni.blocco_2_domicilio.descrizione}</p>
+          <h2 class="text-xl font-bold text-[var(--text-main)] font-serif-luxury mb-3">{prenotazioni.blocco_2_domicilio.titolo}</h2>
+          <p class="text-[var(--text-muted)] text-sm font-light leading-relaxed mb-6">{prenotazioni.blocco_2_domicilio.descrizione}</p>
           
-          <div class="flex flex-col w-full gap-4 mt-auto">
+          <div class="flex flex-col w-full gap-3 mt-auto">
             <a href={prenotazioni.blocco_2_domicilio.link_azione_diretta} target="_blank" class="btn-primary w-full">
               {prenotazioni.blocco_2_domicilio.testo_bottone_diretto}
             </a>

@@ -17,7 +17,7 @@
   },
 
   "orari_apertura": {
-    "titolo_sezione": "I Nostri Orari",
+    "titolo_sezione": "Orari",
     "lunedi": "Chiuso",
     "martedi": "07:00 - 22:00",
     "mercoledi": "07:00 - 22:00",
@@ -63,7 +63,7 @@
       { "testo": "Prenota un Tavolo", "url": "/riserva" }
     ],
     "banner_tattico": {
-      "attivo": true,
+      "attivo":true,
       "testo": "✨ Scopri le novità della nostra tavola calda! Clicca qui",
       "url": "/menu"
     },
@@ -74,17 +74,17 @@
     ]
   },
 
- "catalogo": {
+  "catalogo": {
     "impostazioni_pagina": {
       "mostra_barra_pagamento": true
     },
     "sfondo_header": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000",
-    "titolo_pagina": "Il Nostro Listino",
-    "sottotitolo_pagina": "Esplora le nostre categorie e lasciati ispirare.",
+    "titolo_pagina": "Il Nostro Menù",
+    "sottotitolo_pagina": "Sfoglia le categorie e scopri i nostri sapori autentici.",
     "barra_software_esterno": {
       "attiva": true,
       "testo_domanda": "Hai già scelto?",
-      "testo_sottotitolo": "Acquista direttamente dal tuo smartphone in pochi clic.",
+      "testo_sottotitolo": "Acquista dal tuo smartphone.",
       "testo_bottone": "Ordina & Paga Ora",
       "link_software": "https://pay.sundayapp.com/caffe-europa"
     },
@@ -93,45 +93,55 @@
         "nome_categoria": "Colazione & Caffetteria",
         "elementi": [
           { "titolo": "Espresso 100% Arabica", "descrizione": "Miscela selezionata, tostatura artigianale.", "prezzo": "€ 1.50", "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800" },
-          { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato, pistacchio o marmellata. Lievitazione naturale.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" }
+          { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato o pistacchio.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" },
+          { "titolo": "Cappuccino Classico", "descrizione": "Latte intero montato a regola d'arte e caffè espresso.", "prezzo": "€ 2.50", "immagine": "https://images.unsplash.com/photo-1534685145391-92b4fa267568?q=80&w=800" },
+          { "titolo": "Spremuta d'Arancia", "descrizione": "Arance rosse di Sicilia spremute al momento.", "prezzo": "€ 3.50", "immagine": "" }
         ]
       },
       {
         "nome_categoria": "Antipasti & Sfizi",
         "elementi": [
-          { "titolo": "Tagliere del Salotto", "descrizione": "Selezione di salumi e formaggi DOP siciliani con confetture artigianali.", "prezzo": "€ 18.00", "immagine": "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=800" },
-          { "titolo": "Caponata di Melanzane", "descrizione": "Ricetta tradizionale siracusana con melanzane, sedano, capperi e olive.", "prezzo": "€ 9.00", "immagine": "https://images.unsplash.com/photo-1594991225010-0937a346538c?q=80&w=800" }
+          { "titolo": "Tagliere del Salotto", "descrizione": "Salumi e formaggi DOP siciliani con confetture.", "prezzo": "€ 18.00", "immagine": "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=800" },
+          { "titolo": "Caponata di Melanzane", "descrizione": "Ricetta tradizionale siracusana con olive e capperi.", "prezzo": "€ 9.00", "immagine": "https://images.unsplash.com/photo-1594991225010-0937a346538c?q=80&w=800" },
+          { "titolo": "Arancinetti Misti", "descrizione": "Piccoli arancini al ragù, al burro e alla norma.", "prezzo": "€ 8.00", "immagine": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800" }
         ]
       },
       {
         "nome_categoria": "I Primi Piatti",
         "elementi": [
-          { "titolo": "Pasta alla Norma", "descrizione": "Maccheroni con salsa di pomodoro fresco, melanzane fritte, ricotta salata e basilico.", "prezzo": "€ 12.00", "immagine": "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800" },
-          { "titolo": "Risotto ai Frutti di Mare", "descrizione": "Riso Carnaroli sfumato al vino bianco con cozze, vongole, calamari e gamberi.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=800" }
+          { "titolo": "Pasta alla Norma", "descrizione": "Salsa di pomodoro, melanzane fritte, ricotta salata e basilico.", "prezzo": "€ 12.00", "immagine": "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800" },
+          { "titolo": "Risotto ai Frutti di Mare", "descrizione": "Riso Carnaroli con cozze, vongole, calamari e gamberi.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=800" },
+          { "titolo": "Spaghetti alle Vongole", "descrizione": "Aglio, olio, peperoncino, prezzemolo e vongole veraci.", "prezzo": "€ 15.00", "immagine": "" }
         ]
       },
       {
         "nome_categoria": "I Secondi Piatti",
         "elementi": [
-          { "titolo": "Involtini di Pesce Spada", "descrizione": "Ripieni di mollica, pinoli, uvetta e profumo di limone verdello.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800" }
+          { "titolo": "Involtini di Pesce Spada", "descrizione": "Ripieni di mollica, pinoli, uvetta e profumo di limone.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800" },
+          { "titolo": "Frittura Mista", "descrizione": "Calamari, gamberi e paranza pescata in giornata.", "prezzo": "€ 18.00", "immagine": "" },
+          { "titolo": "Tagliata di Scottona", "descrizione": "Con rucola, scaglie di grana e pomodorini pachino.", "prezzo": "€ 22.00", "immagine": "" }
         ]
       },
       {
-        "nome_categoria": "I Nostri Dessert",
+        "nome_categoria": "Dessert & Pasticceria",
         "elementi": [
-          { "titolo": "Cannolo Siciliano", "descrizione": "Cialda croccante ripiena di ricotta di pecora fresca e granella di pistacchio.", "prezzo": "€ 4.00", "immagine": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800" },
-          { "titolo": "Tiramisù al Pistacchio", "descrizione": "Crema al mascarpone arricchita con pasta pura di pistacchio di Bronte DOP.", "prezzo": "€ 6.00", "immagine": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800" }
+          { "titolo": "Cannolo Siciliano", "descrizione": "Ricotta di pecora fresca e granella di pistacchio.", "prezzo": "€ 4.00", "immagine": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800" },
+          { "titolo": "Tiramisù al Pistacchio", "descrizione": "Crema al mascarpone con pasta di pistacchio di Bronte.", "prezzo": "€ 6.00", "immagine": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800" },
+          { "titolo": "Cassatina Siciliana", "descrizione": "Pan di spagna, ricotta e glassa di zucchero fondente.", "prezzo": "€ 5.00", "immagine": "" },
+          { "titolo": "Sorbetto al Limone", "descrizione": "Freschissimo, con limoni di Siracusa IGP.", "prezzo": "€ 4.00", "immagine": "" }
         ]
       },
       {
         "nome_categoria": "Cantina & Bevande",
         "elementi": [
-          { "titolo": "Calice di Etna Rosso DOC", "descrizione": "Corposo e vellutato, con sentori di frutti rossi e spezie.", "prezzo": "€ 7.00", "immagine": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800" },
-          { "titolo": "Acqua Minerale 75cl", "descrizione": "Naturale o Frizzante in bottiglia di vetro.", "prezzo": "€ 2.50", "immagine": "" }
+          { "titolo": "Calice Etna Rosso DOC", "descrizione": "Corposo e vellutato.", "prezzo": "€ 7.00", "immagine": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800" },
+          { "titolo": "Birra Artigianale 33cl", "descrizione": "Bionda, Rossa o Ipa prodotta localmente.", "prezzo": "€ 6.00", "immagine": "" },
+          { "titolo": "Acqua Naturale/Frizzante", "descrizione": "Bottiglia di vetro da 75cl.", "prezzo": "€ 2.50", "immagine": "" }
         ]
       }
     ]
   },
+
   "prenotazioni": {
     "sfondo_header": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000",
     "titolo_pagina": "Riserva & Ordina",
@@ -175,4 +185,4 @@
     "qr_1": { "titolo": "Vetrina & Social", "uso": "Porte, Volantini", "spiegazione": "Manda i clienti alla Home Page.", "url_aggiuntivo": "" },
     "qr_2": { "titolo": "Menù da Tavolo", "uso": "Segnaposti", "spiegazione": "Manda direttamente al Menù Digitale.", "url_aggiuntivo": "/menu" }
   }
-} 
+}

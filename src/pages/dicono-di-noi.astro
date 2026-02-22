@@ -6,31 +6,31 @@ const { recensioni_pagina, integrazioni_esterne_API } = siteData;
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-24 flex flex-col items-center justify-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5">
+  <header class="relative pt-32 pb-16 flex flex-col items-center justify-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5">
     <div class="relative z-10 px-6 reveal max-w-3xl">
-      <h1 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] mb-6 font-serif-luxury">
+      <h1 class="text-3xl md:text-5xl font-bold text-[var(--text-main)] mb-4 font-serif-luxury">
         {recensioni_pagina.titolo_pagina}
       </h1>
-      <p class="text-[var(--text-muted)] text-base md:text-lg font-light leading-relaxed">
+      <p class="text-[var(--text-muted)] text-sm md:text-base font-light leading-relaxed">
         {recensioni_pagina.sottotitolo_pagina}
       </p>
     </div>
   </header>
 
-  <section class="py-20 bg-[var(--bg)] min-h-screen">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="py-16 bg-[var(--bg)] min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       
-      <div class="flex flex-col lg:flex-row gap-12 items-start">
-        <div class="w-full lg:w-1/3 text-center lg:text-left reveal bg-[var(--card)] p-8 rounded-3xl shadow-sm border border-[var(--text-main)]/5">
-          <h2 class="text-3xl font-bold text-[var(--text-main)] font-serif-luxury mb-4">{recensioni_pagina.titolo_sezione}</h2>
-          <p class="text-[var(--text-muted)] font-light leading-relaxed mb-8">{recensioni_pagina.descrizione_sezione}</p>
-          <div class="flex flex-col gap-4">
+      <div class="flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-full lg:w-1/3 text-center lg:text-left reveal bg-[var(--card)] p-6 md:p-8 rounded-3xl shadow-sm border border-[var(--text-main)]/5">
+          <h2 class="text-2xl font-bold text-[var(--text-main)] font-serif-luxury mb-3">{recensioni_pagina.titolo_sezione}</h2>
+          <p class="text-[var(--text-muted)] text-sm font-light leading-relaxed mb-6">{recensioni_pagina.descrizione_sezione}</p>
+          <div class="flex flex-col gap-3">
             <a href={recensioni_pagina.bottone_leggi_tutte.url} target="_blank" class="btn-primary w-full">{recensioni_pagina.bottone_leggi_tutte.testo}</a>
             <a href={recensioni_pagina.bottone_scrivi_recensione.url} target="_blank" class="btn-outline w-full">{recensioni_pagina.bottone_scrivi_recensione.testo}</a>
           </div>
         </div>
 
-        <div class="w-full lg:w-2/3 reveal bg-[var(--card)] p-8 rounded-3xl shadow-md border border-[var(--text-main)]/5 min-h-[300px]">
+        <div class="w-full lg:w-2/3 reveal bg-[var(--card)] p-6 md:p-8 rounded-3xl shadow-md border border-[var(--text-main)]/5 min-h-[300px]">
           <Fragment set:html={integrazioni_esterne_API.script_recensioni_google} />
         </div>
       </div>

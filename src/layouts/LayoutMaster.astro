@@ -35,7 +35,7 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
       }
       .font-serif-luxury { font-family: 'Playfair Display', serif; }
       
-      .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+      .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
       .reveal.active { opacity: 1; transform: translateY(0); }
       
       .glass-nav { 
@@ -45,60 +45,58 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
       }
       
       /* =========================================
-         BOTTONI 3D GLOBALI (ORA FUNZIONANO OVUNQUE)
+         BOTTONI 3D (RIDOTTI DEL ~13%)
          ========================================= */
       .btn-primary { 
         background-color: var(--primary); 
         background-image: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.1) 100%);
         color: #000000 !important; 
         border: 1px solid #000000;
-        border-radius: 6px; 
+        border-radius: 5px; 
         font-weight: 800; 
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.8rem; /* Rimasto piccolo */
         transition: all 0.2s ease-in-out; 
-        padding: 1rem 2.5rem; 
+        padding: 0.85rem 2.15rem; /* RIDOTTO DEL 13% (Prima era 1rem 2.5rem) */
         display: inline-flex; 
         align-items: center;
         justify-content: center;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255,255,255,0.4); 
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.4); 
       }
       .btn-primary:hover { 
         background-image: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.05) 100%);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent); 
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 12px color-mix(in srgb, var(--primary) 40%, transparent); 
       }
       .btn-primary:active { 
-        transform: translateY(2px);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9), inset 0 3px 6px rgba(0,0,0,0.4);
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), inset 0 2px 5px rgba(0,0,0,0.4);
       }
       
       .btn-outline { 
         background-color: var(--card);
         border: 2px solid var(--primary); 
         color: var(--primary) !important; 
-        border-radius: 6px; 
+        border-radius: 5px; 
         font-weight: 800; 
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 0.8rem; 
         transition: all 0.2s ease-in-out; 
-        padding: 1rem 2.5rem; 
+        padding: 0.85rem 2.15rem; /* RIDOTTO DEL 13% */
         display: inline-flex; 
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
       }
       .btn-outline:hover { 
         background-color: var(--primary); 
         color: #000000 !important; 
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.6);
       }
-      .btn-outline:active {
-        transform: translateY(2px);
-      }
+      .btn-outline:active { transform: translateY(1px); }
       
       #mobile-menu { transition: transform 0.4s ease-in-out; transform: translateY(-100%); }
       #mobile-menu.open { transform: translateY(0); }
@@ -108,26 +106,26 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
     
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20 md:h-24">
-          <a href="/" class="text-[var(--primary)] text-xl md:text-2xl font-serif-luxury font-bold tracking-widest uppercase z-50 relative drop-shadow-md">
+        <div class="flex justify-between items-center h-16 md:h-20">
+          <a href="/" class="text-[var(--primary)] text-lg md:text-xl font-serif-luxury font-bold tracking-widest uppercase z-50 relative drop-shadow-md">
             {impostazioni_sito.nome_brand}
           </a>
           
-          <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest uppercase text-[var(--text-main)]">
+          <div class="hidden md:flex space-x-6 text-xs font-semibold tracking-widest uppercase text-[var(--text-main)]">
             {navigazione_menu.map((item) => (
               <a href={item.url} class="hover:text-[var(--primary)] transition-colors opacity-90 hover:opacity-100">{item.etichetta}</a>
             ))}
           </div>
 
           <button id="hamburger-btn" class="md:hidden text-[var(--primary)] z-50 relative p-2 focus:outline-none" aria-label="Menu">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"></path></svg>
           </button>
         </div>
       </div>
     </nav>
 
     <div id="mobile-menu" class="fixed inset-0 bg-[var(--bg)] z-40 flex flex-col items-center justify-center h-screen md:hidden">
-        <div class="flex flex-col space-y-8 text-center text-lg font-light tracking-[0.2em] uppercase text-[var(--text-main)]">
+        <div class="flex flex-col space-y-6 text-center text-base font-light tracking-[0.2em] uppercase text-[var(--text-main)]">
             {navigazione_menu.map((item) => (
               <a href={item.url} class="mobile-link hover:text-[var(--primary)] transition-colors">{item.etichetta}</a>
             ))}
@@ -138,58 +136,56 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
       <slot />
     </main>
 
-    <footer class="bg-[var(--card)] pt-20 pb-10 border-t border-[var(--text-main)]/5 relative z-10 mt-auto">
+    <footer class="bg-[var(--card)] pt-12 pb-6 border-t border-[var(--text-main)]/5 relative z-10 mt-auto">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16 text-center md:text-left">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-10 text-left">
           
-          <div class="flex flex-col items-center md:items-start">
-            <h2 class="text-2xl text-[var(--primary)] font-serif-luxury font-bold tracking-widest uppercase mb-4">{impostazioni_sito.nome_brand}</h2>
-            <p class="text-[var(--text-muted)] text-sm leading-relaxed max-w-sm font-light">
+          <div class="flex flex-col col-span-2 md:col-span-1">
+            <h2 class="text-lg text-[var(--primary)] font-serif-luxury font-bold tracking-widest uppercase mb-3">{impostazioni_sito.nome_brand}</h2>
+            <p class="text-[var(--text-muted)] text-xs leading-relaxed max-w-xs font-light">
               {impostazioni_sito.sottotitolo_brand}
             </p>
             {impostazioni_sito.telefono_principale && (
-              <p class="text-[var(--text-main)] text-sm mt-6 font-semibold tracking-widest">
+              <p class="text-[var(--text-main)] text-xs mt-3 font-semibold tracking-widest">
                 T. +{impostazioni_sito.telefono_principale}
               </p>
             )}
           </div>
 
-          <div class="flex flex-col items-center md:items-start md:pl-12">
-            <h3 class="text-[var(--text-main)] text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-[var(--primary)] pb-2 inline-block">Esplora</h3>
-            <div class="flex flex-col gap-3 text-sm font-light text-[var(--text-muted)] tracking-wider">
+          <div class="flex flex-col">
+            <h3 class="text-[var(--text-main)] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border-b border-[var(--primary)] pb-2 inline-block w-fit">Esplora</h3>
+            <div class="flex flex-col gap-2 text-xs font-light text-[var(--text-muted)] tracking-wider">
               {navigazione_menu.map((item) => (
                 <a href={item.url} class="hover:text-[var(--primary)] transition-colors w-fit">{item.etichetta}</a>
               ))}
             </div>
           </div>
 
-          <div class="flex flex-col items-center md:items-start">
-            <h3 class="text-[var(--text-main)] text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-[var(--primary)] pb-2 inline-block">{orari_apertura.titolo_sezione}</h3>
-            <ul class="text-[var(--text-muted)] text-sm font-light space-y-3 w-full max-w-[280px]">
-              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
-                <span class="tracking-wider text-[var(--text-main)]">Lunedì</span> <span>{orari_apertura.lunedi}</span>
+          <div class="flex flex-col">
+            <h3 class="text-[var(--text-main)] text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border-b border-[var(--primary)] pb-2 inline-block w-fit">{orari_apertura.titolo_sezione}</h3>
+            <ul class="text-[var(--text-muted)] text-xs font-light space-y-2 w-full max-w-[200px]">
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-1">
+                <span class="text-[var(--text-main)]">Lun</span> <span>{orari_apertura.lunedi}</span>
               </li>
-              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
-                <span class="tracking-wider text-[var(--text-main)]">Mar - Gio</span> <span>{orari_apertura.martedi}</span>
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-1">
+                <span class="text-[var(--text-main)]">Mar-Gio</span> <span>{orari_apertura.martedi}</span>
               </li>
-              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
-                <span class="tracking-wider text-[var(--text-main)]">Ven - Sab</span> <span>{orari_apertura.venerdi}</span>
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-1">
+                <span class="text-[var(--text-main)]">Ven-Sab</span> <span>{orari_apertura.venerdi}</span>
               </li>
-              <li class="flex justify-between pb-2 text-[var(--primary)] font-medium">
-                <span class="tracking-wider">Domenica</span> <span>{orari_apertura.domenica}</span>
+              <li class="flex justify-between pb-1 text-[var(--primary)] font-medium">
+                <span>Dom</span> <span>{orari_apertura.domenica}</span>
               </li>
             </ul>
           </div>
 
         </div>
 
-        <div class="border-t border-[var(--text-main)]/10 pt-8 flex flex-col items-center">
-          <p class="text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase text-center">
+        <div class="border-t border-[var(--text-main)]/10 pt-5 flex flex-col items-center">
+          <p class="text-[9px] text-[var(--text-muted)] tracking-[0.2em] uppercase text-center">
             &copy; {new Date().getFullYear()} {impostazioni_sito.nome_brand}. Tutti i diritti riservati.
           </p>
         </div>
-
       </div>
     </footer>
 
@@ -204,7 +200,6 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
       }
       window.addEventListener("scroll", reveal);
       reveal();
-
       document.addEventListener('DOMContentLoaded', () => {
         const btn = document.getElementById('hamburger-btn');
         const menu = document.getElementById('mobile-menu');
