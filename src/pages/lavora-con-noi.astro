@@ -6,41 +6,36 @@ const { lavora_con_noi, integrazioni_esterne_API } = siteData;
 
 <LayoutMaster>
   
-  <header class="pt-40 pb-20 flex flex-col items-center text-center border-b border-white/5 bg-black">
-    <div class="px-4 reveal">
-      <h1 class="text-4xl md:text-5xl font-bold text-[var(--colorNocciola)] mb-4 tracking-widest font-elegante uppercase drop-shadow-xl">
-        {lavora_con_noi.titolo_pagina}
-      </h1>
-      <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
-      <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
-        {lavora_con_noi.sottotitolo_pagina}
-      </p>
+  <header class="pt-40 pb-20 flex flex-col items-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5">
+    <div class="px-6 reveal max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-[var(--text-main)] mb-6 font-serif-luxury">{lavora_con_noi.titolo_pagina}</h1>
+      <p class="text-[var(--text-muted)] text-base md:text-lg font-light leading-relaxed">{lavora_con_noi.sottotitolo_pagina}</p>
     </div>
   </header>
 
-  <section class="py-24 bg-[var(--colorSfondo)]">
-    <div class="max-w-3xl mx-auto px-4 lg:px-8 reveal">
-      <div class="bg-[var(--colorCard)] p-8 md:p-12 rounded-sm border border-white/5 shadow-2xl">
+  <section class="py-20 bg-[var(--bg)] min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 reveal">
+      <div class="bg-[var(--card)] p-8 md:p-12 rounded-3xl shadow-lg border border-[var(--text-main)]/5">
         
         <form action={`https://formsubmit.co/${integrazioni_esterne_API.email_ricezione_form}`} method="POST" class="flex flex-col gap-6">
-          <input type="hidden" name="_subject" value="Nuova Candidatura dal Sito Web!">
+          <input type="hidden" name="_subject" value="Nuova Candidatura">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value={siteData.impostazioni_sito.dominio_sito}>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="flex flex-col gap-2">
-              <label class="text-[var(--colorNocciola)] text-[10px] uppercase tracking-widest font-bold">Nome e Cognome</label>
-              <input type="text" name="Nome" required class="bg-black/50 border border-white/10 text-white p-4 focus:outline-none focus:border-[var(--colorNocciola)] transition-colors text-sm" placeholder="Il tuo nome">
+              <label class="text-[var(--text-main)] text-sm font-semibold">Nome e Cognome</label>
+              <input type="text" name="Nome" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all">
             </div>
             <div class="flex flex-col gap-2">
-              <label class="text-[var(--colorNocciola)] text-[10px] uppercase tracking-widest font-bold">Email</label>
-              <input type="email" name="Email" required class="bg-black/50 border border-white/10 text-white p-4 focus:outline-none focus:border-[var(--colorNocciola)] transition-colors text-sm" placeholder="La tua email">
+              <label class="text-[var(--text-main)] text-sm font-semibold">Email</label>
+              <input type="email" name="Email" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all">
             </div>
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-[var(--colorNocciola)] text-[10px] uppercase tracking-widest font-bold">Posizione di Interesse</label>
-            <select name="Ruolo" required class="bg-black/50 border border-white/10 text-white p-4 focus:outline-none focus:border-[var(--colorNocciola)] transition-colors text-sm appearance-none cursor-pointer">
+            <label class="text-[var(--text-main)] text-sm font-semibold">Posizione di Interesse</label>
+            <select name="Ruolo" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all cursor-pointer">
               <option value="" disabled selected>Seleziona un ruolo</option>
               {lavora_con_noi.posizioni_aperte.map((ruolo) => (
                 <option value={ruolo}>{ruolo}</option>
@@ -49,13 +44,11 @@ const { lavora_con_noi, integrazioni_esterne_API } = siteData;
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-[var(--colorNocciola)] text-[10px] uppercase tracking-widest font-bold">Presentazione e Link al CV</label>
-            <textarea name="Messaggio" rows="4" required class="bg-black/50 border border-white/10 text-white p-4 focus:outline-none focus:border-[var(--colorNocciola)] transition-colors text-sm resize-none" placeholder="Inserisci il link al tuo CV (Google Drive, LinkedIn) e raccontaci di te..."></textarea>
+            <label class="text-[var(--text-main)] text-sm font-semibold">Presentazione e Link al CV</label>
+            <textarea name="Messaggio" rows="4" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all resize-none"></textarea>
           </div>
 
-          <button type="submit" class="mt-4 bg-[var(--colorNocciola)] text-black px-10 py-5 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-lg w-full">
-            Invia Candidatura
-          </button>
+          <button type="submit" class="mt-4 btn-primary w-full text-lg">Invia Candidatura</button>
         </form>
 
       </div>

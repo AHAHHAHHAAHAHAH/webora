@@ -6,63 +6,40 @@ const { qr_code_hub, impostazioni_sito } = siteData;
 
 <LayoutMaster>
   
-  <header class="relative pt-40 pb-20 flex flex-col items-center justify-center text-center border-b border-white/5 bg-black hide-on-print">
-    <div class="relative z-10 px-4 reveal">
-      <h1 class="text-4xl md:text-5xl font-bold text-[var(--colorNocciola)] mb-4 tracking-widest font-elegante uppercase">
-        {qr_code_hub.titolo_pagina}
-      </h1>
-      <div class="w-16 h-px bg-[var(--colorRosso)] mx-auto mb-6"></div>
-      <p class="text-gray-300 text-xs md:text-sm font-light tracking-widest uppercase max-w-xl leading-relaxed">
-        {qr_code_hub.sottotitolo_pagina}
-      </p>
+  <header class="pt-40 pb-20 flex flex-col items-center text-center bg-[var(--card)] border-b border-[var(--text-main)]/5 hide-on-print">
+    <div class="px-6 reveal max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6 font-serif-luxury">{qr_code_hub.titolo_pagina}</h1>
+      <p class="text-[var(--text-muted)] text-base font-light leading-relaxed">{qr_code_hub.sottotitolo_pagina}</p>
     </div>
   </header>
 
-  <section class="py-16 bg-[var(--colorSfondo)] min-h-screen">
-    <div class="max-w-5xl mx-auto px-4 lg:px-8">
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+  <section class="py-20 bg-[var(--bg)] min-h-screen">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 reveal">
         
-        <div id="stampa-1" class="bg-[var(--colorCard)] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
-          <div class="sfumatura-decorativa absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorNocciola)] to-transparent opacity-50"></div>
+        <div id="stampa-1" class="bg-[var(--card)] border border-[var(--text-main)]/10 p-10 flex flex-col items-center text-center rounded-3xl shadow-lg relative">
+          <h2 class="text-2xl font-bold text-[var(--text-main)] mb-2 print-text-black">{qr_code_hub.qr_1.titolo}</h2>
+          <span class="bg-[var(--primary)]/10 text-[var(--primary)] px-3 py-1 rounded-full text-xs font-bold uppercase mb-8 print-text-black">{qr_code_hub.qr_1.uso}</span>
           
-          <h2 class="text-2xl font-bold text-white tracking-widest uppercase font-elegante mb-2 print-text-black">{qr_code_hub.qr_1.titolo}</h2>
-          <p class="text-gray-400 text-xs tracking-widest uppercase mb-8 print-text-black">Uso: {qr_code_hub.qr_1.uso}</p>
-          
-          <div class="bg-white p-4 rounded-sm shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-6">
-            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${impostazioni_sito.dominio_sito}${qr_code_hub.qr_1.url_aggiuntivo}`} alt="QR Code 1" class="w-48 h-48 md:w-64 md:h-64" />
+          <div class="bg-white p-4 rounded-2xl shadow-sm mb-6 border border-gray-100 print-border-black">
+            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${impostazioni_sito.dominio_sito}${qr_code_hub.qr_1.url_aggiuntivo}`} alt="QR Code 1" class="w-48 h-48 md:w-56 md:h-56" />
           </div>
-
-          <p class="text-gray-500 text-xs font-light leading-relaxed mb-8 print-text-black">
-            {qr_code_hub.qr_1.spiegazione}
-          </p>
-
-          <button onclick="stampaIsolata('stampa-1')" class="mt-auto hide-on-print bg-white text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] transition-colors shadow-lg">
-            Stampa QR
-          </button>
+          <p class="text-[var(--text-muted)] text-sm font-light mb-8 print-text-black">{qr_code_hub.qr_1.spiegazione}</p>
+          <button onclick="stampaIsolata('stampa-1')" class="mt-auto hide-on-print btn-outline w-full">Stampa QR</button>
         </div>
 
-        <div id="stampa-2" class="bg-[var(--colorCard)] border border-white/5 p-8 flex flex-col items-center text-center rounded-sm shadow-2xl relative">
-          <div class="sfumatura-decorativa absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--colorRosso)] to-transparent opacity-50"></div>
+        <div id="stampa-2" class="bg-[var(--card)] border border-[var(--text-main)]/10 p-10 flex flex-col items-center text-center rounded-3xl shadow-lg relative">
+          <h2 class="text-2xl font-bold text-[var(--text-main)] mb-2 print-text-black">{qr_code_hub.qr_2.titolo}</h2>
+          <span class="bg-[var(--primary)]/10 text-[var(--primary)] px-3 py-1 rounded-full text-xs font-bold uppercase mb-8 print-text-black">{qr_code_hub.qr_2.uso}</span>
           
-          <h2 class="text-2xl font-bold text-[var(--colorNocciola)] tracking-widest uppercase font-elegante mb-2 print-text-black">{qr_code_hub.qr_2.titolo}</h2>
-          <p class="text-[var(--colorNocciola)] text-xs tracking-widest uppercase mb-8 print-text-black">Uso: {qr_code_hub.qr_2.uso}</p>
-          
-          <div class="bg-white p-4 rounded-sm shadow-[0_0_30px_rgba(212,175,55,0.2)] mb-6 border-2 border-[var(--colorNocciola)] print-border-black">
-            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${impostazioni_sito.dominio_sito}${qr_code_hub.qr_2.url_aggiuntivo}`} alt="QR Code 2" class="w-48 h-48 md:w-64 md:h-64" />
+          <div class="bg-white p-4 rounded-2xl shadow-sm mb-6 border border-gray-100 print-border-black">
+            <img src={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${impostazioni_sito.dominio_sito}${qr_code_hub.qr_2.url_aggiuntivo}`} alt="QR Code 2" class="w-48 h-48 md:w-56 md:h-56" />
           </div>
-
-          <p class="text-gray-500 text-xs font-light leading-relaxed mb-8 print-text-black">
-            {qr_code_hub.qr_2.spiegazione}
-          </p>
-
-          <button onclick="stampaIsolata('stampa-2')" class="mt-auto hide-on-print bg-[var(--colorNocciola)] text-black px-8 py-3 font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-lg">
-            Stampa QR
-          </button>
+          <p class="text-[var(--text-muted)] text-sm font-light mb-8 print-text-black">{qr_code_hub.qr_2.spiegazione}</p>
+          <button onclick="stampaIsolata('stampa-2')" class="mt-auto hide-on-print btn-primary w-full">Stampa QR</button>
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -71,12 +48,9 @@ const { qr_code_hub, impostazioni_sito } = siteData;
 <script is:inline>
   function stampaIsolata(idElemento) {
     const elemento = document.getElementById(idElemento);
-    elemento.classList.add('stampa-attiva');
-    window.print();
-    elemento.classList.remove('stampa-attiva');
+    elemento.classList.add('stampa-attiva'); window.print(); elemento.classList.remove('stampa-attiva');
   }
 </script>
-
 <style is:global>
   @media print {
     body * { visibility: hidden; }
@@ -84,6 +58,6 @@ const { qr_code_hub, impostazioni_sito } = siteData;
     .stampa-attiva { position: absolute !important; left: 50% !important; top: 0 !important; transform: translateX(-50%) !important; width: 100% !important; max-width: 600px !important; background: white !important; color: black !important; box-shadow: none !important; border: none !important; padding: 40px !important; }
     .stampa-attiva .print-text-black { color: black !important; }
     .stampa-attiva .print-border-black { border-color: black !important; }
-    .hide-on-print, .stampa-attiva .hide-on-print, .stampa-attiva .sfumatura-decorativa { display: none !important; }
+    .hide-on-print { display: none !important; }
   }
 </style>

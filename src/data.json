@@ -1,5 +1,5 @@
 {
-  "_GUIDA_ALL_USO": "Questo è il file Master. Compila solo i valori a destra dei due punti. Non cancellare le virgolette. Le righe che iniziano con _INFO o _ESEMPIO sono solo per te.",
+  "_GUIDA_ALL_USO": "Questo è il file Master. Il Tema è Globale. I contenuti e i bottoni sono controllati singolarmente in ogni blocco di pagina.",
 
   "impostazioni_sito": {
     "nome_brand": "Caffè Europa",
@@ -11,10 +11,9 @@
   },
   
   "seo_manager": {
-    "meta_titolo": "Caffè Europa | Il Salotto di Catania dal 1960",
-    "meta_descrizione": "Scopri l'eccellenza della pasticceria siciliana e la cultura del caffè presso il Caffè Europa. Prenota un tavolo o ordina a domicilio.",
-    "parole_chiave": "caffetteria catania, pasticceria siciliana, tavola calda, caffè europa catania",
-    "_INFO_SEO": "Questi dati verranno letti da Google per posizionare il sito nei risultati di ricerca."
+    "meta_titolo": "Caffè Europa | L'eccellenza dal 1960",
+    "meta_descrizione": "Scopri l'eccellenza della pasticceria siciliana e la cultura del caffè presso il Caffè Europa.",
+    "parole_chiave": "caffetteria catania, pasticceria siciliana, tavola calda"
   },
 
   "orari_apertura": {
@@ -30,9 +29,11 @@
   
   "tema_grafico": {
     "colore_primario": "#D4AF37", 
-    "colore_secondario": "#8B0000",
-    "colore_sfondo": "#0a0705",
-    "colore_card": "#120d0b"
+    "colore_secondario": "#8B2525",
+    "colore_sfondo": "#1C1815", 
+    "colore_card": "#26211D",
+    "colore_testo": "#F4EFEA",
+    "colore_testo_muted": "#A89F96"
   },
 
   "integrazioni_esterne_API": {
@@ -42,54 +43,63 @@
 
   "navigazione_menu": [
     { "etichetta": "Home", "url": "/" },
-    { "etichetta": "Il Listino", "url": "/menu-fotografico" },
+    { "etichetta": "Il Menù", "url": "/menu" },
     { "etichetta": "Prenota", "url": "/riserva" },
     { "etichetta": "Recensioni", "url": "/dicono-di-noi" },
     { "etichetta": "Lavora con noi", "url": "/lavora-con-noi" }
   ],
 
   "home_page": {
+    "impostazioni_pagina": {
+      "mostra_banner_tattico": true,
+      "mostra_griglia_servizi": true
+    },
     "sfondo_hero": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000&auto=format&fit=crop",
-    "testo_badge": "Dal 1960",
+    "testo_badge": "Tradizione Siciliana",
     "titolo_principale": "Caffè Europa",
-    "descrizione_principale": "L'eccellenza della pasticceria e la cultura del caffè.",
+    "descrizione_principale": "Un'esperienza di gusto indimenticabile, tra l'arte della pasticceria e l'eccellenza del caffè.",
     "bottoni_hero": [
-      { "testo": "Prenota Subito", "url": "/riserva" },
-      { "testo": "Sfoglia il Listino", "url": "/menu-fotografico" }
+      { "testo": "Esplora il Menù", "url": "/menu" },
+      { "testo": "Prenota un Tavolo", "url": "/riserva" }
     ],
     "banner_tattico": {
       "attivo": true,
-      "testo": "Sei in sede? Clicca qui per il listino rapido",
+      "testo": "✨ Scopri le novità della nostra tavola calda! Clicca qui",
       "url": "/menu"
     },
     "griglia_servizi": [
-      { "titolo": "I Nostri Servizi", "testo_link": "Esplora", "url": "/menu-fotografico", "immagine": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" },
-      { "titolo": "Prenotazioni", "testo_link": "Riserva ora", "url": "/riserva", "immagine": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" },
-      { "titolo": "Dicono di Noi", "testo_link": "Leggi le opinioni", "url": "/dicono-di-noi", "immagine": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" }
+      { "titolo": "Pasticceria", "testo_link": "Scopri i Dolci", "url": "/menu", "immagine": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" },
+      { "titolo": "Eventi & Catering", "testo_link": "Richiedi Info", "url": "/riserva", "immagine": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" },
+      { "titolo": "Le Vostre Storie", "testo_link": "Leggi le Recensioni", "url": "/dicono-di-noi", "immagine": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" }
     ]
   },
 
   "catalogo": {
+    "impostazioni_pagina": {
+      "mostra_barra_pagamento": true
+    },
     "sfondo_header": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000",
-    "titolo_pagina": "Il Nostro Listino",
-    "sottotitolo_pagina": "Scopri la nostra offerta completa.",
+    "titolo_pagina": "Le Nostre Specialità",
+    "sottotitolo_pagina": "Un viaggio nei sapori, selezionati con cura per te.",
     "barra_software_esterno": {
       "attiva": true,
-      "testo_domanda": "Hai scelto?",
-      "testo_sottotitolo": "Acquista o ordina direttamente dal tuo smartphone.",
-      "testo_bottone": "Ordina e Paga Ora",
+      "testo_domanda": "Hai già scelto?",
+      "testo_sottotitolo": "Acquista direttamente dal tuo smartphone in pochi clic.",
+      "testo_bottone": "Ordina & Paga Ora",
       "link_software": "https://pay.sundayapp.com/caffe-europa"
     },
     "categorie": [
       {
-        "nome_categoria": "Colazione & Caffetteria",
+        "nome_categoria": "Caffetteria & Colazione",
         "elementi": [
-          {
-            "titolo": "Espresso 100% Arabica",
-            "descrizione": "Miscela selezionata, tostatura artigianale.",
-            "prezzo": "€ 1.50",
-            "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800"
-          }
+          { "titolo": "Espresso 100% Arabica", "descrizione": "Miscela selezionata, tostatura artigianale.", "prezzo": "€ 1.50", "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800" },
+          { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato, pistacchio o marmellata. Lievitazione naturale.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" }
+        ]
+      },
+      {
+        "nome_categoria": "Tavola Calda",
+        "elementi": [
+          { "titolo": "Arancino al Ragù", "descrizione": "Riso carnaroli, ragù di scottona, piselli freschi.", "prezzo": "€ 3.00", "immagine": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800" }
         ]
       }
     ]
@@ -97,21 +107,21 @@
 
   "prenotazioni": {
     "sfondo_header": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000",
-    "titolo_pagina": "Prenota & Contatta",
-    "sottotitolo_pagina": "Siamo a tua disposizione per appuntamenti o ordini.",
+    "titolo_pagina": "Riserva & Ordina",
+    "sottotitolo_pagina": "Siamo pronti ad accoglierti o a portarti le nostre specialità a casa.",
     "blocco_1_sede": {
       "titolo": "Prenota in Sede",
-      "descrizione": "Assicurati il tuo posto o il tuo appuntamento. Conferma immediata.",
-      "testo_bottone": "Prenota via WhatsApp",
-      "link_azione": "https://wa.me/393331234567?text=Salve,%20vorrei%20prenotare%20un%20appuntamento/tavolo."
+      "descrizione": "Assicurati il tuo tavolo per colazioni di lavoro o momenti di relax.",
+      "testo_bottone": "Prenota con WhatsApp",
+      "link_azione": "https://wa.me/393331234567?text=Salve,%20vorrei%20prenotare%20un%20tavolo."
     },
     "blocco_2_domicilio": {
-      "titolo": "Ordina / Servizio a Domicilio",
-      "descrizione": "Richiedi i nostri servizi a domicilio o prenota un ritiro.",
-      "testo_bottone_diretto": "Contatto Diretto",
-      "link_azione_diretta": "https://wa.me/393331234567?text=Salve,%20vorrei%20richiedere%20il%20servizio%20a%20domicilio.",
+      "titolo": "Asporto & Domicilio",
+      "descrizione": "Gusta le nostre specialità comodamente a casa tua. Servizio rapido e garantito.",
+      "testo_bottone_diretto": "Ordina su WhatsApp",
+      "link_azione_diretta": "https://wa.me/393331234567?text=Salve,%20vorrei%20ordinare%20per%20asporto.",
       "usa_app_terze": true,
-      "testo_bottone_app": "Trovaci sull'App",
+      "testo_bottone_app": "Ordina su Glovo",
       "link_app_esterna": "https://glovoapp.com/it/it/catania/"
     }
   },
@@ -119,39 +129,23 @@
   "recensioni_pagina": {
     "sfondo_header": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000",
     "titolo_pagina": "La Voce dei Clienti",
-    "sottotitolo_pagina": "Non chiediamo di crederci sulla parola. Leggi le esperienze in tempo reale direttamente da Google.",
-    "titolo_sezione": "La Prova Assoluta",
-    "descrizione_sezione": "Scopri cosa pensano i nostri ospiti. Sfoglia l'archivio completo o condividi la tua esperienza personale con noi.",
-    "bottone_leggi_tutte": {
-      "testo": "Guarda Tutte le Recensioni",
-      "url": "https://search.google.com/local/reviews?placeid=ChIJaaqymLf8ExMRg0ozHPhZGKY"
-    },
-    "bottone_scrivi_recensione": {
-      "testo": "Scrivi una Recensione",
-      "url": "https://search.google.com/local/writereview?placeid=ChIJaaqymLf8ExMRg0ozHPhZGKY"
-    }
+    "sottotitolo_pagina": "L'opinione di chi ci sceglie ogni giorno è la nostra più grande soddisfazione.",
+    "titolo_sezione": "Trasparenza Assoluta",
+    "descrizione_sezione": "Leggi le recensioni in tempo reale. Siamo fieri del nostro servizio.",
+    "bottone_leggi_tutte": { "testo": "Tutte le Recensioni", "url": "https://search.google.com/local/reviews" },
+    "bottone_scrivi_recensione": { "testo": "Lascia un Feedback", "url": "https://search.google.com/local/writereview" }
   },
 
   "lavora_con_noi": {
-    "titolo_pagina": "Unisciti al Team",
-    "sottotitolo_pagina": "Siamo sempre alla ricerca di nuovi talenti.",
-    "posizioni_aperte": ["Addetto Vendite", "Assistente", "Responsabile di Sala"]
+    "titolo_pagina": "Lavora con Noi",
+    "sottotitolo_pagina": "Entra a far parte della nostra grande famiglia.",
+    "posizioni_aperte": ["Barista / Caffetteria", "Cameriere di Sala", "Aiuto Pasticcere"]
   },
 
   "qr_code_hub": {
-    "titolo_pagina": "Centro Marketing & QR",
-    "sottotitolo_pagina": "Strumento riservato. Stampa i codici QR per le tue operazioni.",
-    "qr_1": {
-      "titolo": "QR Code Vetrina",
-      "uso": "Volantini, Biglietti da Visita, Social",
-      "spiegazione": "Porta alla Home Page. Presenta il brand e i servizi.",
-      "url_aggiuntivo": ""
-    },
-    "qr_2": {
-      "titolo": "QR Code Operativo",
-      "uso": "Tavoli, Casse, Reception",
-      "spiegazione": "Porta direttamente al listino rapido per transazioni veloci.",
-      "url_aggiuntivo": "/menu"
-    }
+    "titolo_pagina": "Area Manageriale QR",
+    "sottotitolo_pagina": "Genera e stampa i tuoi materiali promozionali in un clic.",
+    "qr_1": { "titolo": "Vetrina & Social", "uso": "Porte, Volantini", "spiegazione": "Manda i clienti alla Home Page.", "url_aggiuntivo": "" },
+    "qr_2": { "titolo": "Menù da Tavolo", "uso": "Segnaposti", "spiegazione": "Manda direttamente al Menù Digitale.", "url_aggiuntivo": "/menu" }
   }
-}
+} 

@@ -1,8 +1,5 @@
 ---
-// Importiamo il nostro "Cervello" (il file JSON)
 import siteData from '../data.json';
-
-// Estraiamo i blocchi che ci servono per comodità
 const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_apertura } = siteData;
 ---
 
@@ -10,86 +7,129 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <title>{seo_manager.meta_titolo}</title>
     <meta name="description" content={seo_manager.meta_descrizione} />
-    <meta name="keywords" content={seo_manager.parole_chiave} />
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <style define:vars={{
+    <style is:global define:vars={{
       colorPrimario: tema_grafico.colore_primario,
-      colorSecondario: tema_grafico.colore_secondario,
       colorSfondo: tema_grafico.colore_sfondo,
-      colorCard: tema_grafico.colore_card
+      colorCard: tema_grafico.colore_card,
+      colorTesto: tema_grafico.colore_testo,
+      colorTestoMuted: tema_grafico.colore_testo_muted
     }}>
       :root {
-        --colorNocciola: var(--colorPrimario); 
-        --colorRosso: var(--colorSecondario);    
+        --primary: var(--colorPrimario);
+        --bg: var(--colorSfondo);
+        --card: var(--colorCard);
+        --text-main: var(--colorTesto);
+        --text-muted: var(--colorTestoMuted);
       }
       body {
-        background-color: var(--colorSfondo);
-        color: white;
+        background-color: var(--bg);
+        color: var(--text-main);
         font-family: 'Inter', sans-serif;
         overflow-x: hidden;
       }
-      .bg-card { background-color: var(--colorCard); }
-      .bg-sfondo { background-color: var(--colorSfondo); }
-      .font-elegante {
-        font-family: 'Playfair Display', serif;
+      .font-serif-luxury { font-family: 'Playfair Display', serif; }
+      
+      .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+      .reveal.active { opacity: 1; transform: translateY(0); }
+      
+      .glass-nav { 
+        background-color: rgba(28, 24, 21, 0.95); 
+        backdrop-filter: blur(12px); 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
       }
       
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease-out;
+      /* =========================================
+         BOTTONI 3D GLOBALI (ORA FUNZIONANO OVUNQUE)
+         ========================================= */
+      .btn-primary { 
+        background-color: var(--primary); 
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.1) 100%);
+        color: #000000 !important; 
+        border: 1px solid #000000;
+        border-radius: 6px; 
+        font-weight: 800; 
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        transition: all 0.2s ease-in-out; 
+        padding: 1rem 2.5rem; 
+        display: inline-flex; 
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255,255,255,0.4); 
       }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
+      .btn-primary:hover { 
+        background-image: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(0,0,0,0.05) 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 15px color-mix(in srgb, var(--primary) 40%, transparent); 
+      }
+      .btn-primary:active { 
+        transform: translateY(2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9), inset 0 3px 6px rgba(0,0,0,0.4);
       }
       
-      #mobile-menu {
-        transition: transform 0.4s ease-in-out;
-        transform: translateY(-100%);
+      .btn-outline { 
+        background-color: var(--card);
+        border: 2px solid var(--primary); 
+        color: var(--primary) !important; 
+        border-radius: 6px; 
+        font-weight: 800; 
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        transition: all 0.2s ease-in-out; 
+        padding: 1rem 2.5rem; 
+        display: inline-flex; 
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
-      #mobile-menu.open {
-        transform: translateY(0);
+      .btn-outline:hover { 
+        background-color: var(--primary); 
+        color: #000000 !important; 
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
       }
+      .btn-outline:active {
+        transform: translateY(2px);
+      }
+      
+      #mobile-menu { transition: transform 0.4s ease-in-out; transform: translateY(-100%); }
+      #mobile-menu.open { transform: translateY(0); }
     </style>
   </head>
   <body class="antialiased flex flex-col min-h-screen">
     
-    <nav class="fixed w-full z-50 bg-sfondo/95 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
-      <div class="max-w-7xl mx-auto px-4 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-          
-          <a href="/" class="text-[var(--colorNocciola)] text-xl md:text-2xl font-elegante tracking-widest uppercase font-bold drop-shadow-md z-50 relative">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20 md:h-24">
+          <a href="/" class="text-[var(--primary)] text-xl md:text-2xl font-serif-luxury font-bold tracking-widest uppercase z-50 relative drop-shadow-md">
             {impostazioni_sito.nome_brand}
           </a>
           
-          <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase text-gray-300">
+          <div class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest uppercase text-[var(--text-main)]">
             {navigazione_menu.map((item) => (
-              <a href={item.url} class="hover:text-[var(--colorNocciola)] transition-colors">{item.etichetta}</a>
+              <a href={item.url} class="hover:text-[var(--primary)] transition-colors opacity-90 hover:opacity-100">{item.etichetta}</a>
             ))}
           </div>
 
-          <button id="hamburger-btn" class="md:hidden text-[var(--colorNocciola)] z-50 relative p-2 focus:outline-none" aria-label="Menu">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+          <button id="hamburger-btn" class="md:hidden text-[var(--primary)] z-50 relative p-2 focus:outline-none" aria-label="Menu">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16"></path></svg>
           </button>
-
         </div>
       </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-sfondo z-40 flex flex-col items-center justify-center pt-20 h-screen md:hidden">
-        <div class="flex flex-col space-y-8 text-center text-lg font-bold tracking-widest uppercase text-gray-300">
+    <div id="mobile-menu" class="fixed inset-0 bg-[var(--bg)] z-40 flex flex-col items-center justify-center h-screen md:hidden">
+        <div class="flex flex-col space-y-8 text-center text-lg font-light tracking-[0.2em] uppercase text-[var(--text-main)]">
             {navigazione_menu.map((item) => (
-              <a href={item.url} class="mobile-link hover:text-[var(--colorNocciola)] transition-colors">{item.etichetta}</a>
+              <a href={item.url} class="mobile-link hover:text-[var(--primary)] transition-colors">{item.etichetta}</a>
             ))}
         </div>
     </div>
@@ -98,31 +138,58 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
       <slot />
     </main>
 
-    <footer class="bg-card py-16 border-t border-white/5 text-center relative z-10">
-      <div class="max-w-4xl mx-auto px-4">
-        <h2 class="text-3xl text-[var(--colorNocciola)] font-elegante uppercase tracking-widest mb-4">{impostazioni_sito.nome_brand}</h2>
-        <p class="text-gray-500 text-xs md:text-sm mb-8 tracking-widest uppercase font-light">{impostazioni_sito.sottotitolo_brand}</p>
+    <footer class="bg-[var(--card)] pt-20 pb-10 border-t border-[var(--text-main)]/5 relative z-10 mt-auto">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
         
-        <div class="mb-12 border border-white/5 p-6 inline-block rounded-sm bg-black/20">
-          <h3 class="text-white text-xs font-bold tracking-widest uppercase mb-4">{orari_apertura.titolo_sezione}</h3>
-          <ul class="text-gray-400 text-xs font-light tracking-wider space-y-2">
-            <li><span class="text-white">Lunedì:</span> {orari_apertura.lunedi}</li>
-            <li><span class="text-white">Mar-Gio:</span> {orari_apertura.martedi}</li>
-            <li><span class="text-white">Ven-Sab:</span> {orari_apertura.venerdi}</li>
-            <li><span class="text-white">Domenica:</span> {orari_apertura.domenica}</li>
-          </ul>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-16 text-center md:text-left">
+          
+          <div class="flex flex-col items-center md:items-start">
+            <h2 class="text-2xl text-[var(--primary)] font-serif-luxury font-bold tracking-widest uppercase mb-4">{impostazioni_sito.nome_brand}</h2>
+            <p class="text-[var(--text-muted)] text-sm leading-relaxed max-w-sm font-light">
+              {impostazioni_sito.sottotitolo_brand}
+            </p>
+            {impostazioni_sito.telefono_principale && (
+              <p class="text-[var(--text-main)] text-sm mt-6 font-semibold tracking-widest">
+                T. +{impostazioni_sito.telefono_principale}
+              </p>
+            )}
+          </div>
+
+          <div class="flex flex-col items-center md:items-start md:pl-12">
+            <h3 class="text-[var(--text-main)] text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-[var(--primary)] pb-2 inline-block">Esplora</h3>
+            <div class="flex flex-col gap-3 text-sm font-light text-[var(--text-muted)] tracking-wider">
+              {navigazione_menu.map((item) => (
+                <a href={item.url} class="hover:text-[var(--primary)] transition-colors w-fit">{item.etichetta}</a>
+              ))}
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center md:items-start">
+            <h3 class="text-[var(--text-main)] text-xs font-bold uppercase tracking-[0.2em] mb-6 border-b border-[var(--primary)] pb-2 inline-block">{orari_apertura.titolo_sezione}</h3>
+            <ul class="text-[var(--text-muted)] text-sm font-light space-y-3 w-full max-w-[280px]">
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
+                <span class="tracking-wider text-[var(--text-main)]">Lunedì</span> <span>{orari_apertura.lunedi}</span>
+              </li>
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
+                <span class="tracking-wider text-[var(--text-main)]">Mar - Gio</span> <span>{orari_apertura.martedi}</span>
+              </li>
+              <li class="flex justify-between border-b border-[var(--text-main)]/10 pb-2">
+                <span class="tracking-wider text-[var(--text-main)]">Ven - Sab</span> <span>{orari_apertura.venerdi}</span>
+              </li>
+              <li class="flex justify-between pb-2 text-[var(--primary)] font-medium">
+                <span class="tracking-wider">Domenica</span> <span>{orari_apertura.domenica}</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-gray-400 mb-12">
-            {navigazione_menu.map((item) => (
-              <a href={item.url} class="hover:text-white transition-colors">{item.etichetta}</a>
-            ))}
+        <div class="border-t border-[var(--text-main)]/10 pt-8 flex flex-col items-center">
+          <p class="text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase text-center">
+            &copy; {new Date().getFullYear()} {impostazioni_sito.nome_brand}. Tutti i diritti riservati.
+          </p>
         </div>
-        
-        <p class="text-[10px] text-gray-600 tracking-widest uppercase">
-          &copy; {new Date().getFullYear()} {impostazioni_sito.nome_brand}. Tutti i diritti riservati. <br/>
-          {impostazioni_sito.telefono_principale ? `Info: +${impostazioni_sito.telefono_principale}` : ''}
-        </p>
+
       </div>
     </footer>
 
@@ -132,10 +199,7 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
         for (var i = 0; i < reveals.length; i++) {
           var windowHeight = window.innerHeight;
           var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 100;
-          if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-          }
+          if (elementTop < windowHeight - 50) reveals[i].classList.add("active");
         }
       }
       window.addEventListener("scroll", reveal);
@@ -146,7 +210,6 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('hamburger-icon');
         const links = document.querySelectorAll('.mobile-link');
-
         if (btn && menu && icon) {
           function toggleMenu() {
             menu.classList.toggle('open');
@@ -154,11 +217,10 @@ const { impostazioni_sito, seo_manager, tema_grafico, navigazione_menu, orari_ap
               icon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
               document.body.style.overflow = 'hidden'; 
             } else {
-              icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); 
+              icon.setAttribute('d', 'M4 7h16M4 12h16M4 17h16'); 
               document.body.style.overflow = ''; 
             }
           }
-
           btn.addEventListener('click', toggleMenu);
           links.forEach(link => link.addEventListener('click', toggleMenu));
         }
