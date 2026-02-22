@@ -37,13 +37,13 @@
 
   "integrazioni_esterne_API": {
     "email_ricezione_form": "tuamail@gmail.com",
-    "script_recensioni_google": "<script defer async src='https://cdn.trustindex.io/loader.js?xyz'></script>"
+    "script_recensioni_google": "<script defer async src='https://cdn.trustindex.io/loader.js?156f87b65a4a4023be061b5bf13'></script>"
   },
 
   "navigazione_menu": [
     { "etichetta": "Home", "url": "/" },
-    { "etichetta": "Il Listino", "url": "/catalogo-visivo" },
-    { "etichetta": "Prenota", "url": "/prenotazioni" },
+    { "etichetta": "Il Listino", "url": "/menu-fotografico" },
+    { "etichetta": "Prenota", "url": "/riserva" },
     { "etichetta": "Recensioni", "url": "/dicono-di-noi" },
     { "etichetta": "Lavora con noi", "url": "/lavora-con-noi" }
   ],
@@ -54,14 +54,19 @@
     "titolo_principale": "Caffè Europa",
     "descrizione_principale": "L'eccellenza della pasticceria e la cultura del caffè.",
     "bottoni_hero": [
-      { "testo": "Prenota Subito", "url": "/prenotazioni" },
-      { "testo": "Sfoglia il Listino", "url": "/catalogo-visivo" }
+      { "testo": "Prenota Subito", "url": "/riserva" },
+      { "testo": "Sfoglia il Listino", "url": "/menu-fotografico" }
     ],
     "banner_tattico": {
       "attivo": true,
       "testo": "Sei in sede? Clicca qui per il listino rapido",
-      "url": "/catalogo-rapido"
-    }
+      "url": "/menu"
+    },
+    "griglia_servizi": [
+      { "titolo": "I Nostri Servizi", "testo_link": "Esplora", "url": "/menu-fotografico", "immagine": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" },
+      { "titolo": "Prenotazioni", "testo_link": "Riserva ora", "url": "/riserva", "immagine": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" },
+      { "titolo": "Dicono di Noi", "testo_link": "Leggi le opinioni", "url": "/dicono-di-noi", "immagine": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" }
+    ]
   },
 
   "catalogo": {
@@ -94,20 +99,17 @@
     "sfondo_header": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000",
     "titolo_pagina": "Prenota & Contatta",
     "sottotitolo_pagina": "Siamo a tua disposizione per appuntamenti o ordini.",
-    
     "blocco_1_sede": {
       "titolo": "Prenota in Sede",
       "descrizione": "Assicurati il tuo posto o il tuo appuntamento. Conferma immediata.",
       "testo_bottone": "Prenota via WhatsApp",
       "link_azione": "https://wa.me/393331234567?text=Salve,%20vorrei%20prenotare%20un%20appuntamento/tavolo."
     },
-    
     "blocco_2_domicilio": {
       "titolo": "Ordina / Servizio a Domicilio",
       "descrizione": "Richiedi i nostri servizi a domicilio o prenota un ritiro.",
       "testo_bottone_diretto": "Contatto Diretto",
       "link_azione_diretta": "https://wa.me/393331234567?text=Salve,%20vorrei%20richiedere%20il%20servizio%20a%20domicilio.",
-      
       "usa_app_terze": true,
       "testo_bottone_app": "Trovaci sull'App",
       "link_app_esterna": "https://glovoapp.com/it/it/catania/"
@@ -116,8 +118,18 @@
 
   "recensioni_pagina": {
     "sfondo_header": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000",
-    "titolo_pagina": "Dicono di noi",
-    "sottotitolo_pagina": "L'opinione dei nostri clienti è la nostra migliore garanzia."
+    "titolo_pagina": "La Voce dei Clienti",
+    "sottotitolo_pagina": "Non chiediamo di crederci sulla parola. Leggi le esperienze in tempo reale direttamente da Google.",
+    "titolo_sezione": "La Prova Assoluta",
+    "descrizione_sezione": "Scopri cosa pensano i nostri ospiti. Sfoglia l'archivio completo o condividi la tua esperienza personale con noi.",
+    "bottone_leggi_tutte": {
+      "testo": "Guarda Tutte le Recensioni",
+      "url": "https://search.google.com/local/reviews?placeid=ChIJaaqymLf8ExMRg0ozHPhZGKY"
+    },
+    "bottone_scrivi_recensione": {
+      "testo": "Scrivi una Recensione",
+      "url": "https://search.google.com/local/writereview?placeid=ChIJaaqymLf8ExMRg0ozHPhZGKY"
+    }
   },
 
   "lavora_con_noi": {
@@ -128,6 +140,18 @@
 
   "qr_code_hub": {
     "titolo_pagina": "Centro Marketing & QR",
-    "sottotitolo_pagina": "Strumento riservato. Stampa i codici QR per le tue operazioni."
+    "sottotitolo_pagina": "Strumento riservato. Stampa i codici QR per le tue operazioni.",
+    "qr_1": {
+      "titolo": "QR Code Vetrina",
+      "uso": "Volantini, Biglietti da Visita, Social",
+      "spiegazione": "Porta alla Home Page. Presenta il brand e i servizi.",
+      "url_aggiuntivo": ""
+    },
+    "qr_2": {
+      "titolo": "QR Code Operativo",
+      "uso": "Tavoli, Casse, Reception",
+      "spiegazione": "Porta direttamente al listino rapido per transazioni veloci.",
+      "url_aggiuntivo": "/menu"
+    }
   }
 }

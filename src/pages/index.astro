@@ -1,84 +1,73 @@
 ---
 import LayoutMaster from '../layouts/LayoutMaster.astro';
 import siteData from '../data.json';
-const heroBg = siteData.sfondi_sezioni.recensioni; 
+
+// Estraiamo il blocco della home page dal JSON
+const { home_page } = siteData;
 ---
 
 <LayoutMaster>
   
   <section class="relative h-screen flex flex-col items-center justify-center text-center overflow-hidden">
     <div class="absolute inset-0 z-0 bg-black">
-      <img src={heroBg} alt="Interno Caffè Europa" class="w-full h-full object-cover opacity-30 scale-105 origin-center animate-[pulse_10s_ease-in-out_infinite]" />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0705]/40 to-[#0a0705]"></div>
+      <img src={home_page.sfondo_hero} alt={home_page.titolo_principale} class="w-full h-full object-cover opacity-30 scale-105 origin-center animate-[pulse_10s_ease-in-out_infinite]" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--colorSfondo)]/40 to-[var(--colorSfondo)]"></div>
     </div>
     
     <div class="relative z-10 px-4 flex flex-col items-center mt-20">
-      <p class="text-[var(--colorNocciola)] tracking-[0.4em] uppercase text-xs md:text-sm mb-4 font-bold drop-shadow-lg">Dal 1960</p>
+      <p class="text-[var(--colorNocciola)] tracking-[0.4em] uppercase text-xs md:text-sm mb-4 font-bold drop-shadow-lg">
+        {home_page.testo_badge}
+      </p>
       <h1 class="text-6xl md:text-8xl md:text-[100px] font-bold text-white mb-6 tracking-widest font-elegante uppercase drop-shadow-2xl">
-        Caffè Europa
+        {home_page.titolo_principale}
       </h1>
       <div class="w-24 h-px bg-[var(--colorRosso)] mx-auto mb-8"></div>
       <p class="text-gray-300 text-sm md:text-lg font-light tracking-widest uppercase max-w-2xl leading-relaxed mb-12 drop-shadow-md">
-        Il Salotto di Catania. L'arte della pasticceria, la cultura del caffè e l'eccellenza della tavola calda.
+        {home_page.descrizione_principale}
       </p>
       
       <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
-        <a href="/riserva" class="inline-block bg-[var(--colorNocciola)] text-black px-12 py-5 font-bold tracking-widest uppercase text-xs hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.4)]">
-          Prenota un Tavolo
-        </a>
-        <a href="/menu-fotografico" class="inline-block border border-[var(--colorNocciola)] text-[var(--colorNocciola)] px-12 py-5 font-bold tracking-widest uppercase text-xs hover:bg-[var(--colorNocciola)] hover:text-black transition-all duration-300 backdrop-blur-sm bg-black/20">
-          Sfoglia il Menù
-        </a>
+        {home_page.bottoni_hero.map((bottone, index) => (
+          <a href={bottone.url} class={`inline-block px-12 py-5 font-bold tracking-widest uppercase text-xs transition-all duration-300 shadow-lg ${index === 0 ? 'bg-[var(--colorNocciola)] text-black hover:bg-white shadow-[0_0_30px_rgba(212,175,55,0.4)]' : 'border border-[var(--colorNocciola)] text-[var(--colorNocciola)] hover:bg-[var(--colorNocciola)] hover:text-black backdrop-blur-sm bg-black/20'}`}>
+            {bottone.testo}
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-[var(--colorNocciola)] py-5 text-center">
-    <a href="/menu" class="text-black font-bold uppercase tracking-widest text-[10px] md:text-xs hover:text-white transition-colors flex items-center justify-center gap-3">
-      <span>Sei seduto al tavolo? Clicca qui per il Menu Rapido e Ordina</span>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-    </a>
-  </section>
+  {home_page.banner_tattico.attivo && (
+    <section class="bg-[var(--colorNocciola)] py-5 text-center">
+      <a href={home_page.banner_tattico.url} class="text-black font-bold uppercase tracking-widest text-[10px] md:text-xs hover:text-white transition-colors flex items-center justify-center gap-3">
+        <span>{home_page.banner_tattico.testo}</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </section>
+  )}
 
-  <section class="py-24 bg-[#0a0705]">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8">
-      
-      <div class="text-center mb-16 reveal">
-        <h2 class="text-3xl text-white font-elegante uppercase tracking-widest mb-4">L'Esperienza</h2>
-        <div class="w-12 h-px bg-[var(--colorNocciola)] mx-auto"></div>
+  {home_page.griglia_servizi && (
+    <section class="py-24 bg-[var(--colorSfondo)]">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl text-white font-elegante uppercase tracking-widest mb-4">L'Esperienza</h2>
+          <div class="w-12 h-px bg-[var(--colorNocciola)] mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+          {home_page.griglia_servizi.map((servizio) => (
+            <a href={servizio.url} class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl bg-[var(--colorCard)]">
+              <img src={servizio.immagine} alt={servizio.titolo} class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[var(--colorSfondo)] via-[var(--colorSfondo)]/50 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 p-8 w-full text-center">
+                <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">{servizio.titolo}</h3>
+                <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">{servizio.testo_link}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-        
-        <a href="/menu-fotografico" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Caffè e Pasticceria" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
-            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Le Creazioni</h3>
-            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Esplora i Piatti</p>
-          </div>
-        </a>
-        
-        <a href="/riserva" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="Ristorante" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
-            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Riserva & Delivery</h3>
-            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Prenota Subito</p>
-          </div>
-        </a>
-        
-        <a href="/dicono-di-noi" class="group block relative h-96 overflow-hidden rounded-sm shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800&auto=format&fit=crop" alt="Recensioni Clienti" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-40 transition-all duration-1000" />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0705] via-[#0a0705]/50 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full text-center">
-            <h3 class="text-[var(--colorNocciola)] text-xl font-bold tracking-widest uppercase mb-2">Dicono di Noi</h3>
-            <p class="text-white text-xs tracking-wider uppercase underline underline-offset-4 group-hover:text-[var(--colorNocciola)] transition-colors">Leggi le Opinioni</p>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 
 </LayoutMaster>
