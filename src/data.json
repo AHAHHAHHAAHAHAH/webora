@@ -1,102 +1,133 @@
 {
-  "configurazione": {
-    "nome_agenzia": "La Tua Agenzia Web",
-    "moduli": {
-      "promo_banner": true,
-      "video_hero": true,
-      "faq": true,
-      "newsletter": true
-    }
+  "_GUIDA_ALL_USO": "Questo è il file Master. Compila solo i valori a destra dei due punti. Non cancellare le virgolette. Le righe che iniziano con _INFO o _ESEMPIO sono solo per te.",
+
+  "impostazioni_sito": {
+    "nome_brand": "Caffè Europa",
+    "sottotitolo_brand": "Il Salotto di Catania dal 1960",
+    "anno_fondazione": "1960",
+    "dominio_sito": "https://webora-01a.pages.dev",
+    "telefono_principale": "393331234567",
+    "lingua_default": "it"
   },
-  "ristorante": {
-    "sfondo_hero_fallback": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "orari_completi": [
-      {
-        "giorno": "Lunedì",
-        "ore": "Chiuso"
-      },
-      {
-        "giorno": "Martedì - Giovedì",
-        "ore": "19:30 - 23:30"
-      },
-      {
-        "giorno": "Venerdì - Sabato",
-        "ore": "19:30 - 01:00"
-      },
-      {
-        "giorno": "Domenica",
-        "ore": "12:30 - 15:00 / 19:30 - 23:00"
-      }
-    ],
-    "indirizzo": "Via dei Macellai 12, Catania (CT)",
-    "chi_siamo": "siamo noi",
-    "telefono": "+39 379 290 0060",
-    "colore_rosso": "#8b1818",
-    "colore_nocciola": "#d4af37",
-    "nome": "Milos",
-    "logo_url": "/logo.png",
-    "slogan": "L'esaltazione della carne. Frollature estreme e lussuria culinaria."
+  
+  "seo_manager": {
+    "meta_titolo": "Caffè Europa | Il Salotto di Catania dal 1960",
+    "meta_descrizione": "Scopri l'eccellenza della pasticceria siciliana e la cultura del caffè presso il Caffè Europa. Prenota un tavolo o ordina a domicilio.",
+    "parole_chiave": "caffetteria catania, pasticceria siciliana, tavola calda, caffè europa catania",
+    "_INFO_SEO": "Questi dati verranno letti da Google per posizionare il sito nei risultati di ricerca."
   },
-  "sfondi_sezioni": {
-    "filosofia": "https://images.unsplash.com/photo-1544025162-8350cc8eb82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "vetrina_piatti": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "mappa": "https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "recensioni": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-    "lavora_con_noi": "https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+
+  "orari_apertura": {
+    "titolo_sezione": "I Nostri Orari",
+    "lunedi": "Chiuso",
+    "martedi": "07:00 - 22:00",
+    "mercoledi": "07:00 - 22:00",
+    "giovedi": "07:00 - 22:00",
+    "venerdi": "07:00 - 23:30",
+    "sabato": "07:00 - 23:30",
+    "domenica": "08:00 - 21:00"
   },
-  "mappa": {
-    "link_google": "https://maps.google.com/?q=Via+dei+Macellai+12+Catania",
-    "indicazioni": "Servizio di Car Valet o parcheggio convenzionato a 50 metri."
+  
+  "tema_grafico": {
+    "colore_primario": "#D4AF37", 
+    "colore_secondario": "#8B0000",
+    "colore_sfondo": "#0a0705",
+    "colore_card": "#120d0b"
   },
-  "promo_banner": "🔥 Esclusiva Weekend: Degustazione Tomahawk. Prenota ora.",
-  "menu": [
-    {
-      "categoria": "I Preludi",
-      "piatti": [
-        {
-          "nome": "Estasi",
-          "descrizione": "Pecorino affinato e gorgonzola.",
-          "prezzo": "2€",
-          "immagine": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          "in_vetrina": true
-        },
-        {
-          "nome": "Battuta al Tartufo",
-          "descrizione": "Tartare di fassona e tartufo.",
-          "prezzo": "26€",
-          "immagine": "https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          "in_vetrina": false
-        }
-      ]
-    },
-    {
-      "categoria": "Il Fuoco",
-      "piatti": [
-        {
-          "nome": "Tomahawk Dry Aged",
-          "descrizione": "Frollatura 60 giorni.",
-          "prezzo": "85€",
-          "immagine": "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          "in_vetrina": true
-        },
-        {
-          "nome": "Filetto Cenere",
-          "descrizione": "Cuore di filetto a fiamma.",
-          "prezzo": "38€",
-          "immagine": "https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-          "in_vetrina": false
-        }
-      ]
-    }
+
+  "integrazioni_esterne_API": {
+    "email_ricezione_form": "tuamail@gmail.com",
+    "script_recensioni_google": "<script defer async src='https://cdn.trustindex.io/loader.js?xyz'></script>"
+  },
+
+  "navigazione_menu": [
+    { "etichetta": "Home", "url": "/" },
+    { "etichetta": "Il Listino", "url": "/catalogo-visivo" },
+    { "etichetta": "Prenota", "url": "/prenotazioni" },
+    { "etichetta": "Recensioni", "url": "/dicono-di-noi" },
+    { "etichetta": "Lavora con noi", "url": "/lavora-con-noi" }
   ],
-  "faq": [
-    {
-      "domanda": "Avete opzioni per celiaci?",
-      "risposta": "Sì, menù gluten-free disponibile."
-    },
-    {
-      "domanda": "Cani ammessi?",
-      "risposta": "Sì, segnalarlo alla prenotazione."
+
+  "home_page": {
+    "sfondo_hero": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000&auto=format&fit=crop",
+    "testo_badge": "Dal 1960",
+    "titolo_principale": "Caffè Europa",
+    "descrizione_principale": "L'eccellenza della pasticceria e la cultura del caffè.",
+    "bottoni_hero": [
+      { "testo": "Prenota Subito", "url": "/prenotazioni" },
+      { "testo": "Sfoglia il Listino", "url": "/catalogo-visivo" }
+    ],
+    "banner_tattico": {
+      "attivo": true,
+      "testo": "Sei in sede? Clicca qui per il listino rapido",
+      "url": "/catalogo-rapido"
     }
-  ]
+  },
+
+  "catalogo": {
+    "sfondo_header": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000",
+    "titolo_pagina": "Il Nostro Listino",
+    "sottotitolo_pagina": "Scopri la nostra offerta completa.",
+    "barra_software_esterno": {
+      "attiva": true,
+      "testo_domanda": "Hai scelto?",
+      "testo_sottotitolo": "Acquista o ordina direttamente dal tuo smartphone.",
+      "testo_bottone": "Ordina e Paga Ora",
+      "link_software": "https://pay.sundayapp.com/caffe-europa"
+    },
+    "categorie": [
+      {
+        "nome_categoria": "Colazione & Caffetteria",
+        "elementi": [
+          {
+            "titolo": "Espresso 100% Arabica",
+            "descrizione": "Miscela selezionata, tostatura artigianale.",
+            "prezzo": "€ 1.50",
+            "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800"
+          }
+        ]
+      }
+    ]
+  },
+
+  "prenotazioni": {
+    "sfondo_header": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000",
+    "titolo_pagina": "Prenota & Contatta",
+    "sottotitolo_pagina": "Siamo a tua disposizione per appuntamenti o ordini.",
+    
+    "blocco_1_sede": {
+      "titolo": "Prenota in Sede",
+      "descrizione": "Assicurati il tuo posto o il tuo appuntamento. Conferma immediata.",
+      "testo_bottone": "Prenota via WhatsApp",
+      "link_azione": "https://wa.me/393331234567?text=Salve,%20vorrei%20prenotare%20un%20appuntamento/tavolo."
+    },
+    
+    "blocco_2_domicilio": {
+      "titolo": "Ordina / Servizio a Domicilio",
+      "descrizione": "Richiedi i nostri servizi a domicilio o prenota un ritiro.",
+      "testo_bottone_diretto": "Contatto Diretto",
+      "link_azione_diretta": "https://wa.me/393331234567?text=Salve,%20vorrei%20richiedere%20il%20servizio%20a%20domicilio.",
+      
+      "usa_app_terze": true,
+      "testo_bottone_app": "Trovaci sull'App",
+      "link_app_esterna": "https://glovoapp.com/it/it/catania/"
+    }
+  },
+
+  "recensioni_pagina": {
+    "sfondo_header": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000",
+    "titolo_pagina": "Dicono di noi",
+    "sottotitolo_pagina": "L'opinione dei nostri clienti è la nostra migliore garanzia."
+  },
+
+  "lavora_con_noi": {
+    "titolo_pagina": "Unisciti al Team",
+    "sottotitolo_pagina": "Siamo sempre alla ricerca di nuovi talenti.",
+    "posizioni_aperte": ["Addetto Vendite", "Assistente", "Responsabile di Sala"]
+  },
+
+  "qr_code_hub": {
+    "titolo_pagina": "Centro Marketing & QR",
+    "sottotitolo_pagina": "Strumento riservato. Stampa i codici QR per le tue operazioni."
+  }
 }
