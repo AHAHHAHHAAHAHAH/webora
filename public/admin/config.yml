@@ -16,72 +16,214 @@ collections:
         name: "data"
         file: "src/data.json"
         fields:
-          - label: "Configurazione"
-            name: "configurazione"
+          - {label: "Guida all'Uso", name: "_GUIDA_ALL_USO", widget: "string", required: false}
+          
+          - label: "Impostazioni Sito"
+            name: "impostazioni_sito"
             widget: "object"
             fields:
-              - {label: "Nome Agenzia", name: "nome_agenzia", widget: "string"}
-              - label: "Moduli Attivi"
-                name: "moduli"
+              - {label: "Nome Brand", name: "nome_brand", widget: "string"}
+              - {label: "Sottotitolo Brand", name: "sottotitolo_brand", widget: "string"}
+              - {label: "Anno Fondazione", name: "anno_fondazione", widget: "string"}
+              - {label: "Dominio Sito (Es: https://...)", name: "dominio_sito", widget: "string"}
+              - {label: "Telefono Principale (senza +)", name: "telefono_principale", widget: "string"}
+              - {label: "Lingua Default (es: it)", name: "lingua_default", widget: "string"}
+
+          - label: "SEO Manager"
+            name: "seo_manager"
+            widget: "object"
+            fields:
+              - {label: "Meta Titolo (Tag Title)", name: "meta_titolo", widget: "string"}
+              - {label: "Meta Descrizione", name: "meta_descrizione", widget: "text"}
+              - {label: "Parole Chiave (Separate da virgola)", name: "parole_chiave", widget: "string"}
+
+          - label: "Orari di Apertura"
+            name: "orari_apertura"
+            widget: "object"
+            fields:
+              - {label: "Titolo Sezione", name: "titolo_sezione", widget: "string"}
+              - {label: "Lunedì", name: "lunedi", widget: "string"}
+              - {label: "Martedì", name: "martedi", widget: "string"}
+              - {label: "Mercoledì", name: "mercoledi", widget: "string"}
+              - {label: "Giovedì", name: "giovedi", widget: "string"}
+              - {label: "Venerdì", name: "venerdi", widget: "string"}
+              - {label: "Sabato", name: "sabato", widget: "string"}
+              - {label: "Domenica", name: "domenica", widget: "string"}
+
+          - label: "Tema Grafico"
+            name: "tema_grafico"
+            widget: "object"
+            fields:
+              - {label: "Colore Primario (es: #D4AF37)", name: "colore_primario", widget: "color"}
+              - {label: "Colore Secondario", name: "colore_secondario", widget: "color"}
+              - {label: "Colore Sfondo Scurissimo", name: "colore_sfondo", widget: "color"}
+              - {label: "Colore Box / Card", name: "colore_card", widget: "color"}
+              - {label: "Colore Testi Principali", name: "colore_testo", widget: "color"}
+              - {label: "Colore Testi Secondari (Muted)", name: "colore_testo_muted", widget: "color"}
+
+          - label: "Integrazioni Esterne (API)"
+            name: "integrazioni_esterne_API"
+            widget: "object"
+            fields:
+              - {label: "Email per ricezione Curriculum (FormSubmit)", name: "email_ricezione_form", widget: "string"}
+              - {label: "Script Recensioni Google (Trustindex)", name: "script_recensioni_google", widget: "text"}
+
+          - label: "Navigazione Menu (Barra in alto e Footer)"
+            name: "navigazione_menu"
+            widget: "list"
+            fields:
+              - {label: "Nome Link", name: "etichetta", widget: "string"}
+              - {label: "Percorso (es: /menu)", name: "url", widget: "string"}
+
+          - label: "Home Page"
+            name: "home_page"
+            widget: "object"
+            fields:
+              - label: "Moduli Accesi/Spenti"
+                name: "impostazioni_pagina"
                 widget: "object"
                 fields:
-                  - {label: "Promo Banner", name: "promo_banner", widget: "boolean"}
-                  - {label: "Video Hero", name: "video_hero", widget: "boolean"}
-                  - {label: "FAQ", name: "faq", widget: "boolean"}
-                  - {label: "Newsletter", name: "newsletter", widget: "boolean"}
-          - label: "Ristorante Info"
-            name: "ristorante"
-            widget: "object"
-            fields:
-              - {label: "Nome", name: "nome", widget: "string"}
-              - {label: "Slogan", name: "slogan", widget: "string"}
-              - {label: "Telefono", name: "telefono", widget: "string"}
-              - {label: "Indirizzo", name: "indirizzo", widget: "string"}
-              - label: "Orari Completi"
-                name: "orari_completi"
+                  - {label: "Mostra Banner Tattico", name: "mostra_banner_tattico", widget: "boolean"}
+                  - {label: "Mostra Griglia Servizi", name: "mostra_griglia_servizi", widget: "boolean"}
+              - {label: "Immagine di Sfondo Hero (URL)", name: "sfondo_hero", widget: "string"}
+              - {label: "Testo Badge Dorato", name: "testo_badge", widget: "string"}
+              - {label: "Titolo Principale", name: "titolo_principale", widget: "string"}
+              - {label: "Descrizione Principale", name: "descrizione_principale", widget: "text"}
+              - label: "Bottoni Principali"
+                name: "bottoni_hero"
                 widget: "list"
                 fields:
-                  - {label: "Giorno", name: "giorno", widget: "string"}
-                  - {label: "Ore", name: "ore", widget: "string"}
-              - {label: "Colore Nocciola", name: "colore_nocciola", widget: "color"}
-              - {label: "Colore Rosso", name: "colore_rosso", widget: "color"}
-              - {label: "Logo URL", name: "logo_url", widget: "string"}
-              - {label: "Sfondo Hero Fallback", name: "sfondo_hero_fallback", widget: "string"}
-              - {label: "Video Hero URL", name: "video_hero_url", widget: "string", required: false}
-              - {label: "Chi Siamo", name: "chi_siamo", widget: "text"}
-          - label: "Sfondi Sezioni"
-            name: "sfondi_sezioni"
-            widget: "object"
-            fields:
-              - {label: "Filosofia", name: "filosofia", widget: "string"}
-              - {label: "Vetrina Piatti", name: "vetrina_piatti", widget: "string"}
-              - {label: "Mappa", name: "mappa", widget: "string"}
-              - {label: "Recensioni", name: "recensioni", widget: "string"}
-              - {label: "Lavora con Noi", name: "lavora_con_noi", widget: "string"}
-          - label: "Mappa Google"
-            name: "mappa"
-            widget: "object"
-            fields:
-              - {label: "Link Google Maps", name: "link_google", widget: "string"}
-              - {label: "Indicazioni Mappa", name: "indicazioni", widget: "text"}
-          - {label: "Testo Promo Banner", name: "promo_banner", widget: "string"}
-          - label: "Gestione Menù"
-            name: "menu"
-            widget: "list"
-            fields:
-              - {label: "Nome Categoria", name: "categoria", widget: "string"}
-              - label: "Piatti in questa categoria"
-                name: "piatti"
+                  - {label: "Testo", name: "testo", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+              - label: "Banner Tattico"
+                name: "banner_tattico"
+                widget: "object"
+                fields:
+                  - {label: "Testo Promozionale", name: "testo", widget: "string"}
+                  - {label: "URL Destinazione", name: "url", widget: "string"}
+              - label: "Griglia Servizi (Le 3 Card)"
+                name: "griglia_servizi"
                 widget: "list"
                 fields:
-                  - {label: "Nome Piatto", name: "nome", widget: "string"}
+                  - {label: "Titolo", name: "titolo", widget: "string"}
+                  - {label: "Testo Bottone Link", name: "testo_link", widget: "string"}
+                  - {label: "URL", name: "url", widget: "string"}
+                  - {label: "Immagine Copertina (URL)", name: "immagine", widget: "string"}
+
+          - label: "Il Menù / Catalogo"
+            name: "catalogo"
+            widget: "object"
+            fields:
+              - label: "Impostazioni Pagina"
+                name: "impostazioni_pagina"
+                widget: "object"
+                fields:
+                  - {label: "Mostra Barra Pagamento Inferiore", name: "mostra_barra_pagamento", widget: "boolean"}
+              - {label: "Sfondo Header (URL)", name: "sfondo_header", widget: "string"}
+              - {label: "Titolo Pagina", name: "titolo_pagina", widget: "string"}
+              - {label: "Sottotitolo Pagina", name: "sottotitolo_pagina", widget: "text"}
+              - label: "Barra Software Esterno (Sunday, ecc.)"
+                name: "barra_software_esterno"
+                widget: "object"
+                fields:
+                  - {label: "Barra Attiva?", name: "attiva", widget: "boolean"}
+                  - {label: "Testo Domanda", name: "testo_domanda", widget: "string"}
+                  - {label: "Sottotitolo", name: "testo_sottotitolo", widget: "string"}
+                  - {label: "Testo Bottone", name: "testo_bottone", widget: "string"}
+                  - {label: "Link Software Pagamento", name: "link_software", widget: "string"}
+              - label: "Categorie Menù (Antipasti, Primi, ecc.)"
+                name: "categorie"
+                widget: "list"
+                fields:
+                  - {label: "Nome Categoria", name: "nome_categoria", widget: "string"}
+                  - label: "Piatti della Categoria"
+                    name: "elementi"
+                    widget: "list"
+                    fields:
+                      - {label: "Nome Piatto", name: "titolo", widget: "string"}
+                      - {label: "Descrizione", name: "descrizione", widget: "text"}
+                      - {label: "Prezzo", name: "prezzo", widget: "string"}
+                      - {label: "Immagine (Opzionale URL)", name: "immagine", widget: "string", required: false}
+
+          - label: "Prenotazioni & Delivery"
+            name: "prenotazioni"
+            widget: "object"
+            fields:
+              - {label: "Sfondo Header (URL)", name: "sfondo_header", widget: "string"}
+              - {label: "Titolo Pagina", name: "titolo_pagina", widget: "string"}
+              - {label: "Sottotitolo Pagina", name: "sottotitolo_pagina", widget: "text"}
+              - label: "Card 1: Sede/Tavoli"
+                name: "blocco_1_sede"
+                widget: "object"
+                fields:
+                  - {label: "Titolo", name: "titolo", widget: "string"}
                   - {label: "Descrizione", name: "descrizione", widget: "text"}
-                  - {label: "Prezzo", name: "prezzo", widget: "string"}
-                  - {label: "URL Immagine", name: "immagine", widget: "string", required: false}
-                  - {label: "Mostra in Vetrina sulla Home?", name: "in_vetrina", widget: "boolean"}
-          - label: "Domande Frequenti (FAQ)"
-            name: "faq"
-            widget: "list"
+                  - {label: "Testo Bottone", name: "testo_bottone", widget: "string"}
+                  - {label: "Link (es: wa.me/...)", name: "link_azione", widget: "string"}
+              - label: "Card 2: Domicilio"
+                name: "blocco_2_domicilio"
+                widget: "object"
+                fields:
+                  - {label: "Titolo", name: "titolo", widget: "string"}
+                  - {label: "Descrizione", name: "descrizione", widget: "text"}
+                  - {label: "Testo Bottone Diretto (WhatsApp)", name: "testo_bottone_diretto", widget: "string"}
+                  - {label: "Link Azione Diretta", name: "link_azione_diretta", widget: "string"}
+                  - {label: "Abilita Bottone App Terze (Glovo/Deliveroo)", name: "usa_app_terze", widget: "boolean"}
+                  - {label: "Testo Bottone App", name: "testo_bottone_app", widget: "string"}
+                  - {label: "Link App Esterna", name: "link_app_esterna", widget: "string"}
+
+          - label: "Pagina Recensioni"
+            name: "recensioni_pagina"
+            widget: "object"
             fields:
-              - {label: "Domanda", name: "domanda", widget: "string"}
-              - {label: "Risposta", name: "risposta", widget: "text"}
+              - {label: "Sfondo Header", name: "sfondo_header", widget: "string"}
+              - {label: "Titolo Pagina", name: "titolo_pagina", widget: "string"}
+              - {label: "Sottotitolo Pagina", name: "sottotitolo_pagina", widget: "text"}
+              - {label: "Titolo Box", name: "titolo_sezione", widget: "string"}
+              - {label: "Descrizione Box", name: "descrizione_sezione", widget: "text"}
+              - label: "Bottone 'Leggi Tutte'"
+                name: "bottone_leggi_tutte"
+                widget: "object"
+                fields:
+                  - {label: "Testo", name: "testo", widget: "string"}
+                  - {label: "Link", name: "url", widget: "string"}
+              - label: "Bottone 'Scrivi Recensione'"
+                name: "bottone_scrivi_recensione"
+                widget: "object"
+                fields:
+                  - {label: "Testo", name: "testo", widget: "string"}
+                  - {label: "Link", name: "url", widget: "string"}
+
+          - label: "Lavora Con Noi"
+            name: "lavora_con_noi"
+            widget: "object"
+            fields:
+              - {label: "Titolo Pagina", name: "titolo_pagina", widget: "string"}
+              - {label: "Sottotitolo Pagina", name: "sottotitolo_pagina", widget: "text"}
+              - label: "Posizioni Aperte (Aggiungi ruoli)"
+                name: "posizioni_aperte"
+                widget: "list"
+                field: {label: "Ruolo", name: "ruolo", widget: "string"}
+
+          - label: "QR Code Hub (Privato)"
+            name: "qr_code_hub"
+            widget: "object"
+            fields:
+              - {label: "Titolo Pagina", name: "titolo_pagina", widget: "string"}
+              - {label: "Sottotitolo Pagina", name: "sottotitolo_pagina", widget: "text"}
+              - label: "QR 1 (Vetrina)"
+                name: "qr_1"
+                widget: "object"
+                fields:
+                  - {label: "Titolo", name: "titolo", widget: "string"}
+                  - {label: "Uso", name: "uso", widget: "string"}
+                  - {label: "Spiegazione per la stampa", name: "spiegazione", widget: "text"}
+                  - {label: "Aggiunta URL (lascia vuoto per la Home)", name: "url_aggiuntivo", widget: "string", required: false}
+              - label: "QR 2 (Menù/Tavoli)"
+                name: "qr_2"
+                widget: "object"
+                fields:
+                  - {label: "Titolo", name: "titolo", widget: "string"}
+                  - {label: "Uso", name: "uso", widget: "string"}
+                  - {label: "Spiegazione per la stampa", name: "spiegazione", widget: "text"}
+                  - {label: "Aggiunta URL (es: /menu)", name: "url_aggiuntivo", widget: "string", required: false}
