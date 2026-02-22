@@ -74,13 +74,13 @@
     ]
   },
 
-  "catalogo": {
+ "catalogo": {
     "impostazioni_pagina": {
       "mostra_barra_pagamento": true
     },
     "sfondo_header": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000",
-    "titolo_pagina": "Le Nostre Specialità",
-    "sottotitolo_pagina": "Un viaggio nei sapori, selezionati con cura per te.",
+    "titolo_pagina": "Il Nostro Listino",
+    "sottotitolo_pagina": "Esplora le nostre categorie e lasciati ispirare.",
     "barra_software_esterno": {
       "attiva": true,
       "testo_domanda": "Hai già scelto?",
@@ -90,21 +90,48 @@
     },
     "categorie": [
       {
-        "nome_categoria": "Caffetteria & Colazione",
+        "nome_categoria": "Colazione & Caffetteria",
         "elementi": [
           { "titolo": "Espresso 100% Arabica", "descrizione": "Miscela selezionata, tostatura artigianale.", "prezzo": "€ 1.50", "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800" },
           { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato, pistacchio o marmellata. Lievitazione naturale.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" }
         ]
       },
       {
-        "nome_categoria": "Tavola Calda",
+        "nome_categoria": "Antipasti & Sfizi",
         "elementi": [
-          { "titolo": "Arancino al Ragù", "descrizione": "Riso carnaroli, ragù di scottona, piselli freschi.", "prezzo": "€ 3.00", "immagine": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800" }
+          { "titolo": "Tagliere del Salotto", "descrizione": "Selezione di salumi e formaggi DOP siciliani con confetture artigianali.", "prezzo": "€ 18.00", "immagine": "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=800" },
+          { "titolo": "Caponata di Melanzane", "descrizione": "Ricetta tradizionale siracusana con melanzane, sedano, capperi e olive.", "prezzo": "€ 9.00", "immagine": "https://images.unsplash.com/photo-1594991225010-0937a346538c?q=80&w=800" }
+        ]
+      },
+      {
+        "nome_categoria": "I Primi Piatti",
+        "elementi": [
+          { "titolo": "Pasta alla Norma", "descrizione": "Maccheroni con salsa di pomodoro fresco, melanzane fritte, ricotta salata e basilico.", "prezzo": "€ 12.00", "immagine": "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800" },
+          { "titolo": "Risotto ai Frutti di Mare", "descrizione": "Riso Carnaroli sfumato al vino bianco con cozze, vongole, calamari e gamberi.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=800" }
+        ]
+      },
+      {
+        "nome_categoria": "I Secondi Piatti",
+        "elementi": [
+          { "titolo": "Involtini di Pesce Spada", "descrizione": "Ripieni di mollica, pinoli, uvetta e profumo di limone verdello.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800" }
+        ]
+      },
+      {
+        "nome_categoria": "I Nostri Dessert",
+        "elementi": [
+          { "titolo": "Cannolo Siciliano", "descrizione": "Cialda croccante ripiena di ricotta di pecora fresca e granella di pistacchio.", "prezzo": "€ 4.00", "immagine": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800" },
+          { "titolo": "Tiramisù al Pistacchio", "descrizione": "Crema al mascarpone arricchita con pasta pura di pistacchio di Bronte DOP.", "prezzo": "€ 6.00", "immagine": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800" }
+        ]
+      },
+      {
+        "nome_categoria": "Cantina & Bevande",
+        "elementi": [
+          { "titolo": "Calice di Etna Rosso DOC", "descrizione": "Corposo e vellutato, con sentori di frutti rossi e spezie.", "prezzo": "€ 7.00", "immagine": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800" },
+          { "titolo": "Acqua Minerale 75cl", "descrizione": "Naturale o Frizzante in bottiglia di vetro.", "prezzo": "€ 2.50", "immagine": "" }
         ]
       }
     ]
   },
-
   "prenotazioni": {
     "sfondo_header": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=2000",
     "titolo_pagina": "Riserva & Ordina",

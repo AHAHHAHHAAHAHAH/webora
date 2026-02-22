@@ -17,8 +17,8 @@ const { lavora_con_noi, integrazioni_esterne_API } = siteData;
     <div class="max-w-3xl mx-auto px-6 lg:px-8 reveal">
       <div class="bg-[var(--card)] p-8 md:p-12 rounded-3xl shadow-lg border border-[var(--text-main)]/5">
         
-        <form action={`https://formsubmit.co/${integrazioni_esterne_API.email_ricezione_form}`} method="POST" class="flex flex-col gap-6">
-          <input type="hidden" name="_subject" value="Nuova Candidatura">
+        <form action={`https://formsubmit.co/${integrazioni_esterne_API.email_ricezione_form}`} method="POST" enctype="multipart/form-data" class="flex flex-col gap-6">
+          <input type="hidden" name="_subject" value="Nuova Candidatura dal Sito Web">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value={siteData.impostazioni_sito.dominio_sito}>
 
@@ -44,8 +44,14 @@ const { lavora_con_noi, integrazioni_esterne_API } = siteData;
           </div>
 
           <div class="flex flex-col gap-2">
-            <label class="text-[var(--text-main)] text-sm font-semibold">Presentazione e Link al CV</label>
-            <textarea name="Messaggio" rows="4" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all resize-none"></textarea>
+            <label class="text-[var(--text-main)] text-sm font-semibold">Breve Presentazione</label>
+            <textarea name="Messaggio" rows="4" required placeholder="Raccontaci brevemente di te e perché vorresti lavorare con noi..." class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-4 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all resize-none"></textarea>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label class="text-[var(--text-main)] text-sm font-semibold">Allega il tuo Curriculum (PDF, DOCX)</label>
+            <input type="file" name="attachment" accept=".pdf, .doc, .docx" required class="bg-[var(--bg)] border border-[var(--text-main)]/10 text-[var(--text-main)] p-3 rounded-xl focus:ring-2 focus:ring-[var(--primary)] outline-none transition-all cursor-pointer 
+            file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-bold file:uppercase file:tracking-widest file:bg-[var(--primary)] file:text-black hover:file:bg-white file:transition-colors file:cursor-pointer">
           </div>
 
           <button type="submit" class="mt-4 btn-primary w-full text-lg">Invia Candidatura</button>
