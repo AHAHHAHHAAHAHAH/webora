@@ -2,18 +2,18 @@
   "_GUIDA_ALL_USO": "Questo è il file Master. Il Tema è Globale. I contenuti e i bottoni sono controllati singolarmente in ogni blocco di pagina.",
 
   "impostazioni_sito": {
-    "nome_brand": "Caffè Europa",
-    "sottotitolo_brand": "Il Salotto di Catania dal 1960",
-    "anno_fondazione": "1960",
-    "dominio_sito": "https://webora-01a.pages.dev",
-    "telefono_principale": "393331234567",
+    "nome_brand": "Nome Locale",
+    "sottotitolo_brand": "Il tuo slogan o sottotitolo qui",
+    "anno_fondazione": "2024",
+    "dominio_sito": "https://iltuosito.it",
+    "telefono_principale": "390000000000",
     "lingua_default": "it"
   },
   
   "seo_manager": {
-    "meta_titolo": "Caffè Europa | L'eccellenza dal 1960",
-    "meta_descrizione": "Scopri l'eccellenza della pasticceria siciliana e la cultura del caffè presso il Caffè Europa.",
-    "parole_chiave": "caffetteria catania, pasticceria siciliana, tavola calda"
+    "meta_titolo": "Nome Locale | Il tuo Slogan",
+    "meta_descrizione": "Descrizione perfetta per i motori di ricerca per attirare nuovi clienti nel tuo ristorante o locale.",
+    "parole_chiave": "ristorante, caffetteria, tua città, specialità"
   },
 
   "orari_apertura": {
@@ -38,7 +38,7 @@
 
   "integrazioni_esterne_API": {
     "email_ricezione_form": "tuamail@gmail.com",
-    "script_recensioni_google": "<script defer async src='https://cdn.trustindex.io/loader.js?156f87b65a4a4023be061b5bf13'></script>"
+    "script_recensioni_google": ""
   },
 
   "navigazione_menu": [
@@ -55,22 +55,22 @@
       "mostra_griglia_servizi": true
     },
     "sfondo_hero": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2000&auto=format&fit=crop",
-    "testo_badge": "Tradizione Siciliana",
-    "titolo_principale": "Caffè Europa",
-    "descrizione_principale": "Un'esperienza di gusto indimenticabile, tra l'arte della pasticceria e l'eccellenza del caffè.",
+    "testo_badge": "Categoria Locale",
+    "titolo_principale": "Nome Locale",
+    "descrizione_principale": "Una breve descrizione accattivante per catturare l'attenzione del cliente non appena atterra sul sito.",
     "bottoni_hero": [
       { "testo": "Esplora il Menù", "url": "/menu" },
       { "testo": "Prenota un Tavolo", "url": "/riserva" }
     ],
     "banner_tattico": {
-      "attivo":true,
-      "testo": "✨ Scopri le novità della nostra tavola calda! Clicca qui",
+      "attivo": true,
+      "testo": "✨ Scopri le nostre ultime novità! Clicca qui",
       "url": "/menu"
     },
     "griglia_servizi": [
-      { "titolo": "Pasticceria", "testo_link": "Scopri i Dolci", "url": "/menu", "immagine": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" },
+      { "titolo": "La Nostra Cucina", "testo_link": "Scopri i Piatti", "url": "/menu", "immagine": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800" },
       { "titolo": "Eventi & Catering", "testo_link": "Richiedi Info", "url": "/riserva", "immagine": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800" },
-      { "titolo": "Le Vostre Storie", "testo_link": "Leggi le Recensioni", "url": "/dicono-di-noi", "immagine": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" }
+      { "titolo": "Dicono di Noi", "testo_link": "Leggi le Recensioni", "url": "/dicono-di-noi", "immagine": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=800" }
     ]
   },
 
@@ -86,30 +86,30 @@
       "testo_domanda": "Hai già scelto?",
       "testo_sottotitolo": "Acquista dal tuo smartphone.",
       "testo_bottone": "Ordina & Paga Ora",
-      "link_software": "https://pay.sundayapp.com/caffe-europa"
+      "link_software": "#link-app-pagamento"
     },
     "categorie": [
       {
         "nome_categoria": "Colazione & Caffetteria",
         "elementi": [
-          { "titolo": "Espresso 100% Arabica", "descrizione": "Miscela selezionata, tostatura artigianale.", "prezzo": "€ 1.50", "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800" },
-          { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato o pistacchio.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" },
-          { "titolo": "Cappuccino Classico", "descrizione": "Latte intero montato a regola d'arte e caffè espresso.", "prezzo": "€ 2.50", "immagine": "https://images.unsplash.com/photo-1534685145391-92b4fa267568?q=80&w=800" },
-          { "titolo": "Spremuta d'Arancia", "descrizione": "Arance rosse di Sicilia spremute al momento.", "prezzo": "€ 3.50", "immagine": "" }
+          { "titolo": "Caffè Espresso", "descrizione": "Miscela selezionata, tostatura artigianale.", "prezzo": "€ 1.50", "immagine": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800" },
+          { "titolo": "Cornetto Farcito", "descrizione": "Crema, cioccolato o marmellata.", "prezzo": "€ 2.00", "immagine": "https://images.unsplash.com/photo-1555507036-ab1f40220cb9?q=80&w=800" },
+          { "titolo": "Cappuccino Classico", "descrizione": "Latte intero montato a regola d'arte.", "prezzo": "€ 2.50", "immagine": "https://images.unsplash.com/photo-1534685145391-92b4fa267568?q=80&w=800" },
+          { "titolo": "Spremuta d'Arancia", "descrizione": "Arance fresche spremute al momento.", "prezzo": "€ 3.50", "immagine": "" }
         ]
       },
       {
         "nome_categoria": "Antipasti & Sfizi",
         "elementi": [
-          { "titolo": "Tagliere del Salotto", "descrizione": "Salumi e formaggi DOP siciliani con confetture.", "prezzo": "€ 18.00", "immagine": "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=800" },
-          { "titolo": "Caponata di Melanzane", "descrizione": "Ricetta tradizionale siracusana con olive e capperi.", "prezzo": "€ 9.00", "immagine": "https://images.unsplash.com/photo-1594991225010-0937a346538c?q=80&w=800" },
-          { "titolo": "Arancinetti Misti", "descrizione": "Piccoli arancini al ragù, al burro e alla norma.", "prezzo": "€ 8.00", "immagine": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800" }
+          { "titolo": "Tagliere della Casa", "descrizione": "Selezione di salumi e formaggi del territorio.", "prezzo": "€ 18.00", "immagine": "https://images.unsplash.com/photo-1528736235302-52922df5c122?q=80&w=800" },
+          { "titolo": "Caponata Tradizionale", "descrizione": "Ricetta classica con verdure di stagione.", "prezzo": "€ 9.00", "immagine": "https://images.unsplash.com/photo-1594991225010-0937a346538c?q=80&w=800" },
+          { "titolo": "Arancini Misti", "descrizione": "Specialità tipiche e fritti misti.", "prezzo": "€ 8.00", "immagine": "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=800" }
         ]
       },
       {
         "nome_categoria": "I Primi Piatti",
         "elementi": [
-          { "titolo": "Pasta alla Norma", "descrizione": "Salsa di pomodoro, melanzane fritte, ricotta salata e basilico.", "prezzo": "€ 12.00", "immagine": "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800" },
+          { "titolo": "Pasta Tipica", "descrizione": "Salsa di pomodoro fresco, melanzane e ricotta salata.", "prezzo": "€ 12.00", "immagine": "https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=800" },
           { "titolo": "Risotto ai Frutti di Mare", "descrizione": "Riso Carnaroli con cozze, vongole, calamari e gamberi.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?q=80&w=800" },
           { "titolo": "Spaghetti alle Vongole", "descrizione": "Aglio, olio, peperoncino, prezzemolo e vongole veraci.", "prezzo": "€ 15.00", "immagine": "" }
         ]
@@ -117,7 +117,7 @@
       {
         "nome_categoria": "I Secondi Piatti",
         "elementi": [
-          { "titolo": "Involtini di Pesce Spada", "descrizione": "Ripieni di mollica, pinoli, uvetta e profumo di limone.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800" },
+          { "titolo": "Pesce Spada", "descrizione": "Preparazione tipica della casa.", "prezzo": "€ 16.00", "immagine": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800" },
           { "titolo": "Frittura Mista", "descrizione": "Calamari, gamberi e paranza pescata in giornata.", "prezzo": "€ 18.00", "immagine": "" },
           { "titolo": "Tagliata di Scottona", "descrizione": "Con rucola, scaglie di grana e pomodorini pachino.", "prezzo": "€ 22.00", "immagine": "" }
         ]
@@ -125,16 +125,16 @@
       {
         "nome_categoria": "Dessert & Pasticceria",
         "elementi": [
-          { "titolo": "Cannolo Siciliano", "descrizione": "Ricotta di pecora fresca e granella di pistacchio.", "prezzo": "€ 4.00", "immagine": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800" },
-          { "titolo": "Tiramisù al Pistacchio", "descrizione": "Crema al mascarpone con pasta di pistacchio di Bronte.", "prezzo": "€ 6.00", "immagine": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800" },
-          { "titolo": "Cassatina Siciliana", "descrizione": "Pan di spagna, ricotta e glassa di zucchero fondente.", "prezzo": "€ 5.00", "immagine": "" },
-          { "titolo": "Sorbetto al Limone", "descrizione": "Freschissimo, con limoni di Siracusa IGP.", "prezzo": "€ 4.00", "immagine": "" }
+          { "titolo": "Dolce Tradizionale", "descrizione": "Ricotta fresca e granella.", "prezzo": "€ 4.00", "immagine": "https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800" },
+          { "titolo": "Tiramisù", "descrizione": "Ricetta classica della casa.", "prezzo": "€ 6.00", "immagine": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?q=80&w=800" },
+          { "titolo": "Dolce del Giorno", "descrizione": "Chiedi al personale la specialità odierna.", "prezzo": "€ 5.00", "immagine": "" },
+          { "titolo": "Sorbetto al Limone", "descrizione": "Freschissimo, preparato con limoni selezionati.", "prezzo": "€ 4.00", "immagine": "" }
         ]
       },
       {
         "nome_categoria": "Cantina & Bevande",
         "elementi": [
-          { "titolo": "Calice Etna Rosso DOC", "descrizione": "Corposo e vellutato.", "prezzo": "€ 7.00", "immagine": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800" },
+          { "titolo": "Calice Vino Rosso DOC", "descrizione": "Corposo e vellutato.", "prezzo": "€ 7.00", "immagine": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=800" },
           { "titolo": "Birra Artigianale 33cl", "descrizione": "Bionda, Rossa o Ipa prodotta localmente.", "prezzo": "€ 6.00", "immagine": "" },
           { "titolo": "Acqua Naturale/Frizzante", "descrizione": "Bottiglia di vetro da 75cl.", "prezzo": "€ 2.50", "immagine": "" }
         ]
@@ -150,16 +150,16 @@
       "titolo": "Prenota in Sede",
       "descrizione": "Assicurati il tuo tavolo per colazioni di lavoro o momenti di relax.",
       "testo_bottone": "Prenota con WhatsApp",
-      "link_azione": "https://wa.me/393331234567?text=Salve,%20vorrei%20prenotare%20un%20tavolo."
+      "link_azione": "https://wa.me/390000000000?text=Salve,%20vorrei%20prenotare%20un%20tavolo."
     },
     "blocco_2_domicilio": {
       "titolo": "Asporto & Domicilio",
       "descrizione": "Gusta le nostre specialità comodamente a casa tua. Servizio rapido e garantito.",
       "testo_bottone_diretto": "Ordina su WhatsApp",
-      "link_azione_diretta": "https://wa.me/393331234567?text=Salve,%20vorrei%20ordinare%20per%20asporto.",
+      "link_azione_diretta": "https://wa.me/390000000000?text=Salve,%20vorrei%20ordinare%20per%20asporto.",
       "usa_app_terze": true,
-      "testo_bottone_app": "Ordina su Glovo",
-      "link_app_esterna": "https://glovoapp.com/it/it/catania/"
+      "testo_bottone_app": "Ordina su Delivery",
+      "link_app_esterna": "#link-piattaforma-delivery"
     }
   },
 
@@ -176,7 +176,7 @@
   "lavora_con_noi": {
     "titolo_pagina": "Lavora con Noi",
     "sottotitolo_pagina": "Entra a far parte della nostra grande famiglia.",
-    "posizioni_aperte": ["Barista / Caffetteria", "Cameriere di Sala", "Aiuto Pasticcere"]
+    "posizioni_aperte": ["Barista / Caffetteria", "Cameriere di Sala", "Aiuto Cuoco"]
   },
 
   "qr_code_hub": {
